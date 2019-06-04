@@ -1,0 +1,19 @@
+.OptionBox {
+    width: 29vw;
+    margin: 20px;
+    display: inline-block;
+}
+
+.TopOptionBox {
+    background-color: aqua;
+    padding:20px;
+    text-align: center;
+}
+
+.DwonOptionBox {
+    background-color: blueviolet;
+    padding: 5px;
+    text-align: center;
+}
+
+
