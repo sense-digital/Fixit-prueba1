@@ -1,15 +1,12 @@
 import React from 'react';
 
 import OptionBox from '../components/OptionBox';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import './styles/HomeSections.css';
 
 class Home extends React.Component {
     render () {
         return (
-        <div>
-            <Header />
+        <React.Fragment>
             <div className="Section HeroHome">
             <h1>¿Banner de promociones</h1>
             </div>
@@ -24,11 +21,9 @@ class Home extends React.Component {
                 <h1>¿Condiciones? </h1>
             </div>
             <div className="Section">
-            <h1>Datos numéricos</h1>
-                
+            <h1>Datos numéricos</h1>    
             </div>
-            <Footer />
-        </div>
+        </React.Fragment>
         
 
         );
