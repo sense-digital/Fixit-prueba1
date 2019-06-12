@@ -10,20 +10,22 @@ import Trabajo from '../pages/Trabajo';
 import ThankYou from '../pages/ThankYou';
 import NotFound from '../pages/NotFound';
 import Layout from '../components/Layout';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 function App() {
     return (
         <BrowserRouter>
         <Layout>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/admincliente" component={AdminCliente} />
-            <Route exact path="/soporte" component={Soporte} />
-            <Route exact path="/trabajo" component={Trabajo} />
-            <Route exact path="/thankyou" component={ThankYou} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/adminfixit" component={AdminFixit} />
-            <Route component={NotFound}/>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/admincliente" component={AdminCliente} />
+                <Route exact path="/soporte" component={Soporte} />
+                <Route exact path="/trabajo" component={Trabajo} />
+                <Route exact path="/thankyou" component={ThankYou} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/adminfixit" component={AdminFixit} />
+                <Route component={NotFound}/>
+            </Switch>
         </Layout>
         </BrowserRouter>
         )
