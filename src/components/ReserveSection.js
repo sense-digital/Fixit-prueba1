@@ -2,42 +2,36 @@
 
 import React, {Component} from 'react';
 import Box from './Box';
+import db from '../FirestoreConfig';
 
 class ReserveSection extends Component {  
-
-
-  state = {
-    data:[
-    {
-      id:"1",
-      celular:"Iphone 6 plus",
-    },
-    {
-      id:"2",
-      celular:"Iphone 6 ",
-    },
-    {
-      id:"3",
-      celular:"Iphone 7 ",
-    },
-    {
-      id:"4",
-      celular:"Iphone 7plus ",
-    },
-    {
-      id:"5",
-      celular:"Iphone 8 ",
+  constructor () {
+    super() 
+    this.state = {
+      data:[] 
     }
-  ] };
+  }
+
+
+  componentDidMount () {
+    db.collection('celulares').get().then((snapShots)=>{
+      this.setState({
+        data: snapShots.docs.map(doc => {
+          return (doc.data());
+        })
+      })
+    })
+  }
+    
+
 
   render () {   
       return (
         <div>
-          
          <ul>
           {this.state.data.map(OptionBox=>{
                 return( 
-                  <Box key={OptionBox.id} celular={OptionBox.celular}/> 
+                  <Box key={OptionBox.ref} celular={OptionBox.ref}/> 
                 )
           })}
          </ul>
