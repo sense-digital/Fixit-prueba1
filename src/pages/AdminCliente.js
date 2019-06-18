@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class AdminCliente extends React.Component {
+class AdminCliente extends Component {
     render () {
         return (
         <div>

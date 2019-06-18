@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-import OptionBox from '../components/OptionBox';
+import ReserveSection from '../components/ReserveSection';
 import './styles/HomeSections.css';
 
-class Home extends React.Component {
+class Home extends Component {
     render () {
         return (
         <React.Fragment>
@@ -11,7 +11,7 @@ class Home extends React.Component {
             <h1>¿Banner de promociones</h1>
             </div>
             <div>
-            <OptionBox producto="Productito"/>
+            <ReserveSection/>
             </div>
             <div className="Section">
             <h1>¿Cómo funciona fixit (3pasos)?</h1>
@@ -24,8 +24,6 @@ class Home extends React.Component {
             <h1>Datos numéricos</h1>    
             </div>
         </React.Fragment>
-        
-
         );
     }
 }

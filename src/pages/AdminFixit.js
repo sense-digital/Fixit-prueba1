@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class AdminFixit extends React.Component {
+class AdminFixit extends Component {
     render () {
         return (
         <div>

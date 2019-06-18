@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class Soporte extends React.Component {
+class Soporte extends Component {
     render () {
         return (
         <div>
