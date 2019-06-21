@@ -1,8 +1,135 @@
-.HeroHome {
-    background-color: greenyellow;
-    height: 40vh;
+/* INICIO DE PRIMER MEDIA QUERY */
+@media screen and (min-width:1024px){
+.hero-container{
+    font-family: benchnine;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+    align-items: center;
+    height: 70px;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 5px grey;
 }
+.herosection-1{
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-transform: capitalize;
+    height: 80px;
+    font-family: benchnine;
+}
+/* .ReserveSection{
+    height: 500px;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+} */
 
-.Section {
-    height: 40vh;
+/* INICIO DE LOS ESTILOS AL GID DE CÓMO FUNCIONA */
+.herosection-2{
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 80px;
+    font-family: benchnine;
 }
+.titulo-herosection-2{
+    display: flex;
+    justify-content: center;
+}
+.grid-herosection-2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,0.1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    /* height: 100vh; */
+    justify-items: center;
+    align-items: center;
+}
+.item:nth-of-type(1){
+    grid-column: 1 / -1;
+}
+.item:nth-of-type(5){
+    text-align: center;
+}
+.item:nth-of-type(6){
+    text-align: center;
+}
+.item:nth-of-type(7){
+    text-align: center;
+}
+/* FIN DE LOS ESTILOS AL GID DE CÓMO FUNCIONA */
+
+/* INICIO DE ESTILOS AL BANNER PUBLICITARIO*/
+.herosection-3{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: gray;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 300px;
+    font-family: benchnine;
+    align-items: center;
+}
+/* FIN DE ESTILOS A LA BANNER PUBLICITARIO*/
+
+/* INICIO DE ESTILOS A LA SECCIÓN POR QUÉ FIXIT */
+.herosection-4{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,0.1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    /* height: 100vh; */
+    justify-items: center;
+    align-items: center;
+    font-family: benchnine;
+    background-color: aqua;
+}
+.item2:nth-of-type(1){
+    grid-column: 1 / -1;
+}
+.item2:nth-of-type(5){
+    text-align: center;
+}
+.item2:nth-of-type(6){
+    text-align: center;
+}
+.item2:nth-of-type(7){
+    text-align: center;
+}
+/* INICIO DE ESTILOS A LA SECCIÓN POR QUÉ FIXIT */
+
+/* INICIO ESTILOS A SECCIÓN CIFRAS */
+.herosection-5{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,0.1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    /* height: 100vh; */
+    justify-items: center;
+    align-items: center;
+    font-family: benchnine;
+
+}
+.item3:nth-of-type(1){
+    text-align: center;
+}
+.item3:nth-of-type(2){
+    text-align: center;
+}
+.item3:nth-of-type(3){
+    text-align: center;
+}
+.item3:nth-of-type(4){
+    grid-column: 1 / -1;
+}
+/* FIN ESTILOS A SECCIÓN CIFRAS */
+}
+/* FIN DE PRIMER MEDIA QUERY */

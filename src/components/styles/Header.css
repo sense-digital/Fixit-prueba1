@@ -1,6 +1,7 @@
-/* PRIMER MEDAQUERIE */
+/* PRIMER MEDA QUERY*/
 @media screen and (min-width:1024px){
 .header{
+    font-family: benchnine;
     background-color: white;
     color:#5F5E5E;
     display: flex;
@@ -38,7 +39,7 @@
   height: inherit; 
   padding: 0 10px;
   }
-
+/* INICIO ESTILOS PARA CENTRAR EL HEADER */
   .container-header{
     width: 1000px;
     margin: 0 auto;
@@ -50,7 +51,7 @@
   }
 }
 
-/* FIN DE PRIMER QUERIE */
+/* FIN DE PRIMER QUERY */
 
 @media screen and (min-width:768px){
 }

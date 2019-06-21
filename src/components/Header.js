@@ -9,18 +9,20 @@ class Header extends Component {
     <header className='header'>
       <div className='container-header'>
        <figure className='logo-fixit-header'>
-       <img src='../' alt="LogoFixIt"/>
+           <a href ='/'>
+               <img src='../logofix-it.png' alt="LogoFixIt" href='/home'/>
+           </a>
        </figure>
        <nav className='menu-principal'>
            <ul>
                <li>
-                   <a href='#admincliente'>Trabaja con FixIt</a>
+                   <a href='/trabajo'>Trabaja con FixIt</a>
                </li>
                <li>
-                   <a href='#adminfix'>Soporte</a>
+                   <a href='/soporte'>Soporte</a>
                </li>
                <li>
-                   <a href='#login'>mi cuenta</a>
+                   <a href='/admincliente'>mi cuenta</a>
                </li>
                <li>
                    <a href='#arreglalo ya'>arreglalo ya</a>
