@@ -9,23 +9,23 @@ class Header extends Component {
     <header className='header'>
       <div className='container-header'>
        <figure className='logo-fixit-header'>
-           <a href ='/'>
+           <Link to ='/'>
                <img src='../logofix-it.png' alt="LogoFixIt" href='/home'/>
-           </a>
+           </Link>
        </figure>
        <nav className='menu-principal'>
            <ul>
                <li>
-                   <a href='/trabajo'>Trabaja con FixIt</a>
+                   <Link to='/trabajo'>Trabaja con FixIt</Link>
                </li>
                <li>
-                   <a href='/soporte'>Soporte</a>
+                   <Link to='/soporte'>Soporte</Link>
                </li>
                <li>
-                   <a href='/admincliente'>mi cuenta</a>
+                   <Link to='/admincliente'>mi cuenta</Link>
                </li>
                <li>
-                   <a href='#arreglalo ya'>arreglalo ya</a>
+                   <Link to='#arreglalo ya'>arreglalo ya</Link>
                </li>
            </ul>
        </nav>

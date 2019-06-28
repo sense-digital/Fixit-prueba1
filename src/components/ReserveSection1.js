@@ -3,8 +3,9 @@
 import React, {Component} from 'react';
 import Box from './Box';
 import db from '../FirestoreConfig';
+import { Link, NavLink } from 'react-router-dom';
 
-class ReserveSection extends Component {  
+class ReserveSection1 extends Component {  
   constructor () {
     super() 
     this.state = {
@@ -40,4 +41,4 @@ class ReserveSection extends Component {
     }
   }
 
-export default ReserveSection;
+export default ReserveSection1;

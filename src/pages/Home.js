@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import ReserveSection from '../components/ReserveSection';
+import ReserveSectionRoute from '../components/ReserveSectionRoute';
 import './styles/HomeSections.css';
 
 class Home extends Component {
@@ -17,8 +17,8 @@ class Home extends Component {
         {/* fin de título "selecciona tu dispotivo" */}
 
         {/* INICIO DE GRID DE SELECCIÓN DE PRODUCTOS */}
-            <div class="ReserveSection">
-                <ReserveSection/>
+            <div class="ReserveSection1">
+            <ReserveSectionRoute/>
             </div>
         {/* FIN DE GRID DE SELECCIÓN DE PRODUCTOS */}
 

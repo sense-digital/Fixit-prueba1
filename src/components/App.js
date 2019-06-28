@@ -10,14 +10,15 @@ import Trabajo from '../pages/Trabajo';
 import ThankYou from '../pages/ThankYou';
 import NotFound from '../pages/NotFound';
 import Layout from '../components/Layout';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 function App() {
     return (
         <BrowserRouter>
         <Layout>
             <Switch>
-                <Route exact path="/" component={Home} />
+                <Route path="/home" component={Home} />
+                <Redirect exact from="/" to="/home"/>
                 <Route exact path="/admincliente" component={AdminCliente} />
                 <Route exact path="/soporte" component={Soporte} />
                 <Route exact path="/trabajo" component={Trabajo} />
