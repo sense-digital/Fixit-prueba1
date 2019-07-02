@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-
+import logo from '../images/logofix-it.png';
 import './styles/Header.css';
 
 class Header extends Component {
@@ -10,7 +10,7 @@ class Header extends Component {
       <div className='container-header'>
        <figure className='logo-fixit-header'>
            <Link to ='/'>
-               <img src='../logofix-it.png' alt="LogoFixIt" href='/home'/>
+               <img src={logo} alt="LogoFixIt" href='/home' width='50px'/>
            </Link>
        </figure>
        <nav className='menu-principal'>

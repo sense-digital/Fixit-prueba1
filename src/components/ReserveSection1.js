@@ -1,5 +1,3 @@
-//sección de reservas
-
 import React, {Component} from 'react';
 import Box from './Box';
 import db from '../FirestoreConfig';
