@@ -3,55 +3,64 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 class Login extends Component {
- 
-        // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        //     // Handle Errors here.
-        //     var errorCode = error.code;
-        //     var errorMessage = error.message;
-        //     // ...
-        //   });  
+        constructor(props){
+        super(props);
+        this.login = this.login.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.register = this.register.bind(this);
+        this.state = {
+            correo: '',
+            contraseña: '',
+        }}
+
+
+        login (e) {
+            e.preventDefault();
+            firebase.auth().signInWithEmailAndPassword(this.state.correo, this.state.contraseña).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+              });
+        }
+
+        register (e) {
+            e.preventDefault();
+            firebase.auth().createUserWithEmailAndPassword(this.state.correo, this.state.contraseña).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+              });  
+        }
+
+        handleChange(e) {
+            this.setState({[e.target.name]: e.target.value});
+        }
+
         
         
-        // firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        //     // Handle Errors here.
-        //     var errorCode = error.code;
-        //     var errorMessage = error.message;
-        //     // ...
-        //   });
+        
+        
  
     render () {
         return (
         <div>
-            <h1> Login </h1>
+            <h1> Inicio de sesión / Registro </h1>
 
-            <form onSubmit=''>    
+            <form >    
                 <br/>
-                    <label for='usuario'> Correo:</label>
-                    <input type="text" name="usuario"/>
-                <br/>
-                <br/>
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="text" name="contraseña"/>
+                    <label > Correo:</label>
+                    <input type="text" name="correo" onChange={this.handleChange}/>
                 <br/>
                 <br/>
-                    <input type="submit" name="login"/>
+                    <label >Contraseña:</label>
+                    <input type="password" name="contraseña" onChange={this.handleChange}/>
+                <br/>
+                <br/>
+                    <button name="login" onClick={this.login}>Inicio de sesión </button>
+                    <button name="register" onClick={this.register}>Registro</button>
             </form>
-
-            <h1> Registro </h1>
-
-            <form onSubmit=''>    
-                <br/>
-                    <label for='usuario'> Correo:</label>
-                    <input type="text" name="usuario"/>
-                <br/>
-                <br/>
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="text" name="contraseña"/>
-                <br/>
-                <br/>
-                    <input type="submit" name="register"/>
-            </form>
-
             
         </div>
         
