@@ -12,7 +12,7 @@ class Box extends Component {
             </div>
             <div className="DwonOptionBox">
                 <h2>
-                  {this.props.celular}
+                  {this.props.descripcion}
                 </h2>
              </div>
             </div> 

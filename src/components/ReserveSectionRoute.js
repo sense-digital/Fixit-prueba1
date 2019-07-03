@@ -9,10 +9,10 @@ function ReserveSectionRoute() {
     return (
     <div>
 
-        <Link to="/home">2222222222</Link> <br/>
-        <Link to="/home/2">333333333333333333</Link> <br/>
-        <Link to="/home/3">44444444444444</Link> <br/>
-        <Link to='/home/4'>Trabaja con FixIt</Link>
+        <Link to="/home">Reservesection1</Link> <br/>
+        <Link to="/home/2">Reservesection2</Link> <br/>
+        <Link to="/home/3">Reservesection3</Link> <br/>
+        <Link to='/home/4'>Reservesection4</Link>
 
         <Route  exact path="/home" component={ReserveSection1} />
         <Route  path="/home/2" component={ReserveSection2} />

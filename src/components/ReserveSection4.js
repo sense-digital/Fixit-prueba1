@@ -1,12 +1,25 @@
 import React, {Component} from 'react';
 import Box from './Box';
-import db from '../FirestoreConfig';
+import '../pages/styles/HomeSections.css';
 
 class ReserveSection4 extends Component {  
   render () {   
       return (
         <div>
-          <h1>4</h1>
+
+        {/* inicio de título "selecciona tu dispositivo" */}
+         <div className='hero-container'>
+              <div className='herosectiont-1'>
+                  <h2>4. Confirmación y pago</h2>
+              </div>
+            </div>
+        {/* fin de título "selecciona tu dispotivo" */}
+
+
+
+          <h1>Datos X y Y</h1>
+
+          
         </div>
       );
     }

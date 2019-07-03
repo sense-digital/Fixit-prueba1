@@ -7,14 +7,6 @@ class Home extends Component {
     render () {
         return (
         <React.Fragment>
-           
-        {/* inicio de título "selecciona tu dispositivo" */}
-            <div className='hero-container'>
-              <div className='herosectiont-1'>
-                  <h2>1. selecciona tu dispositivo</h2>
-              </div>
-            </div>
-        {/* fin de título "selecciona tu dispotivo" */}
 
         {/* INICIO DE GRID DE SELECCIÓN DE PRODUCTOS */}
             <div className="ReserveSection1">
