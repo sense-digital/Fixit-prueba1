@@ -49,5 +49,41 @@ margin: 15px 0;
 /* INICIO ESTILOS DE FORMULARIO DE CONTACTO*/
 
 /* FIN ESTILOS DE FORMULARIO DE CONTACTO*/
+
+/* INICIO ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
+.seccion-informacion-soporte{
+  margin-top: 20px;
+}
+.grid1-soporte{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3,0.1fr);
+  grid-column-gap: 80px;
+  grid-row-gap: 10px;
+    /* height: 100vh; */
+  justify-items: center;
+  align-items: center;
+}
+.item-grid1-soporte{
+  border:1px solid red; 
+  padding: 20px;
+}
+
+.item-grid1-soporte:nth-of-type(1){
+  justify-self: left;
+  margin-left: 80px;
+  border-radius: 100px;
+  /* margin: 10px; */
+}
+.item-grid1-soporte:nth-of-type(3){
+  justify-self: right;
+  border-radius: 100px;
+}
+.item-grid1-soporte:nth-of-type(5){
+  justify-self: center;
+  border-radius: 100px;  
+}
+/* FIN ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
+
 }
 /* FIN PRIMER MEDIA QUERY */
