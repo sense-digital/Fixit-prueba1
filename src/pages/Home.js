@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import logo from '../images/logofix-it.png';
 import ReserveSectionRoute from '../components/ReserveSectionRoute';
 import './styles/HomeSections.css';
+import Header from '../components/Header';
 
 class Home extends Component {
     render () {
         return (
         <React.Fragment>
-
+           <Header/>
         {/* INICIO DE GRID DE SELECCIÓN DE PRODUCTOS */}
             <div className="ReserveSection1">
             <ReserveSectionRoute/>

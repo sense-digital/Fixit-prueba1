@@ -50,8 +50,6 @@ class AppLogin extends Component {
         <div>
         {this.state.user ? (<AdminFixit/>):(<Login/>)}
         </div>
-        
-
         );
     }
 }

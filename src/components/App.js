@@ -2,14 +2,12 @@
 
 import React, {Component} from 'react';
 import Home from '../pages/Home';
-import Login from '../pages/Login';
 import AdminCliente from '../pages/AdminCliente';
 import AppLogin from '../components/AppLogin';
 import Soporte from '../pages/Soporte';
 import Trabajo from '../pages/Trabajo';
 import ThankYou from '../pages/ThankYou';
 import NotFound from '../pages/NotFound';
-import Layout from '../components/Layout';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -43,7 +41,6 @@ class App extends Component {
 
     return (
         <BrowserRouter>
-        <Layout>
             <Switch>
                 <Route path="/home" component={Home} />
                 <Redirect exact from="/" to="/home"/>
@@ -51,11 +48,10 @@ class App extends Component {
                 <Route exact path="/soporte" component={Soporte} />
                 <Route exact path="/trabajo" component={Trabajo} />
                 <Route exact path="/thankyou" component={ThankYou} />
-                <Route exact path="/login" component={AppLogin} />
-                <Redirect exact from="/adminfixit" to="/login"/>
+                <Route path="/adminfixit" component={AppLogin} />
+                <Redirect exact from="/login" to="/adminfixit"/>
                 <Route component={NotFound}/>
             </Switch>
-        </Layout>
         </BrowserRouter>
         );
 }}

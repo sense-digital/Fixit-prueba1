@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import './styles/Soporte.css';
+import Header from '../components/Header';
 
 
 class Soporte extends Component {
     render () {
         return (
+        <React.Fragment>
+        <Header/>
         <div className="acordeon-container">
             <h1 className="titulo-acordeon">Preguntas </h1>
             <div className="acordeon">
@@ -74,7 +77,7 @@ class Soporte extends Component {
               </section>
             </div>
         </div>
-        
+        </React.Fragment>
 
         );
     }
