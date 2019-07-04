@@ -1,3 +1,5 @@
+//SECCIÓN DE RESERVA "3. Datos y agendamiento"
+
 import React, {Component} from 'react';
 import Box from './Box';
 import '../pages/styles/HomeSections.css';

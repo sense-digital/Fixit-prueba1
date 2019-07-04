@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class AdminCliente extends Component {
     render () {
@@ -7,6 +8,7 @@ class AdminCliente extends Component {
         <div>
             <Header/>
             <h1>ADMIN CLIENTE</h1>
+            <Footer/>
         </div>
         
 

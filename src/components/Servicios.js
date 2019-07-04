@@ -1,3 +1,5 @@
+//SECCIÓN DE SERVICIOS PRESTADOS DEL PANEL DE ADMINISTRACIÓN
+
 import React, {Component} from 'react';
 
 

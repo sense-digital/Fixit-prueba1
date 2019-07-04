@@ -1,3 +1,5 @@
+//SECCIÓN DE RESERVA "4. Confirmación y pago"
+
 import React, {Component} from 'react';
 import Box from './Box';
 import '../pages/styles/HomeSections.css';

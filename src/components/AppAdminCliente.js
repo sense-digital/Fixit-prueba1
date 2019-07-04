@@ -1,13 +1,13 @@
-//PAGINA DE INICIÓN DE SESIÓN DE ADMINISTRADOR
+//PAGINA DE INICIÓN DE SESIÓN DE CLIENTE
 //COMPONENTE EN DONDE SE IDENTIFICA SI UN USUARIO YA HA INICIADO SESIÓN O NO Y SEGÚN ESO RENDERIZA UN COMPONENTE DE INICIO DE SESIÓN O EL DEL ADMINISTRADOR
 
 import React, {Component} from 'react';
-import Login from '../pages/Login';
-import AdminFixit from '../pages/AdminFixit';
+import AdminCliente from '../pages/AdminCliente';
+import LoginCliente from '../pages/LoginCliente';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-class AppLogin extends Component {
+class AppAdminCliente extends Component {
  
 
     constructor(props){
@@ -40,10 +40,10 @@ class AppLogin extends Component {
     render () {
         return (
         <div>
-        {this.state.user ? (<AdminFixit/>):(<Login/>)}
+        {this.state.user ? (<AdminCliente/>):(<LoginCliente/>)}
         </div>
         );
     }
 }
 
-export default AppLogin;
+export default AppAdminCliente;

@@ -1,3 +1,5 @@
+//SECCIÓN DE RESERVA "2. ¿Que necesitas arreglar?"
+
 import React, {Component} from 'react';
 import Box from './Box';
 import { Link, NavLink } from 'react-router-dom';

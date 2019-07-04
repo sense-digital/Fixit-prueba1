@@ -3,6 +3,7 @@ import logo from '../images/logofix-it.png';
 import ReserveSectionRoute from '../components/ReserveSectionRoute';
 import './styles/HomeSections.css';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class Home extends Component {
     render () {
@@ -93,6 +94,7 @@ class Home extends Component {
             <div className="Section">
             <h1>Datos numéricos</h1>    
             </div> */}
+        <Footer/>
         </React.Fragment>
         );
     }

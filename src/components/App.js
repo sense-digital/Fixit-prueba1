@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import Home from '../pages/Home';
-import AdminCliente from '../pages/AdminCliente';
+import AppAdminCliente from '../components/AppAdminCliente';
 import AppLogin from '../components/AppLogin';
 import Soporte from '../pages/Soporte';
 import Trabajo from '../pages/Trabajo';
@@ -39,12 +39,14 @@ class App extends Component {
 
     render() {
 
+
+        // RUTAS DE LA PAGINA
     return (
         <BrowserRouter>
             <Switch>
                 <Route path="/home" component={Home} />
                 <Redirect exact from="/" to="/home"/>
-                <Route exact path="/admincliente" component={AdminCliente} />
+                <Route exact path="/admincliente" component={AppAdminCliente} />
                 <Route exact path="/soporte" component={Soporte} />
                 <Route exact path="/trabajo" component={Trabajo} />
                 <Route exact path="/thankyou" component={ThankYou} />

@@ -1,3 +1,5 @@
+//SECCIÓN DE CLIENTES DEL PANEL DE ADMINISTRACIÓN
+
 import React, {Component} from 'react';
 
 

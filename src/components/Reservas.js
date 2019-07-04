@@ -1,3 +1,5 @@
+//SECCIÓN DE RESERVAS DEL PANEL DE ADMINISTRACIÓN
+
 import React, {Component} from 'react';
 
 

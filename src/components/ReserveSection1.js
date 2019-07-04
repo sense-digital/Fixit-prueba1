@@ -1,3 +1,5 @@
+//SECCIÓN DE RESERVA "1.SELECCIONA TU DISPOSITIVO"
+
 import React, {Component} from 'react';
 import Box from './Box';
 import { Link, NavLink } from 'react-router-dom';

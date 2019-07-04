@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './styles/Soporte.css';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 class Soporte extends Component {
@@ -77,6 +78,7 @@ class Soporte extends Component {
               </section>
             </div>
         </div>
+        <Footer/>
         </React.Fragment>
 
         );

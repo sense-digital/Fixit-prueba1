@@ -1,3 +1,6 @@
+//ENRUTADOR DE LA SECCIÓN DE RESERVAS
+
+
 import React from 'react';
 import ReserveSection1 from './ReserveSection1';
 import ReserveSection2 from './ReserveSection2';
@@ -13,6 +16,7 @@ function ReserveSectionRoute() {
         <Link to="/home/2">Reservesection2</Link> <br/>
         <Link to="/home/3">Reservesection3</Link> <br/>
         <Link to='/home/4'>Reservesection4</Link>
+
 
         <Route  exact path="/home" component={ReserveSection1} />
         <Route  path="/home/2" component={ReserveSection2} />
