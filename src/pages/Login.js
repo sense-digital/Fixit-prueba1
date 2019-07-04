@@ -8,15 +8,36 @@ class Login extends Component {
         this.login = this.login.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.register = this.register.bind(this);
+        this.authGoogle = this.authGoogle.bind(this);
         this.state = {
-            correo: '',
-            contraseña: '',
+            mail: '',
+            password: '',
         }}
 
+        authGoogle () {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                // ...
+              }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                // ...
+              });
 
+        }
+        
         login (e) {
             e.preventDefault();
-            firebase.auth().signInWithEmailAndPassword(this.state.correo, this.state.contraseña).catch(function(error) {
+            firebase.auth().signInWithEmailAndPassword(this.state.mail, this.state.password).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -26,7 +47,7 @@ class Login extends Component {
 
         register (e) {
             e.preventDefault();
-            firebase.auth().createUserWithEmailAndPassword(this.state.correo, this.state.contraseña).catch(function(error) {
+            firebase.auth().createUserWithEmailAndPassword(this.state.mail, this.state.password).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -51,16 +72,18 @@ class Login extends Component {
             <form >    
                 <br/>
                     <label > Correo:</label>
-                    <input type="text" name="correo" onChange={this.handleChange}/>
+                    <input type="text" name="mail" onChange={this.handleChange}/>
                 <br/>
                 <br/>
                     <label >Contraseña:</label>
-                    <input type="password" name="contraseña" onChange={this.handleChange}/>
+                    <input type="password" name="password" onChange={this.handleChange}/>
                 <br/>
                 <br/>
                     <button name="login" onClick={this.login}>Inicio de sesión </button>
                     <button name="register" onClick={this.register}>Registro</button>
             </form>
+
+            <button name="authGoogle" onClick={this.authGoogle}>Google</button>
             
         </div>
         
