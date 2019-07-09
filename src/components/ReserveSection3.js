@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import Box from './Box';
+import { Link } from 'react-router-dom';
 import '../pages/styles/HomeSections.css';
 
 class ReserveSection3 extends Component {  
@@ -68,6 +69,8 @@ class ReserveSection3 extends Component {
                 Celular:
                 <input type="text" name="celular"/>
           </label>
+
+          <button> <Link to='/home/4'> Siguiente </Link> </button>
 
           </form>
         {/* FIN formulario para compra */}

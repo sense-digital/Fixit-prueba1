@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import Box from './Box';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../pages/styles/HomeSections.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -13,6 +13,7 @@ class ReserveSection1 extends Component {
     this.state = {
       data:[] 
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -26,6 +27,9 @@ class ReserveSection1 extends Component {
     })
   }
     
+  handleClick(data) {
+    console.log(data)
+  }
 
 
   render () {   
@@ -44,7 +48,9 @@ class ReserveSection1 extends Component {
          <ul>
           {this.state.data.map(OptionBox=>{
                 return( 
+                  <Link to='home/2' key={OptionBox.ref} onClick={() => this.handleClick(OptionBox.ref)}>
                   <Box key={OptionBox.ref} descripcion={OptionBox.ref}/> 
+                  </Link>
                 )
           })}
          </ul>

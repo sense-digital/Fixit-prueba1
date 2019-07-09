@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import Box from './Box';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../pages/styles/HomeSections.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -13,6 +13,7 @@ class ReserveSection2 extends Component {
     this.state = {
       data:[] 
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -25,7 +26,11 @@ class ReserveSection2 extends Component {
       })
     })
   }
-    
+  
+  handleClick(data) {
+    console.log(data)
+  }
+
 
 
   render () {   
@@ -46,8 +51,9 @@ class ReserveSection2 extends Component {
           {this.state.data.map(OptionBox=>{
                 return( 
                   // OptionBox.celulares === "pantalla rota"
+                  <Link to='/home/3' key={OptionBox.servicio} onClick={()=>this.handleClick(OptionBox.servicio)}>
                   <Box key={OptionBox.servicio} descripcion={OptionBox.servicio}/> 
-                  
+                  </Link>
                 )
           })}
          </ul>

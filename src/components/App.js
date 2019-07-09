@@ -13,7 +13,6 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 class App extends Component {
-    
     constructor(props){
         super(props);
         this.state = {

@@ -25,7 +25,7 @@ class Header extends Component {
                    <Link to='/admincliente'>mi cuenta</Link>
                </li>
                <li>
-                   <Link to='#arreglalo ya'>arreglalo ya</Link>
+                   <Link to='/#arreglaloYa'>arreglalo ya</Link>
                </li>
            </ul>
        </nav>

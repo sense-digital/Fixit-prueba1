@@ -12,7 +12,7 @@ class Home extends Component {
            <Header/>
         {/* INICIO DE GRID DE SELECCIÓN DE PRODUCTOS */}
             <div className="ReserveSection1">
-            <ReserveSectionRoute/>
+            <ReserveSectionRoute id="arreglaloYa"/>
             </div>
         {/* FIN DE GRID DE SELECCIÓN DE PRODUCTOS */}
 
@@ -86,6 +86,7 @@ class Home extends Component {
                <div className="item3">image 1</div>
             </section>
             {/* FIN GRID DE CIFRAS */}
+            <Footer/>
            </div>
 
             {/* <div className="Section HeroHome">
@@ -94,7 +95,7 @@ class Home extends Component {
             <div className="Section">
             <h1>Datos numéricos</h1>    
             </div> */}
-        <Footer/>
+   
         </React.Fragment>
         );
     }
