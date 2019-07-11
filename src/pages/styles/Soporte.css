@@ -7,6 +7,7 @@
   /* INICIO ESTILOS ACORDEON */
   .titulo-acordeon{
     color: #1E4899;
+    font-size: 40px;
   }
 .acordeon-container{
   box-sizing: border-box;
@@ -37,7 +38,7 @@
 .acordeon-contenido{
   height: 0;
   overflow: hidden;
-  margin:0;
+  margin:2px;
   transition: all 0.5s;
 }
 .acordeon input:checked ~ .acordeon-contenido{
@@ -47,7 +48,59 @@ margin: 15px 0;
 /* FIN ESTILOS ACORDEON */
 
 /* INICIO ESTILOS DE FORMULARIO DE CONTACTO*/
-
+.formulario-soporte>h3{
+font-weight: bold;
+font-size: 50px;
+margin: 0%;
+margin-top: 80px;
+}
+.formulario-soporte>p{
+font-size: 25px;
+margin:-10px 0;
+font-weight: normal;
+color: grey;
+margin-bottom: -10px;
+}
+.form-container{
+  box-shadow: 5px 5px 5px grey;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.form-container>label{
+margin-right: 10px;
+width: 100%;
+margin-right: 25%;
+}
+.campos-formulario-soporte{
+  display: flex;
+}
+.campos-formulario-soporte>input{
+  width:80%;
+  height: 30px;
+}
+.e-mail{
+  /* margin-top: 30px;
+  margin-left:10px; */
+  border: none;
+  background-color: #E0DBDB;
+}
+.e-mail:nth-of-type(1){
+  margin-left: 0;
+}
+.e-mail:nth-of-type(2),.e-mail:nth-of-type(1),.e-mail:nth-of-type(3){
+  margin-right: 10px; 
+}
+.boton-formulario{
+  margin-top: 10px;
+  width: 10%;
+  height: 30px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  font-size: 17px;
+}
 /* FIN ESTILOS DE FORMULARIO DE CONTACTO*/
 
 /* INICIO ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
@@ -58,30 +111,61 @@ margin: 15px 0;
   display:grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3,0.1fr);
-  grid-column-gap: 80px;
-  grid-row-gap: 10px;
+  /* grid-column-gap: 60px; */
+  /* grid-row-gap: 10px; */
     /* height: 100vh; */
   justify-items: center;
   align-items: center;
+  background-color: #F7F7F7;
+  padding: 20px 0;
 }
 .item-grid1-soporte{
-  border:1px solid red; 
-  padding: 20px;
+  /* border:1px solid red;  */
+  /* padding: 20px; */
 }
-
+.item-grid1-soporte>h2{
+  font-size: 30px;
+  margin-right: 20px;
+  color:#981915;
+}
+.item-grid1-soporte>p{
+font-size: 18px;
+padding: 0 50px;
+text-align: justify;
+}
+.item-grid1-soporte:nth-of-type(2){
+  align-self: end;
+}
 .item-grid1-soporte:nth-of-type(1){
   justify-self: left;
-  margin-left: 80px;
+  margin-left: 70px;
   border-radius: 100px;
   /* margin: 10px; */
+  width: 180px;
+  height: 180px;
 }
 .item-grid1-soporte:nth-of-type(3){
   justify-self: right;
   border-radius: 100px;
+  width: 140px;
+  height: 140px;
+  margin-right: 50px;
 }
 .item-grid1-soporte:nth-of-type(5){
   justify-self: center;
   border-radius: 100px;  
+  width: 120px;
+  height: 120px;
+  margin-right: 50px;
+}
+.wp-button{
+  background-color:#1DD13F;
+  width: 100px;
+  height: 30px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
 }
 /* FIN ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
 
