@@ -13,9 +13,7 @@ class ReserveSection2 extends Component {
     this.state = {
       data:[] 
     }
-    this.handleClick = this.handleClick.bind(this);
   }
-
 
   componentDidMount () {
     firebase.firestore().collection('servicios').get().then((snapShots)=>{
@@ -24,19 +22,12 @@ class ReserveSection2 extends Component {
           return (doc.data());
         })
       })
-    })
+    })    
   }
-  
-  handleClick(data) {
-    console.log(data)
-  }
-
-
 
   render () {   
       return (
         <div>
-         
 {/* INICIO de título  */}
          <div className='hero-container'>
               <div className='herosectiont-1'>
@@ -44,18 +35,13 @@ class ReserveSection2 extends Component {
               </div>
             </div>
 {/* FIN de título */}
-
-
 {/* INICIO servicios para mantenimiento  */} 
          <ul>
-          {this.state.data.map(OptionBox=>{
-                return( 
-                  // OptionBox.celulares === "pantalla rota"
-                  <Link to='/home/3' key={OptionBox.servicio} onClick={()=>this.handleClick(OptionBox.servicio)}>
-                  <Box key={OptionBox.servicio} descripcion={OptionBox.servicio}/> 
-                  </Link>
-                )
-          })}
+          {this.state.data.map(OptionBox => {
+              if(OptionBox.celular === this.props.celularEscogido)
+                return(
+              <Box key={OptionBox.celular} descripcion={OptionBox.servicio}/>
+              )})}
          </ul>
 {/* FIN servicios para mantenimiento  */} 
 
