@@ -50,6 +50,9 @@
     flex-wrap: inherit;
   }
 }
+.menu-principal>ul>li:nth-of-type(4){
+  background-color: #D1ECF1;
+}
 
 /* FIN DE PRIMER QUERY */
 
