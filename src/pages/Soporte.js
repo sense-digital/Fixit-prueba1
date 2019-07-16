@@ -26,7 +26,7 @@ class Soporte extends Component {
               <div className="acordeon-item">
                 <input type="radio" name="acordeon" id="item2"></input>
                 <label for="item2" className="acordeon-titulo">Título 2</label>
-                <p className="acordeon-contenido">Lorem ipsum dolor sit amet</p>
+                <p className="acordeon-contenido">Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet</p>
               </div>
             </div>
             <div className="acordeon">

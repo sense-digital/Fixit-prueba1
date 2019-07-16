@@ -40,10 +40,15 @@
   overflow: hidden;
   margin:2px;
   transition: all 0.5s;
+  box-shadow: 0px 2px 6px 0px grey;
+  padding-left: 5px;
 }
 .acordeon input:checked ~ .acordeon-contenido{
 height: auto;
 margin: 15px 0;
+}
+.acordeon-titulo{
+  padding: 6px;
 }
 /* FIN ESTILOS ACORDEON */
 
@@ -62,7 +67,7 @@ color: grey;
 margin-bottom: -10px;
 }
 .form-container{
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 0px 2px 6px 0px grey;
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -159,13 +164,13 @@ text-align: justify;
   margin-right: 50px;
 }
 .wp-button{
-  background-color:#1DD13F;
+  background-color:#1E7E34;
   width: 100px;
   height: 30px;
   color: white;
-  font-size: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-size: 15px;
 }
 /* FIN ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
 
