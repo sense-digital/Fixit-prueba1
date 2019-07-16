@@ -30,19 +30,19 @@ class Trabajo extends Component {
         {/* INICIOS GRID DE PRIMERA SECCIÓN 'TRABAJA CON NOSOTROS' */}
             <div className='section-container'>
                <section className='section1'>
-                 <div className='item1'><h1>Trabaja con nosotros!</h1></div>
-                 <div className='item1'>
+                 <div className='item4'><h1>Trabaja con nosotros!</h1></div>
+                 <div className='item4'>
                    <img className='grid1-img' alt='grid1-img' src={grid1img}></img>
                  </div>
-                 <div className='item1'>
+                 <div className='item4'>
                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                    <p>sed do eiusmod tempor incididunt ut labore et dolore</p>
                  </div>
-                 <div className='item1'></div>
-                 <div className='item1'>
+                 <div className='item4'></div>
+                 <div className='item4'>
                    <button type='button' className='button-trabajo'>Contáctanos</button>
                  </div>
-                 <div className='item1'></div>
+                 <div className='item4'></div>
                </section> 
             </div>
 
@@ -56,15 +56,15 @@ class Trabajo extends Component {
                   <figure></figure>
               </div>
               <section className='section2'>
-                  <div className='item2'>
+                  <div className='item5'>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
                   </div>
-                  <div className='item2'><img src={grid2img1} alt=''></img></div>
-                  <div className='item2'><img src={grid2img2} alt=''></img></div>
-                  <div className='item2'><img src={grid2img3} alt=''></img></div>
-                  <div className='item2'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
-                  <div className='item2'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
-                  <div className='item2'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                  <div className='item5'><img src={grid2img1} alt=''></img></div>
+                  <div className='item5'><img src={grid2img2} alt=''></img></div>
+                  <div className='item5'><img src={grid2img3} alt=''></img></div>
+                  <div className='item5'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                  <div className='item5'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                  <div className='item5'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
               </section>
 
 
