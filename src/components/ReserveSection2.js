@@ -29,7 +29,9 @@ class ReserveSection2 extends Component {
       return (
         <div>
 {/* INICIO de título  */}
-         <div className='hero-container'>
+         <div className='hero-container' style={{
+           backgroundColor:'white',
+         }}>
               <div className='herosectiont-1'>
                   <h2>2. ¿Que necesitas arreglar?</h2>
               </div>
