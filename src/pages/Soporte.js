@@ -60,7 +60,7 @@ class Soporte extends Component {
                     <input id='email' type="text" className="e-mail"></input>
                     <input id='phone' type="phone" className="e-mail"></input>
                   </div>
-                 <button className="boton-formulario">Enviar</button>
+                 <button type='submit' className="boton-formulario" action=''>Enviar</button>
                  </div>
                 </form>
  {/* FIN DE SECCIÓN NECESITAS AYUDA?*/}
@@ -117,7 +117,7 @@ class Soporte extends Component {
                   }}>
                 </div>
                 <div className="item-grid1-soporte">
-                 <button type="submit" className='wp-button'>Whatsapp</button>
+                 <button type="submit" className='wp-button' action=''>Whatsapp</button>
                 </div>
               </section>
             </div>

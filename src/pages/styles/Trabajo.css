@@ -1,0 +1,133 @@
+/* INICIO PRIMER MEDIA QUERY*/
+* {
+  font-family: benchnine;
+}
+@media screen and (min-width:1024px){
+
+  .section-container{
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+/* INICIO ESTILOS A PRIMER GRID "TRABAJA CON NOSOTROS"*/
+
+  .section1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2,0.1fr);
+  }
+  
+  .grid1-img{
+    max-width: 700px;
+  }
+  .item1:nth-of-type(1){
+    justify-self: center;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 0.5px;
+  }
+  .item1:nth-of-type(1)>h1{
+    margin-bottom: 0;
+  }
+  .item1:nth-of-type(2){
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 5; 
+    justify-self: center;
+  }
+  .item1:nth-of-type(3){
+    justify-self: center;
+    color: white;
+    padding:0;
+    letter-spacing: 0.5px;
+  }
+  .item1:nth-of-type(3)>p{
+    font-weight: normal;
+    margin: 0;
+    font-size: 17px;
+  }
+  .item1:nth-of-type(5){
+    justify-self: center;
+    color: white;
+  }
+  .item1:nth-of-type(5)>button{
+    margin-top: 40px;
+    width: 120px;
+    height: 40px;
+    background-color: #3ABB47;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 30px;
+  }
+/* FIN ESTILOS A PRIMER GRID "TRABAJA CON NOSOTROS"*/
+
+/* INICIO ESTILOS A SEGUNDO GRID "CÓMO FUNCIONA"*/
+.section2-tittle{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+.section2-tittle>h2{
+  margin: auto 0;
+  color: #981915;
+  font-weight: bold;
+  font-size: 50px;
+}
+.section2-tittle>figure{
+  background-color: #BE6F6D;
+  width: 1%;
+  height: 30px;
+  margin: auto 10px;
+}
+.section2{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 300px;
+  margin-top: 20px;
+}
+.item2{
+  width: 100%;
+  height: 100%
+}
+.item2:nth-of-type(1){
+  box-sizing: border-box;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 5; 
+  justify-self: center !important;
+  align-self: center;
+  font-size: 20px;
+  font-weight: normal;
+}
+.item2:nth-of-type(1)>p{
+  text-align: center;
+  box-sizing: border-box;
+  /* margin: 0; */
+  height: inherit;
+  text-decoration: none;
+  padding: 0 80px;
+  padding-top: 80px;
+  
+}
+.item2:nth-of-type(2),.item2:nth-of-type(3),.item2:nth-of-type(4){
+  margin: 0;
+  padding: 0;
+  background-color: #C4C4C4;
+  clip-path: circle(38% at 50% 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item2:nth-of-type(5),.item2:nth-of-type(6),.item2:nth-of-type(7){
+  margin: 0;
+  padding: 0;
+}
+/* FIN ESTILOS A SEGUNDO GRID "CÓMO FUNCIONA"*/
+
+
+
+}
+/* FIN PRIMER MEDIA QUERY*/
