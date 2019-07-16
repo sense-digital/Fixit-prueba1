@@ -13,18 +13,23 @@ class ReserveSectionRoute extends Component{
         super() 
         this.state = {
           celular:'',
+          servicio:'',
         }
       }
 
-    handleClick (e) {
+    celularEscogido (e) {
         this.setState({celular:e});
-    }   
+    }  
+    
+    servicioEscogido (e) {
+        this.setState({servicio:e})
+    }
 
     render(){
         return (
     <div>
-        <Route  exact path="/home" render={()=> <ReserveSection1 celularEscogido={(e)=>this.handleClick(e)} />} />
-        <Route  path="/home/2" render={()=> <ReserveSection2 celularEscogido={this.state.celular} />} />
+        <Route  exact path="/home" render={()=> <ReserveSection1 celularEscogido={(e)=>this.celularEscogido(e)} />} />
+        <Route  path="/home/2" render={()=> <ReserveSection2 celularEscogido={this.state.celular} servicioEscogido={(e)=>this.servicioEscogido(e)} />} />
         <Route  path="/home/3" component={ReserveSection3} />
         <Route  path="/home/4" component={ReserveSection4}  />
     </div>               

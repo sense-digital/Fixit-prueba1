@@ -36,13 +36,14 @@ class ReserveSection2 extends Component {
             </div>
 {/* FIN de título */}
 {/* INICIO servicios para mantenimiento  */} 
-         <ul>
           {this.state.data.map(OptionBox => {
               if(OptionBox.celular === this.props.celularEscogido)
                 return(
+              <Link to="home/3" key="OptionBox">
               <Box key={OptionBox.celular} descripcion={OptionBox.servicio}/>
+              </Link>
               )})}
-         </ul>
+              
 {/* FIN servicios para mantenimiento  */} 
 
 
