@@ -7,11 +7,11 @@ import Repair1 from '../images/repair1.jpg';
 import Repair2 from '../images/repair2.jpg';
 import Repair3 from '../images/repair3.jpeg';
 import Repair4 from '../images/repair4.jpeg';
-import Background1 from '../images/background1.jpg';
+import Background1 from '../images/Rectangle3.png';
 import Apple from '../images/home-apple.png';
 import Check from '../images/Check.png';
 import Star from '../images/Star.png';
-import celular from '../images/iphonexs1.png';
+import celular from '../images/image.png';
 import ReserveSectionRoute from '../components/ReserveSectionRoute';
 import './styles/HomeSections.css';
 import Header from '../components/Header';
@@ -22,9 +22,30 @@ class Home extends Component {
         return (
         <React.Fragment>
            <Header/>
+        {/* CONTAINER COLOR GRIS PARA LA PRIMERA SECCIÓN DE LA PÁGINA */}
+           <div className='background-container' style={{
+                 backgroundColor:'red',
+                 width:'100% ',
+                 height:'1200px',
+                 backgroundColor:'#F2F2F2',
+                 width:'100%',
+                 margin:'0 auto',
+                 WebkitClipPath:'polygon(100% 0, 0 0, 0 65%, 51% 39%, 100% 64%)',
+                 clipPath:'polygon(100% 0, 0 0, 0 65%, 51% 39%, 100% 64%)',
+                 marginBottom:'-500px',
+                 position:'absolute',
+                 zIndex:'-1',
+                 }}>
+           </div>
+        {/*CONTAINER COLOR GRIS PARA LA PRIMERA SECCIÓN DE LA PÁGINA*/}
+
+
         {/* INICIO DE GRID DE SELECCIÓN DE PRODUCTOS */}
             <div className="ReserveSection1">
-            <ReserveSectionRoute id="arreglaloYa"/>
+             <ReserveSectionRoute id="arreglaloYa" style={{
+                 position:'absolute',
+                 zIndex:'1'
+                 }}/>
             </div>
         {/* FIN DE GRID DE SELECCIÓN DE PRODUCTOS */}
 
@@ -32,8 +53,7 @@ class Home extends Component {
            
            <div className="herosection-2">
                <div className="titulo-herosection-2">
-                   <h1>¿Como funciona?</h1>
-                   <img src={logo} alt="logo fixit" width="100px"></img>
+                   <h1><strong>¿CÓMO FUNCIONA</strong> FIXIT?</h1>
                </div>
                <section className="grid-herosection-2">
                    <div className="item"><h2>Texto de poyo al título</h2></div>
@@ -77,7 +97,10 @@ class Home extends Component {
                // backgroundRepeat: 'no-repeat',
                // backgroundPosition: 'center',
                backgroundSize: 'cover',
-               // filter: 'brightness(0.5)',
+               // position:'relative',
+               // WebkitClipPath:'polygon(100% 0, 1% 0%, 0 65%, 51% 39%, 100% 64%)',
+               // clipPath:'polygon(100% 0, 1% 0%, 0 65%, 51% 39%, 100% 64%)',
+               filter: 'brightness(0.5)',
                KhtmlOpacity:'0.5',
                MozOpacity:'0.5',
                msFilter:'alpha(opacity=50)',

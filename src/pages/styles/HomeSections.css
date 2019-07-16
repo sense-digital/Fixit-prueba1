@@ -5,7 +5,7 @@
     margin: auto;
 }
     .hero-container{
-    font-family: benchnine;
+    font-family: roboto;
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -23,7 +23,7 @@
     color: black;
     text-transform: capitalize;
     height: 80px;
-    font-family: benchnine;
+    font-family: roboto;
 }
 /* .ReserveSection{
     height: 500px;
@@ -40,18 +40,17 @@
     max-width: 1000px;
     margin: 50px auto;
     height: 80px;
-    font-family: benchnine;
+    font-family: roboto;
 }
 .titulo-herosection-2{
     display: flex;
     justify-content: center;
 }
-.titulo-herosection-2>img{
-    margin-left:10px;
-}
+
 .titulo-herosection-2>h1{
-    margin-right:10px;
     font-size: 60px;
+    margin:0;
+    font-weight: normal;
 }
 
 .grid-herosection-2{
@@ -69,6 +68,11 @@
 
 .item:nth-of-type(1){
     grid-column: 1 / -1;
+}
+.item:nth-of-type(1)>h2{
+    margin-top: 0;
+    font-size: 40px;
+    font-weight: normal;
 }
 .item:nth-of-type(2)>img{
     /* box imagen paso 1 */
@@ -111,7 +115,7 @@
     max-width: 1000px;
     margin: 0 auto;
     height: 300px;
-    font-family: benchnine;
+    font-family: roboto;
     align-items: center;
     box-shadow: 5px  5px 5px grey;
     /* box-shadow: 10px -2px 5px 0px rgba(99,99,99,1); */
@@ -169,7 +173,7 @@
     grid-row-gap: 10px;
     justify-items: center;
     align-items: center;
-    font-family: benchnine;
+    font-family: roboto;
     box-shadow: 5px  5px 5px grey;
     height: 600px;
     color: white;
@@ -218,7 +222,7 @@
     /* height: 100vh; */
     justify-items: center;
     align-items: center;
-    font-family: benchnine;
+    font-family: roboto;
     margin-top: 50px;
 
 }
@@ -260,7 +264,6 @@
 }
 .celular1{
     width: 700px;
-    margin-top: -50px;
 }
 /* FIN ESTILOS A SECCIÓN CIFRAS */
 }

@@ -10,7 +10,9 @@ class ReserveSection4 extends Component {
         <div>
 
         {/* inicio de título "selecciona tu dispositivo" */}
-         <div className='hero-container'>
+         <div className='hero-container' style={{
+           backgroundColor:'white',
+         }}>
               <div className='herosectiont-1'>
                   <h2>4. Confirmación y pago</h2>
               </div>

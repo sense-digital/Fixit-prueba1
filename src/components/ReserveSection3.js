@@ -23,7 +23,9 @@ class ReserveSection3 extends Component {
         <div>
 
         {/* INICIO de título  */}
-         <div className='hero-container'>
+         <div className='hero-container' style={{
+           backgroundColor:'white',
+         }}>
               <div className='herosectiont-1'>
                   <h2>3. Datos y agendamiento</h2>
               </div>
