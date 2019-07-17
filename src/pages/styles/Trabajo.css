@@ -116,7 +116,7 @@
   margin: 0;
   padding: 0;
   background-color: #C4C4C4;
-  clip-path: circle(38% at 50% 50%);
+  clip-path: circle(32% at 50% 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,9 +125,130 @@
   margin: 0;
   padding: 0;
 }
+.item5:nth-of-type(5),.item5:nth-of-type(6),.item5:nth-of-type(7)>p{
+  text-align: center;
+}
 /* FIN ESTILOS A SEGUNDO GRID "CÓMO FUNCIONA"*/
 
-
+/* INICIO ESTILOS TERECERA SECCIÓN "CONTÁCATANOS" */
+.section3-title{
+  display: flex;
+  justify-content: center;
+  
+}
+.section3-title{
+  font-size: 35px;
+}
+.section3-figure1{
+  background-color: #981915;
+  width: 1%;
+  height: 30px;
+  margin: auto 10px;
+}
+.section3-figure2{
+  background-color: #1E4899;
+  width: 1%;
+  height: 30px;
+  margin: auto 10px;
+}
+.section3-form{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  padding-bottom: 0;
+}
+.formulario-trabaja{
+  margin-bottom: 20px;
+}
+.form2-container{
+  box-shadow: 0px 2px 6px 0px grey;
+  width: 650px;
+  padding:20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.item6:nth-of-type(1){
+  grid-column-start: 1; 
+  grid-column-end: 7;
+  display: flex;
+  align-items: flex-end;
+  font-size: 20px;
+}
+.item6:nth-of-type(2){
+  grid-column-start: 1; 
+  grid-column-end: 8;
+  width: 100%;
+}
+.item6:nth-of-type(2)>input{
+  width: inherit;
+  background-color: #E0DBDB;
+  border: none;
+  height: 100%;
+}
+.item6:nth-of-type(3){
+  grid-column-start: 1; 
+  grid-column-end: 4;
+  grid-row-start:3;
+  display: flex;
+  align-items: flex-end; 
+  font-size: 20px;
+}
+.item6:nth-of-type(4){
+  grid-column-start: 1; 
+  grid-column-end: 4;
+  width: 100%;
+  grid-row-start:4;
+}
+.item6:nth-of-type(4)>input{
+  width: inherit;
+  background-color: #E0DBDB;
+  border: none;
+  height: 100%;
+}
+.item6:nth-of-type(5){
+  grid-column-start: 5; 
+  grid-column-end: 9;
+  grid-row-start:3;
+  display: flex;
+  align-items: flex-end;
+  font-size: 20px;
+}
+.item6:nth-of-type(6){
+  grid-column-start: 5; 
+  grid-column-end: 9;
+  grid-row-start:4;
+  width: 100%;
+}
+.item6:nth-of-type(6)>input{
+  width: inherit;
+  background-color: #E0DBDB;
+  border: none;
+  height: 30px;
+}
+.item6:nth-of-type(7){
+  grid-column-start: 1; 
+  grid-column-end: 2;
+  grid-row-start:5;
+  width: 100%;
+}
+.item6:nth-of-type(7)>button{
+  width: 40px;
+  height: 25px;
+  background-color: #3ABB47;
+  color: white;
+  border:none;
+  border-radius: 30px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.trabajaimg4{
+  width:40%;
+  
+}
+/* FIN ESTILOS TERECERA SECCIÓN "CONTÁCATANOS" */
 
 }
 /* FIN PRIMER MEDIA QUERY*/

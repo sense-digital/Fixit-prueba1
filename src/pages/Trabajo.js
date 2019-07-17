@@ -5,6 +5,7 @@ import grid1img from '../images/image2.png';
 import grid2img1 from '../images/trabaja1.png';
 import grid2img2 from '../images/trabaja2.png';
 import grid2img3 from '../images/trabaja3.png';
+import trabajaform from '../images/trabaja4.png';
 import './styles/Trabajo.css';
 class Trabajo extends Component {
     render () {
@@ -49,7 +50,7 @@ class Trabajo extends Component {
         {/* FIN GRID DE PRIMERA SECCIÓN 'TRABAJA CON NOSOTROS' */}
             
         {/* INICIO GRID SEGUNDA SECCIÓN "CÓMO FUNCIONA"*/}
-        
+      
             <div className='section-container'>
               <div className='section2-tittle'>
                   <h2>Cómo funciona?</h2>
@@ -69,14 +70,49 @@ class Trabajo extends Component {
 
 
             </div>
-
-
-
-
         {/* FIN GRID SEGUNDA SECCIÓN "CÓMO FUNCIONA"*/}
 
 
-            {/* <Footer/> */}
+        {/* INICIO TERECERA SECCIÓN "CONTÁCATANOS"*/}
+        <div style={{
+               borderTop:'1px solid black'
+            }}></div>
+
+
+             <div className='section-container'>
+               <div className='section3-title'>
+                 <figure className='section3-figure1'></figure>
+                 <h2>CONTÁCTANOS</h2>
+                 <figure className='section3-figure2'></figure>
+               </div>
+
+
+
+               <div className='section3-form'>
+
+                 <form action='' className='formulario-trabaja'>
+                   <div className='form2-container'>
+                    <div className='item6' ><label for='nya2'>Nombre y apellido</label></div>
+                    <div className='item6'><input id='nya2' type="text"></input></div>
+                    <div className='item6' ><label for='email2'>Correo electrónico</label></div>
+                    <div className='item6'><input id='email2' type="text"></input></div>
+                    <div className='item6' ><label for='phone2'>Número de contacto</label></div>
+                    <div className='item6'><input id='phone2' type="phone"></input></div>
+                     {/* <div className='campos-formulario-trabaja'>
+                     </div> */}
+                    <div className='item6'><button type='submit'className='boton-formulario-trabaja' >Enviar</button></div>
+                   </div> 
+                 </form> 
+
+                 <img src={trabajaform} alt='trabaja con nosotros' className='trabajaimg4'></img>               
+                 
+               </div>   
+
+             </div>   
+        {/* FIN TERECERA SECCIÓN "CONTÁCATANOS"*/}
+
+
+            <Footer/>
         </div>
         
 
