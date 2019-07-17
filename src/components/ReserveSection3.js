@@ -6,15 +6,12 @@ import '../pages/styles/HomeSections.css';
 
 class ReserveSection3 extends Component {  
   state = {};
-
-  handleChange = (e) => {
-      this.setState({
-        [e.target.name]: e.target.value,
-      })  
-  }
  
+  handleChange = (e) => {
+    this.props.formularioDeContacto(e);
+  }
+  
   handleClick = (e) => {
-    console.log('Se hizo click perras');
     console.log(this.state);
   }
  
@@ -81,13 +78,16 @@ class ReserveSection3 extends Component {
 
           <label>
                 Celular:
-                <input type="tel" name="celular" onChange={this.handleChange} value={this.state.celular}/>
+                <input type="tel" name="equipo" onChange={this.handleChange} value={this.state.equipo}/>
           </label>
-
-          <button type='button' onClick={this.handleClick}> <Link to='/home/4'> Siguiente </Link> </button>
-
           </form>
         {/* FIN formulario para compra */}
+
+        <div>
+              <h2>Costo de reparación </h2>
+              <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.precioEscogido)} </h5>
+              <button><Link to="/home/4"> Siguiente </Link></button>
+            </div>
 
         </div>
       );

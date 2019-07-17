@@ -25,6 +25,10 @@ class ReserveSection2 extends Component {
     })    
   }
 
+  handleClick(e,p) {
+    this.props.servicioEscogido(e,p);
+  }
+
   render () {   
       return (
         <div>
@@ -38,13 +42,19 @@ class ReserveSection2 extends Component {
             </div>
 {/* FIN de título */}
 {/* INICIO servicios para mantenimiento  */} 
-         <ul>
           {this.state.data.map(OptionBox => {
               if(OptionBox.celular === this.props.celularEscogido)
                 return(
-              <Box key={OptionBox.celular} descripcion={OptionBox.servicio}/>
+              <span key={OptionBox.servicio} onClick={() => this.handleClick(OptionBox.servicio,OptionBox.precio)}>
+              <Box  descripcion={OptionBox.servicio}/>
+              </span>
               )})}
-         </ul>
+              
+            <div>
+              <h2>Costo de reparación </h2>
+              <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.precioEscogido)} </h5>
+              <button><Link to="/home/3"> Siguiente </Link></button>
+            </div>
 {/* FIN servicios para mantenimiento  */} 
 
 
