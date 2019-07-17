@@ -7,6 +7,9 @@ import Reservas from '../components/Reservas';
 import Servicios from '../components/Servicios';
 import SliderPromocional from '../components/SliderPromocional';
 import Contabilidad from '../components/Contabilidad';
+import './styles/AdminFixit.css';
+import logofixit from '../images/logofix-it.png';
+
 
 class AdminFixit extends Component {
     constructor(props) {
@@ -20,15 +23,17 @@ class AdminFixit extends Component {
 
     render () {
         return (
-        <div>
-            <h1>AdminFixit</h1>
-
-            <Link to="/adminfixit/clientes">Clientes</Link> <br/>
-            <Link to="/adminfixit/reservas">Reservas</Link> <br/>
-            <Link to='/adminfixit/servicios'>Servicios ofrecidos</Link> <br/>
-            <Link to="/adminfixit/sliderpromocional">Slider promocional</Link> <br/>
-            <Link to="/adminfixit/contabilidad">Contabilidad</Link> <br/>
-
+        <div className='admin-page'>
+      
+         <div className='admin-menu'>
+            <img src={logofixit} alt='logofixit'></img>
+             <div className='linkto1'><Link to="/adminfixit/clientes">Clientes</Link> <br/></div>
+             <div className='linkto1'><Link to="/adminfixit/reservas">Reservas</Link> <br/></div>
+             <div className='linkto1'><Link to='/adminfixit/servicios'>Servicios ofrecidos</Link> <br/></div>
+             <div className='linkto1'><Link to="/adminfixit/sliderpromocional">Slider promocional</Link> <br/></div>
+             <div className='linkto1'><Link to="/adminfixit/contabilidad">Contabilidad</Link> <br/></div>
+             
+        <div className='variableh1'>
         <Switch>
             <Route  path="/adminfixit/clientes" component={Clientes} />
             <Redirect exact from="/adminfixit" to="/adminfixit/clientes"/>
@@ -37,8 +42,14 @@ class AdminFixit extends Component {
             <Route  path="/adminfixit/sliderpromocional" component={SliderPromocional} />
             <Route  path="/adminfixit/contabilidad" component={Contabilidad} />
         </Switch>
+        </div>
+            <button onClick={this.logout} className='admin-exit-button'>Cerrar sesión</button>
 
-            <button onClick={this.logout}>Cerrar sesión</button>
+         </div>
+         <div className='display-info-container'>
+           <figure className='display-info-inside'>
+           </figure>  
+         </div>
         </div>
         );
     }
