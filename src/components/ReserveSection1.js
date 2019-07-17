@@ -49,7 +49,7 @@ class ReserveSection1 extends Component {
           {this.state.data.map(OptionBox=>{
                 return( 
                   <Link to='home/2' key={OptionBox.ref} onClick={() => this.handleClick(OptionBox.ref)}>
-                  <Box key={OptionBox.ref} descripcion={OptionBox.ref}/> 
+                  <Box descripcion={OptionBox.ref}/> 
                   </Link>
                 )
           })}

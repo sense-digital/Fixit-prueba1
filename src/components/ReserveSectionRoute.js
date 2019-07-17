@@ -14,6 +14,15 @@ class ReserveSectionRoute extends Component{
         this.state = {
           celular:'',
           servicio:'',
+          precio:'',
+          nombre:'',
+          apellido:'',
+          direccion: '',
+          detalleDireccion: '',
+          fechaDeRecogida:'',
+          hora: '',
+          correo: '',
+          equipo: '',
         }
       }
 
@@ -21,17 +30,24 @@ class ReserveSectionRoute extends Component{
         this.setState({celular:e});
     }  
     
-    servicioEscogido (e) {
+    servicioEscogido (e,p) {
         this.setState({servicio:e})
+        this.setState({precio:p})
+    }
+
+    formularioDeContacto = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value,
+        })  
     }
 
     render(){
         return (
     <div>
         <Route  exact path="/home" render={()=> <ReserveSection1 celularEscogido={(e)=>this.celularEscogido(e)} />} />
-        <Route  path="/home/2" render={()=> <ReserveSection2 celularEscogido={this.state.celular} servicioEscogido={(e)=>this.servicioEscogido(e)} />} />
-        <Route  path="/home/3" component={ReserveSection3} />
-        <Route  path="/home/4" component={ReserveSection4}  />
+        <Route  path="/home/2" render={()=> <ReserveSection2 celularEscogido={this.state.celular} servicioEscogido={(e,p)=>this.servicioEscogido(e,p)} precioEscogido={this.state.precio} />} />
+        <Route  path="/home/3" render={()=> <ReserveSection3 precioEscogido={this.state.precio} formularioDeContacto={(e)=>this.formularioDeContacto(e)}/>} />
+        <Route  path="/home/4" render={()=> <ReserveSection4 estado={this.state} />} />
     </div>               
         )
 }}
