@@ -1,0 +1,96 @@
+/* INICIO DE PRIMER MEDIA QUERY */
+* {
+  font-family: benchnine;
+}
+@media screen and (min-width:1024px){
+ /* MODIFICACIONES GENERALES A LA PG */
+ .login-page-container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 900px;
+   background-color: #EAE7E7;
+ } 
+ .login-page-container>figure{
+   display: inherit;
+   justify-content: center;
+   align-items: center;
+ }
+ /* FIN MODIFICAIONES GENERALES A LA PG */
+
+ /* INICIO MODIFICACIONES AL LOGO */
+ .login-page-container>figure>img{
+   max-width: 50%;
+  }
+  /* FIN MODIFICACIONES AL LOGO */
+
+ /* INICIO ESTILOS PARA EL FORMULARIO */
+ .form-login-container{
+   background-color: white;
+   width: 30%;
+   height: 25%;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   padding: 50px;
+   display: grid;
+   grid-template-columns: 1, 1fr;
+   /* grid-row-gap: 10px; */
+   /* grid-template-rows: repeat(5, 1fr); */
+ }
+ .campos-formulario-login{
+   display: inherit;
+   grid-row-gap: 5px;
+   padding:20px;
+   padding-top: 0;
+ }
+ .item-form-login{
+   display: inherit;
+  }
+.item-form-login>input{
+   background-color: #E0DBDB;
+   width: 50%;
+   border: none;
+   width: 100%;
+   height: 40px;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .item-form-login>button{
+    background:#981915;
+    color: white;
+    width: 100px;
+    height: 25px;
+    justify-self: center;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .item-form-login:hover>button{
+    background-color: black;
+    font-size:15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .item-form-login:nth-of-type(4)>input{
+    margin-bottom: 20px;
+    
+  }
+  .botones-formulario-login{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:0;
+  }
+/* FIN ESTILOS PARA EL FORMULARIO */
+.forgot-my-password{
+  display: flex;
+  justify-content: flex-end;
+  width: 35%;
+  
+}
+.forgot-my-password>p{
+  display: inherit;
+  margin-top:10px;
+  color: #2F9CCB;
+}
+}
+/* FIN DE PRIMER MEDIA QUERY */
