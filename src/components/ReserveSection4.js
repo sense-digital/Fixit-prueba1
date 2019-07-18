@@ -38,6 +38,12 @@ class ReserveSection4 extends Component {
      })
   }
 
+  botonDeSiguiente = ()=>{
+    if(this.state.pago)
+    return  <button onClick={()=>this.guardarServicioEnBaseDeDatos()}><Link to='/thankyou'> Confirmar </Link></button>
+    else
+    return <h5>Elige un medio de pago para continuar</h5>
+  }
   render () {   
       return (
         <div>
@@ -81,7 +87,7 @@ class ReserveSection4 extends Component {
           <label><input type="radio" name="pago" value="contraEntrega" onChange={()=>this.setState({pago:'contraEntrega'})} /> Contra Entrega </label>
           </form>
           
-          <button onClick={()=>this.guardarServicioEnBaseDeDatos()}><Link to='/thankyou'> Confirmar </Link></button>
+          {this.botonDeSiguiente()}
 
         </div>
       );

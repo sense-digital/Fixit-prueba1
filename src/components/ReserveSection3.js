@@ -11,8 +11,15 @@ class ReserveSection3 extends Component {
     this.props.formularioDeContacto(e);
   }
   
-  handleClick = (e) => {
-    console.log(this.state);
+  // handleClick = (e) => {
+  //   console.log(this.state);
+  // }
+
+  botonDeSiguiente = ()=> {
+    if ((this.props.estado.nombre) && (this.props.estado.apellido) && (this.props.estado.direccion) && (this.props.estado.detalleDireccion) && (this.props.estado.fechaDeRecogida) && (this.props.estado.hora) && (this.props.estado.correo) && (this.props.estado.celular))
+    return <button ><Link to="/home/4"> Siguiente </Link></button>
+    else
+    return <h4>Completa el formulario para continuar</h4>
   }
  
   render () {   
@@ -78,7 +85,7 @@ class ReserveSection3 extends Component {
 
           <label>
                 Celular:
-                <input type="tel" name="equipo" onChange={this.handleChange} value={this.state.equipo}/>
+                <input type="tel" name="celular" onChange={this.handleChange} value={this.state.celular}/>
           </label>
           </form>
         {/* FIN formulario para compra */}
@@ -86,7 +93,7 @@ class ReserveSection3 extends Component {
         <div>
               <h2>Costo de reparación </h2>
               <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.precioEscogido)} </h5>
-              <button><Link to="/home/4"> Siguiente </Link></button>
+              {this.botonDeSiguiente()}
             </div>
 
         </div>

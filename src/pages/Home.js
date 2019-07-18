@@ -42,7 +42,7 @@ class Home extends Component {
 
         {/* INICIO DE GRID DE SELECCIÓN DE PRODUCTOS */}
             <div className="ReserveSection1">
-             <ReserveSectionRoute id="arreglaloYa" style={{
+             <ReserveSectionRoute className="arreglaloYa" style={{
                  position:'absolute',
                  zIndex:'1'
                  }}/>
