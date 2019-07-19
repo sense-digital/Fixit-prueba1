@@ -11,9 +11,34 @@ class ReserveSection3 extends Component {
     this.props.formularioDeContacto(e);
   }
   
-  // handleClick = (e) => {
-  //   console.log(this.state);
-  // }
+  hoy = () => {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10){
+      dd='0'+dd
+  } 
+  if(mm<10){
+      mm='0'+mm
+  } 
+    return yyyy+"-"+mm+"-"+dd
+  }
+
+
+  dosMesesDespues = () => {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+3; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10){
+      dd='0'+dd
+  } 
+  if(mm<10){
+      mm='0'+mm
+  } 
+    return yyyy+"-"+mm+"-"+dd
+  }
 
   botonDeSiguiente = ()=> {
     if ((this.props.estado.nombre) && (this.props.estado.apellido) && (this.props.estado.direccion) && (this.props.estado.detalleDireccion) && (this.props.estado.fechaDeRecogida) && (this.props.estado.hora) && (this.props.estado.correo) && (this.props.estado.celular))
@@ -68,12 +93,29 @@ class ReserveSection3 extends Component {
 
          <label>   
                 Fecha de recogida:
-                <input type="date" name="fechaDeRecogida" onChange={this.handleChange} value={this.state.fechaDeRecogida}/>
+                <input type="date" name="fechaDeRecogida" onChange={this.handleChange} value={this.state.fechaDeRecogida} min={this.hoy()} max={this.dosMesesDespues()}/>
           </label>    
 
           <label>
                 Hora:
-                <input type="time" name="hora" onChange={this.handleChange} value={this.state.hora}/>
+                <select name="hora" onChange={this.handleChange} value={this.state.hora}>
+                <option value="">Elige una opción</option> 
+                  <optgroup label="AM"> 
+                      <option value="8">8:00 A.M</option> 
+                      <option value="9">9:00 A.M</option> 
+                      <option value="10">10:00 A.M</option> 
+                      <option value="11">11:00 A.M</option> 
+                  </optgroup> 
+                  <optgroup label="PM"> 
+                      <option value="12">12:00 M</option> 
+                      <option value="13">1:00 P.M</option> 
+                      <option value="14">2:00 P.M</option> 
+                      <option value="15">3:00 P.M</option> 
+                      <option value="16">4:00 P.M</option> 
+                      <option value="17">5:00 P.M</option> 
+                      <option value="18">6:00 P.M</option> 
+                  </optgroup> 
+                </select>
           </label>
 
           <br/>
