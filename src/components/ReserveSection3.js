@@ -101,6 +101,7 @@ class ReserveSection3 extends Component {
                 <select name="hora" onChange={this.handleChange} value={this.state.hora}>
                 <option value="">Elige una opción</option> 
                   <optgroup label="AM"> 
+<<<<<<< HEAD
                       <option value="8:00 A.M">8:00 A.M</option> 
                       <option value="9:00 A.M">9:00 A.M</option> 
                       <option value="10:00 A.M">10:00 A.M</option> 
@@ -114,6 +115,21 @@ class ReserveSection3 extends Component {
                       <option value="4:00 P.M">4:00 P.M</option> 
                       <option value="5:00 P.M">5:00 P.M</option> 
                       <option value="6:00 P.M">6:00 P.M</option> 
+=======
+                      <option value="8">8:00 A.M</option> 
+                      <option value="9">9:00 A.M</option> 
+                      <option value="10">10:00 A.M</option> 
+                      <option value="11">11:00 A.M</option> 
+                  </optgroup> 
+                  <optgroup label="PM"> 
+                      <option value="12">12:00 M</option> 
+                      <option value="13">1:00 P.M</option> 
+                      <option value="14">2:00 P.M</option> 
+                      <option value="15">3:00 P.M</option> 
+                      <option value="16">4:00 P.M</option> 
+                      <option value="17">5:00 P.M</option> 
+                      <option value="18">6:00 P.M</option> 
+>>>>>>> 56ead4647a35d5d6b51b76ccf500f531b35740c8
                   </optgroup> 
                 </select>
           </label>
