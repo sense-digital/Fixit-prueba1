@@ -2,7 +2,9 @@
 
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import '../components/styles/reservesection3.css';
 import '../pages/styles/HomeSections.css';
+
 
 class ReserveSection3 extends Component {  
   state = {};
@@ -64,41 +66,63 @@ class ReserveSection3 extends Component {
 
 
          {/* INICIO formulario para compra */}
-          <form>
+    
+          
+          <form className='form-datosyagendamiento'>
 
-            <label>
+            <div className='item-rs3form'><label>
               Nombre:
-              <input type="text" name="nombre" onChange={this.handleChange} value={this.state.nombre}/>
             </label>
+            </div>
+            <div className='item-rs3form'>
+               <input type="text" name="nombre" onChange={this.handleChange} value={this.state.nombre}/>
+            </div>
 
+            <div className='item-rs3form'>
             <label>
                 Apellido:
-                <input type="text" name="apellido" onChange={this.handleChange} value={this.state.apellido}/>
             </label>
+            </div>
+            <div className='item-rs3form'>
+              <input type="text" name="apellido" onChange={this.handleChange} value={this.state.apellido}/>
+            </div>
 
-          <br/>
 
-          <label>
+
+          <div className='item-rs3form'>
+            <label>
                 Dirección:
-                <input type="text" name="direccion" onChange={this.handleChange} value={this.state.direccion}/>
-          </label>
+            </label>
+          </div>
+          <div className='item-rs3form'>
+            <input type="text" name="direccion" onChange={this.handleChange} value={this.state.direccion}/>
+          </div>
 
-
-          <label>
+          <div className='item-rs3form'>
+            <label>
                 Detalle dirección:
-                <input type="text" name="detalleDireccion" onChange={this.handleChange} value={this.state.detalleDireccion}/>
-          </label>
+            </label>
+          </div>
+          <div className='item-rs3form'>
+             <input type="text" name="detalleDireccion" onChange={this.handleChange} value={this.state.detalleDireccion}/>
+          </div>
 
-          <br/>
+          
 
-         <label>   
+          <div className='item-rs3form'>
+           <label>   
                 Fecha de recogida:
-                <input type="date" name="fechaDeRecogida" onChange={this.handleChange} value={this.state.fechaDeRecogida} min={this.hoy()} max={this.dosMesesDespues()}/>
-          </label>    
-
-          <label>
+           </label> 
+          </div>   
+          <div className='item-rs3form'>
+           <input type="date" name="fechaDeRecogida" onChange={this.handleChange} value={this.state.fechaDeRecogida} min={this.hoy()} max={this.dosMesesDespues()}/>
+          </div> 
+          <div className='item-rs3form'>
+           <label>
                 Hora:
-                <select name="hora" onChange={this.handleChange} value={this.state.hora}>
+           </label>
+          </div>
+          <div className='item-rs3form'><select name="hora" onChange={this.handleChange} value={this.state.hora}>
                 <option value="">Elige una opción</option> 
                   <optgroup label="AM"> 
                       <option value="8">8:00 A.M</option> 
@@ -116,29 +140,38 @@ class ReserveSection3 extends Component {
                       <option value="18">6:00 P.M</option> 
                   </optgroup> 
                 </select>
-          </label>
-
-          <br/>
-
-          <label>
+          </div>
+          <div className='item-rs3form'>
+            <label>
                 Correo electrónico:
-                <input type="email" name="correo" onChange={this.handleChange} value={this.state.correo}/>
-          </label>
-
-          <label>
+            </label>
+          </div>
+          <div className='item-rs3form'>
+            <input type="email" name="correo" onChange={this.handleChange} value={this.state.correo}/>
+          </div>
+          <div className='item-rs3form'>
+            <label>
                 Celular:
-                <input type="tel" name="celular" onChange={this.handleChange} value={this.state.celular}/>
-          </label>
+            </label>
+          </div>
+          <div className='item-rs3form'>
+           <input type="tel" name="celular" onChange={this.handleChange} value={this.state.celular}/>
+          </div>
           </form>
         {/* FIN formulario para compra */}
 
-        <div>
+        <div className='reservesection2-info-container'> 
+            <div className='reservesection2-tittle-container'>
+            <div className='reservesection2-title'>
               <h2>Costo de reparación </h2>
               <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.precioEscogido)} </h5>
-              {this.botonDeSiguiente()}
             </div>
-
+              {this.botonDeSiguiente()}
+          </div>
         </div>
+      </div>
+
+         
       );
     }
   }
