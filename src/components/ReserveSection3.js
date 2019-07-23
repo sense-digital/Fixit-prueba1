@@ -124,7 +124,7 @@ class ReserveSection3 extends Component {
           </div>
           <div className='item-rs3form'><select name="hora" onChange={this.handleChange} value={this.state.hora}>
                 <option value="">Elige una opción</option> 
-                  <optgroup label="AM"> 
+                  <optgroup label="AM">
                       <option value="8:00 A.M">8:00 A.M</option> 
                       <option value="9:00 A.M">9:00 A.M</option> 
                       <option value="10:00 A.M">10:00 A.M</option> 
