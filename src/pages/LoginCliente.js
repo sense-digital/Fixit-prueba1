@@ -3,6 +3,9 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import './styles/logincliente.css';
+import { Link } from 'react-router-dom';
+import logofixit from '../images/logofixitsintexto.png';
 
 class LoginCliente extends Component {
         constructor(props){
@@ -68,28 +71,31 @@ class LoginCliente extends Component {
  
     render () {
         return (
-        <div>
+        <div >
            
            <Header/>
-           
-            <h1> Inicio de sesión / Registro </h1>
-
-            <form >    
-                <br/>
-                    <label > Correo:</label>
-                    <input type="text" name="mail" onChange={this.handleChange}/>
-                <br/>
-                <br/>
-                    <label >Contraseña:</label>
-                    <input type="password" name="password" onChange={this.handleChange}/>
-                <br/>
-                <br/>
-                    <button name="login" onClick={this.login}>Inicio de sesión </button>
-                    <button name="register" onClick={this.register}>Registro</button>
-            </form>
-
-            <button name="authGoogle" onClick={this.authGoogle}>Google</button>
-            
+           <div className='login-page-container'>
+            <Link to='/' > 
+               <figure ><img className='logologin' src={logofixit} alt='logofixit'></img></figure>
+            </Link><br/>  
+            <section className='form-login-container'>
+               <form className='campos-formulario-login'>    
+                 <div className='item-form-login'><label > Correo:</label></div>
+                 <div className='item-form-login'><input type="text" name="mail" onChange={this.handleChange}/></div>
+                 <div className='item-form-login'><label >Contraseña:</label></div>
+                 <div className='item-form-login'><input type="password" name="password" onChange={this.handleChange}/></div>
+               </form>
+                 <section className='botones-formulario-login'>
+                 <div className='item-form-login'><button name="login" onClick={this.login}>Inicio de sesión </button></div>
+                 <div className='item-form-login'><button name="register" onClick={this.register}>Registro</button></div>
+                 <div className='item-form-login'><button name="authGoogle" onClick={this.authGoogle}>Google</button></div>
+               </section>
+            </section>
+            <div className='forgot-my-password'>
+            <Link to='/adminfixit/servicios' >Olvidé mi contraseña</Link><br/>
+            {/* <p>Olvidé mi contraseña</p> */}
+            </div>
+           </div>
 
             <Footer/>
         </div>
