@@ -4,6 +4,7 @@ import 'firebase/auth';
 import './styles/Login.css';
 import logofixit from '../images/logofixitsintexto.png';
 import logogoogle from '../images/G-google.png';
+import { Link } from 'react-router-dom'
 class Login extends Component {
         constructor(props){
         super(props);
@@ -70,7 +71,9 @@ class Login extends Component {
         return (
     <div className='login-page'>
       <div className='login-page-container'>
-        <figure><img src={logofixit} alt='logofixit'></img></figure>
+      <Link to='/' > 
+        <figure ><img className='logologin' src={logofixit} alt='logofixit'></img></figure>
+      </Link><br/>  
         <section className='form-login-container'>
             <form className='campos-formulario-login'>
                 <div className='item-form-login'><label > Nombre de usuario / Correo electrónico:</label></div>
@@ -88,8 +91,8 @@ class Login extends Component {
             </section>
         </section>  
         <div className='forgot-my-password'>
-            {/* <Link to='/adminfixit/servicios' >Olvidé mi contraseña</Link><br/> */}
-            <p>Olvidé mi contraseña</p>
+            <Link to='/adminfixit/servicios' >Olvidé mi contraseña</Link><br/>
+            {/* <p>Olvidé mi contraseña</p> */}
         </div>
       </div>
             

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import '../pages/styles/HomeSections.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import '../components/styles/reservesection2.css';
 
 class ReserveSection2 extends Component {  
   constructor () {
@@ -39,6 +40,7 @@ class ReserveSection2 extends Component {
   render () {   
       return (
         <div>
+
 {/* INICIO de título  */}
          <div className='hero-container' style={{
            backgroundColor:'white',
@@ -48,6 +50,7 @@ class ReserveSection2 extends Component {
               </div>
             </div>
 {/* FIN de título */}
+
 {/* INICIO servicios para mantenimiento  */} 
           {this.state.data.map(OptionBox => {
               if(OptionBox.equipo === this.props.celularEscogido)
@@ -56,13 +59,14 @@ class ReserveSection2 extends Component {
               <Box  descripcion={OptionBox.servicio}/>
               </span>
               )})}
-              
-            <div>
+            <div className='reservesection2-info-container'> 
+            <div className='reservesection2-tittle-container'>
+            <div className='reservesection2-title'>
               <h2>Costo de reparación </h2>
               <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.precioEscogido)} </h5>
-              
+            </div> 
             {this.botonDeSiguiente()}
-
+            </div>
               
             </div>
 {/* FIN servicios para mantenimiento  */} 

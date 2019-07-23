@@ -13,15 +13,15 @@
    height: 900px;
    background-color: #EAE7E7;
  } 
- .login-page-container>figure{
-   display: inherit;
+ .login-page-container>a>figure{
+   display: flex;
    justify-content: center;
    align-items: center;
  }
  /* FIN MODIFICAIONES GENERALES A LA PG */
 
  /* INICIO MODIFICACIONES AL LOGO */
- .login-page-container>figure>img{
+ .logologin{
    max-width: 50%;
   }
   /* FIN MODIFICACIONES AL LOGO */
@@ -49,6 +49,7 @@
   }
 .item-form-login>input{
    background-color: #E0DBDB;
+   font-size: 18px;
    width: 50%;
    border: none;
    width: 100%;
@@ -87,10 +88,16 @@
   width: 35%;
   
 }
-.forgot-my-password>p{
+.forgot-my-password>a{
   display: inherit;
   margin-top:10px;
   color: #2F9CCB;
+}
+.forgot-my-password>a:hover{
+  display: inherit;
+  margin-top:10px;
+  color: #2F9CCB;
+  font-size: 17px;
 }
 }
 /* FIN DE PRIMER MEDIA QUERY */

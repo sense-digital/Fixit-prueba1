@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import '../pages/styles/HomeSections.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import '../components/styles/reservesection4.css';
 
 
 class ReserveSection4 extends Component {  
@@ -58,36 +59,50 @@ class ReserveSection4 extends Component {
             </div>
         {/* fin de título "selecciona tu dispotivo" */}
 
-
-
-          <h2>Dirección y contacto</h2>
+      <section className='form-container-inforeserva'>
+        <div className='info-servicio-cliente'>
+          <h2>Dirección y contacto:</h2>
           <p>{this.props.estado.nombre} {this.props.estado.apellido}</p>
           <p>{this.props.estado.direccion}</p>
           <p>{this.props.estado.detalleDireccion}</p>
           <p>{this.props.estado.celular}</p>
           <p>{this.props.estado.correo}</p>
+        </div>
 
-          <h2>Servicio</h2>
-          <p>{this.props.estado.servicio}</p>
+        <div className='info-servicio-cliente'>
+         <h2>Servicio:</h2>
+         <p>{this.props.estado.servicio}</p>
+        </div>
 
-          <h2>Equipo</h2>
+        <div className='info-servicio-cliente'>
+          <h2>Equipo:</h2>
           <p>{this.props.estado.celular}</p>
+        </div>
 
-          <h2>Fecha y hora</h2>
+        <div className='info-servicio-cliente'>
+          <h2>Fecha y hora:</h2>
           <p>{this.props.estado.fechaDeRecogida}</p>
           <p>{this.props.estado.hora}</p>
+        </div>
 
-          <h2>Valor a pagar</h2>
+        <div className='info-servicio-cliente'>
+          <h2>Valor a pagar:</h2>
           <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.estado.precio)} </h5>
+        </div> 
 
+        <div className='info-servicio-cliente'>
           <h2>¿Cómo vas a pagar?</h2>
-
-          <form>
+          <form className='form-mediodepago'>
           <label><input type="radio" name="pago" value="payu" onChange={()=>this.setState({pago:'payu'})} /> PayU </label>
           <label><input type="radio" name="pago" value="contraEntrega" onChange={()=>this.setState({pago:'contraEntrega'})} /> Contra Entrega </label>
           </form>
-          
+        </div> 
+
+        <div className='info-servicio-cliente'> 
           {this.botonDeSiguiente()}
+        </div> 
+      
+      </section>  
 
         </div>
       );
