@@ -40,7 +40,15 @@ class ReserveSection1 extends Component {
          <div className='hero-container' style={{
            backgroundColor:'white',
          }}>
-              <div className='herosectiont-1'>
+             
+             
+             {/* <button onClick='goback()' className='regresar-herosections'>Regresar </button>
+             <script>
+               function goBack(params) {
+                 window.history.back()
+               }
+             </script> */}
+              <div className='herosection-1'>
                   <h2>1. selecciona tu dispositivo</h2>
               </div>
             </div>

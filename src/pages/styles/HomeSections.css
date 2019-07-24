@@ -3,12 +3,12 @@
    .ReserveSection1{
     max-width: 1000px;
     margin: auto;
-}
-    .hero-container{
-    font-family: roboto;
+    }
+
+.hero-container{
     display: flex;
-    justify-content: center;
-    justify-items: center;
+    /* justify-content: center;
+    justify-items: center; */
     width: 100%;
     margin: 20px auto;
     padding: 0 10px;
@@ -17,13 +17,30 @@
     flex-wrap: wrap;
     box-shadow: 5px 5px 5px grey;
 }
+.previous{
+    font-size: 40px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /* padding: 8px 16px; */
+    color:white;
+    height: 50%;
+    width: 30px;
+    clip-path: circle(40% at 50% 50%);
+}
+.previous:hover{
+  background-color:#1F4899;
+}
 .herosection-1{
     display: flex;
     justify-content: center;
     color: black;
     text-transform: capitalize;
     height: 80px;
-    font-family: roboto;
+    /* font-family: roboto; */
+    margin: 0 auto;
 }
 /* .ReserveSection{
     height: 500px;

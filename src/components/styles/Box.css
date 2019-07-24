@@ -1,28 +1,26 @@
 .OptionBox {
-    width: 15vw;
+    width: 230px;
     margin: 10px;
     display: inline-block;
 }
-
-.TopOptionBox {
-    background-color:white;
-    padding:15px;
-    text-align: center;
-    border: 1px solid #8080803d;
-    margin-bottom: 2px;
-    box-shadow: 0px 2px 6px 0px grey;
+.OptionBox-Container{
+    display: grid;
+    grid-row-gap: 2px;
 }
-
-.DwonOptionBox {
-    background-color:white;
-    padding: 1px;
-    text-align: center;
-    border: 1px solid #8080803d;
-    box-shadow: 0px 2px 6px 0px grey;
-
+.OptionBox-Item{
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    /* padding: 10px; */
 }
-.DwonOptionBox>h2{
-    color:#0000006b;
+.OptionBox-Item>h2{
+    text-decoration: none;
+    color: #5F5E5E;
+    text-transform: uppercase;
 }
-
-
+.OptionBox-Item>img{
+    width: 70%;
+    margin-top:50px;
+    margin-bottom:50px;
+}
