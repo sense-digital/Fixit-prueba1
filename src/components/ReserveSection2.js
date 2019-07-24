@@ -17,7 +17,7 @@ class ReserveSection2 extends Component {
   }
 
   componentDidMount () {
-    firebase.firestore().collection('servicios').get().then((snapShots)=>{
+    firebase.firestore().collection('servicios').where("equipo", '==',this.props.celularEscogido).get().then((snapShots)=>{
       this.setState({
         data: snapShots.docs.map(doc => {
           return (doc.data());
@@ -53,7 +53,6 @@ class ReserveSection2 extends Component {
 
 {/* INICIO servicios para mantenimiento  */} 
           {this.state.data.map(OptionBox => {
-              if(OptionBox.equipo === this.props.celularEscogido)
                 return(
               <span key={OptionBox.servicio} onClick={() => this.handleClick(OptionBox.servicio,OptionBox.precio)}>
               <Box  descripcion={OptionBox.servicio}/>
