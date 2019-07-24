@@ -44,8 +44,9 @@ class ReserveSection2 extends Component {
 {/* INICIO de título  */}
          <div className='hero-container' style={{
            backgroundColor:'white',
-         }}>
-              <div className='herosectiont-1'>
+         }}>  
+              <a href='' className='previous'>&#8249;</a>{/*&#8701*/}
+              <div className='herosection-1'>
                   <h2>2. ¿Que necesitas arreglar?</h2>
               </div>
             </div>

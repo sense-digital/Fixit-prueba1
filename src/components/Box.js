@@ -10,14 +10,14 @@ class Box extends Component {
         return (
 
             <div className="OptionBox">
-            <div className="TopOptionBox">
-                <img src={ProductImage} alt="Foto de producto"/>
+            <div className='OptionBox-Container'>
+              <div className="OptionBox-Item">
+                  <img src={ProductImage} alt="Foto de producto"/>
+              </div>
+              <div className="OptionBox-Item">
+                <h2>{this.props.descripcion}</h2>
+              </div>
             </div>
-            <div className="DwonOptionBox">
-                <h2>
-                  {this.props.descripcion}
-                </h2>
-             </div>
             </div> 
         );  
     }
