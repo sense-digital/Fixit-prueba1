@@ -117,7 +117,7 @@ class Soporte extends Component {
                   }}>
                 </div>
                 <div className="item-grid1-soporte">
-                 <button type="submit" className='wp-button' action=''>Whatsapp</button>
+                 <a href='https://api.whatsapp.com/send?phone=573219363482&text=Te contacto desde la web de fixit y necesito:' target="_blank"><button type="submit" className='wp-button'>Whatsapp</button></a>
                 </div>
               </section>
             </div>
