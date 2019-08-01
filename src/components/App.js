@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import AppAdminCliente from '../components/AppAdminCliente';
 import AppLogin from '../components/AppLogin';
 import Soporte from '../pages/Soporte';
+import LoginCliente from '../pages/LoginCliente';
 import Trabajo from '../pages/Trabajo';
 import ThankYou from '../pages/ThankYou';
 import NotFound from '../pages/NotFound';
@@ -46,6 +47,7 @@ class App extends Component {
             <Switch>
                 <Route path="/home" component={Home} />
                 <Redirect exact from="/" to="/home"/>
+                <Route exact path="/LoginCliente" component={AppAdminCliente} />
                 <Route exact path="/admincliente" component={AppAdminCliente} />
                 <Route exact path="/soporte" component={Soporte} />
                 <Route exact path="/trabajo" component={Trabajo} />

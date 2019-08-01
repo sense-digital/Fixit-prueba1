@@ -19,44 +19,36 @@ class Login extends Component {
 
         authGoogle () {
             var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function(result) {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                // ...
+            firebase.auth().signInWithPopup(provider)
+                .then(function(result) {
+                result.user.updateProfile()            
               }).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                // ...
+                alert(error)
               });
 
         }
         
         login (e) {
             e.preventDefault();
-            firebase.auth().signInWithEmailAndPassword(this.state.mail, this.state.password).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
+            firebase.auth().signInWithEmailAndPassword(this.state.mail, this.state.password)
+            .then(result => {
+                // return this.login();
+            })
+            .catch(function(error) {
+                alert(`Se ha presentado el siguiente error: ${error}`)
               });
         }
 
         register (e) {
             e.preventDefault();
-            firebase.auth().createUserWithEmailAndPassword(this.state.mail, this.state.password).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-              });  
-        }
+            firebase.auth().createUserWithEmailAndPassword(this.state.mail, this.state.password)
+            .then(result => {
+                result.user.updateProfile()
+            })
+            .catch(function(error) {
+                alert(`Se ha presentado el siguiente error: ${error}`)
+              });
+          }
 
         handleChange(e) {
             this.setState({[e.target.name]: e.target.value});
