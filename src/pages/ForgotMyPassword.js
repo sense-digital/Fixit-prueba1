@@ -28,3 +28,5 @@ class ForgotMyPassword extends Component {
         );
       }
   }
+
+  export default ForgotMyPassword;

@@ -35,7 +35,8 @@ class ReserveSection4 extends Component {
       correo: this.props.estado.correo,
       equipo: this.props.estado.equipo,
       pago:this.state.pago,
-      fechaDeSolicitud: firebase.firestore.FieldValue.serverTimestamp()
+      fechaDeSolicitud: firebase.firestore.FieldValue.serverTimestamp(),
+      estado: 'procesando'
      })
   }
 
@@ -53,7 +54,7 @@ class ReserveSection4 extends Component {
          <div className='hero-container' style={{
            backgroundColor:'white',
          }}>
-              <a href='' className='previous'>&#8249;</a>{/*&#8701*/}
+              <Link to='/home/3' className='previous'>&#8249;</Link>{/*&#8701*/}              
               <div className='herosection-1'>
                   <h2>4. Confirmación y pago</h2>
               </div>
@@ -77,7 +78,7 @@ class ReserveSection4 extends Component {
 
         <div className='info-servicio-cliente'>
           <h2>Equipo:</h2>
-          <p>{this.props.estado.celular}</p>
+          <p>{this.props.estado.equipo}</p>
         </div>
 
         <div className='info-servicio-cliente'>

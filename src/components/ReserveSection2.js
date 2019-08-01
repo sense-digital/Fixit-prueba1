@@ -45,7 +45,7 @@ class ReserveSection2 extends Component {
          <div className='hero-container' style={{
            backgroundColor:'white',
          }}>  
-              <a href='' className='previous'>&#8249;</a>{/*&#8701*/}
+              <Link to='/home' className='previous'>&#8249;</Link>{/*&#8701*/}
               <div className='herosection-1'>
                   <h2>2. ¿Que necesitas arreglar?</h2>
               </div>

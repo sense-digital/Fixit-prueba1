@@ -47,18 +47,19 @@ class Soporte extends Component {
 {/* FIN DE ACORDEÓN DE PREGUNTAS FRECUENTES   */}
 
 {/* INICIO DE SECCIÓN NECESITAS AYUDA? */}
-                <form action="" className="formulario-soporte">
+                <form method="POST"action="https://us-central1-fixit-88405.cloudfunctions.net/mailContacto/v1" className="formulario-soporte">
                   <h3>¿Necesitas ayuda?</h3>
                   <p>Nos pondremos en </p>
                   <p>contacto contigo</p>
                 <div className='form-container'>
-                    <label for='nya'>Nombre y apellido</label>
-                    <label for='email'>Correo electrónico</label>
-                    <label for='phone'>Número de contacto</label>
+                    <label for='nombre'>Nombre y apellido</label>
+                    <label for='correo'>Correo electrónico</label>
+                    <label for='numero'>Número de contacto</label>
                   <div className='campos-formulario-soporte'>
-                    <input id='nya' type="text" className="e-mail"></input>
-                    <input id='email' type="text" className="e-mail"></input>
-                    <input id='phone' type="phone" className="e-mail"></input>
+                    <input id='nombre' name='nombre' type="text" className="e-mail"></input>
+                    <input id='correo' name='correo' type="text" className="e-mail"></input>
+                    <input id='numero' name='numero' type="phone" className="e-mail"></input>
+                    <input id='tipo' name='tipo' type="hidden" value="Soporte"></input>
                   </div>
                  <button type='submit' className="boton-formulario" action=''>Enviar</button>
                  </div>

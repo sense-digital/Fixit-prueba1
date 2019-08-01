@@ -57,7 +57,7 @@ class ReserveSection3 extends Component {
          <div className='hero-container' style={{
            backgroundColor:'white',
          }}>
-              <a href='' className='previous'>&#8249;</a>{/*&#8701*/}
+              <Link to='/home/2' className='previous'>&#8249;</Link>{/*&#8701*/}
               <div className='herosection-1'>
                   <h2>3. Datos y agendamiento</h2>
               </div>

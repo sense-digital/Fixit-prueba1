@@ -90,14 +90,15 @@ class Trabajo extends Component {
 
                <div className='section3-form'>
 
-                 <form action='' className='formulario-trabaja'>
+                 <form method="POST"action="https://us-central1-fixit-88405.cloudfunctions.net/mailContacto/v1"className='formulario-trabaja'>
                    <div className='form2-container'>
-                    <div className='item6' ><label for='nya2'>Nombre y apellido</label></div>
-                    <div className='item6'><input id='nya2' type="text"></input></div>
-                    <div className='item6' ><label for='email2'>Correo electrónico</label></div>
-                    <div className='item6'><input id='email2' type="text"></input></div>
-                    <div className='item6' ><label for='phone2'>Número de contacto</label></div>
-                    <div className='item6'><input id='phone2' type="phone"></input></div>
+                    <div className='item6' ><label for='nombre'>Nombre y apellido</label></div>
+                    <div className='item6'><input  id='nombre' name='nombre' type="text"></input></div>
+                    <div className='item6' ><label for='correo'>Correo electrónico</label></div>
+                    <div className='item6'><input id='correo' name='correo' type="text"></input></div>
+                    <div className='item6' ><label for='numero'>Número de contacto</label></div>
+                    <div className='item6'><input id='numero' name='numero' type="phone"></input></div>
+                    <input id='tipo' name='tipo' type="hidden" value="Trabaja con fixit"></input>
                      {/* <div className='campos-formulario-trabaja'>
                      </div> */}
                     <div className='item6'><button type='submit'className='boton-formulario-trabaja' >Enviar</button></div>

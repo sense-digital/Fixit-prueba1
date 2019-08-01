@@ -91,7 +91,7 @@ class Login extends Component {
             </section>
         </section>  
         <div className='forgot-my-password'>
-            <Link to='/adminfixit/servicios' >Olvidé mi contraseña</Link><br/>
+            <Link to='/olvideMiContraseña' >Olvidé mi contraseña</Link><br/>
             {/* <p>Olvidé mi contraseña</p> */}
         </div>
       </div>
