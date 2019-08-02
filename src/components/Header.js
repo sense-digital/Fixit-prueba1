@@ -5,6 +5,7 @@ import './styles/Header.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+
 class Header extends Component {
 
     constructor(props){

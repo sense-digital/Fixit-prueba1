@@ -43,7 +43,7 @@ class Login extends Component {
             e.preventDefault();
             firebase.auth().createUserWithEmailAndPassword(this.state.mail, this.state.password)
             .then(result => {
-                result.user.updateProfile()
+                // result.user.updateProfile()
             })
             .catch(function(error) {
                 alert(`Se ha presentado el siguiente error: ${error}`)
@@ -75,11 +75,11 @@ class Login extends Component {
             </form>
             <section className='botones-formulario-login'>
                 <div className='item-form-login'><button name="login" onClick={this.login}>Inicio de sesión </button></div>
-                <div className='item-form-login'><button name="register" onClick={this.register}>Registro</button></div>
-                <div className='item-form-login'><button style={{
+                {/* <div className='item-form-login'><button name="register" onClick={this.register}>Registro</button></div> */}
+                {/* <div className='item-form-login'><button style={{
                     backgroundImage:"url{}",
                     backgroundSize:'',
-                }} name="authGoogle" onClick={this.authGoogle}>Google</button></div>
+                }} name="authGoogle" onClick={this.authGoogle}>Google</button></div> */}
             </section>
         </section>  
         <div className='forgot-my-password'>

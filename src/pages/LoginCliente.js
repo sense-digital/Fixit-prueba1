@@ -34,7 +34,7 @@ class LoginCliente extends Component {
             e.preventDefault();
             firebase.auth().signInWithEmailAndPassword(this.state.mail, this.state.password)
             .then(result => {
-              result.user.updateProfile()
+              // result.user.updateProfile()
             })
             .catch(function(error) {
                 alert(`Se ha presentado el siguiente error: ${error}`)
