@@ -27,7 +27,7 @@
 .itemfooter{
     padding: 15px;
 }
-.itemfooter>h3{
+.itemfooter>label{
     
     color: #E7E7E7;
     font-weight: bold;
@@ -53,7 +53,7 @@
 .itemfooter:nth-of-type(3)>p{
 margin: 0;
 }
-.itemfooter:nth-of-type(3)>h3{
+.itemfooter:nth-of-type(3)>label{
     margin-bottom: 16px;
 }
 .footer-img-container{
@@ -68,3 +68,86 @@ margin: 0;
     margin: 0;
     font-weight: normal;
 }
+.footer-desplegable-menu{
+    display: none;
+}
+/* PRIMER MEDIA QUERY */
+
+@media screen and (max-width:814px){/* media query para el tamaño de letra en footer */
+    .itemfooter{
+        font-size: 30px;
+    }
+    .itemfooter>label{
+        font-size: 0.8em;
+    }
+    .itemfooter>p{
+        font-size: 0.5em;
+    }
+    
+    
+}
+/* FIN DE PRIMER MEDIA QUERY */
+
+/* SEGUNDO MEDIA QUERY */
+@media screen and (max-width:500px){
+    .first-footer{
+        padding: 10px;
+        height: 250px;
+    }
+    .footer-img-container,.footer-img-container>img{
+        width: 50%;
+    }
+    .info-containter-footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .itemfooter{
+        padding: 0;
+        font-size: 20px;
+    }
+    .itemfooter:nth-of-type(1)>label,.itemfooter:nth-of-type(2)>label, .itemfooter:nth-of-type(3)>label{
+        margin-bottom: 0;
+        font-size: 0.7em;
+        border-bottom: 1px solid white;
+    }
+    .itemfooter:nth-of-type(1)>p,.itemfooter:nth-of-type(2)>p, .itemfooter:nth-of-type(3)>p{
+        margin:3px 0;
+        text-align: justify;
+    }
+}
+/* FIN DE SEGUNDO MEDIA QUERY */
+
+/* TERCER MEDIA QUERY*/
+@media screen and (max-width:319px){
+    .first-footer{
+        padding: 10px;
+        height: 200px;
+    }
+    .footer-img-container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .itemfooter:nth-of-type(1)>label, .itemfooter:nth-of-type(2)>label,.itemfooter:nth-of-type(3)>label{
+        display: inline-block;
+        /* position: absolute; */
+        padding: 5px;
+        cursor: pointer;
+        border-bottom: 1px solid white;
+        content: "+";
+    }
+    .footercontenido{
+        height: 0;
+        overflow: hidden;
+        margin: 2px;
+        transition: all 0.5s;
+    }
+    .itemfooter input:checked ~ .footercontenido{
+        height: auto;
+        margin: 15px 0;
+    }
+    
+}
+
+/* FIN TERCER MEDIA QUERY*/

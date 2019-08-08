@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logofix-it.png';
+import btnmenu from '../images/menu3.png';
 import './styles/Header.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+
 
 
 class Header extends Component {
@@ -40,6 +42,7 @@ class Header extends Component {
            <Link to ='/'>
                <img src={logo} alt="LogoFixIt" href='/home' width='50px'/>
            </Link>
+               <img src={btnmenu} className='responsive-menu-button' alt="botón menu fixit" href=''/>
        </figure>
        <nav className='menu-principal'>
            <ul>

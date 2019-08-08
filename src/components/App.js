@@ -13,6 +13,7 @@ import ForgotMyPassword from '../pages/ForgotMyPassword';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import './styles/App.css';
 
 class App extends Component {
     constructor(props){

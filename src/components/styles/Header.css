@@ -1,5 +1,5 @@
-/* PRIMER MEDA QUERY*/
-@media screen and (min-width:1024px){
+
+
 .header{
     font-family: benchnine;
     background-color: white;
@@ -49,18 +49,100 @@
     height: inherit;
     flex-wrap: inherit;
   }
+  .menu-principal>ul>li:nth-of-type(4){
+    background-color: #D1ECF1;
+  }
+
+  /* EFECTOS PARA HOVER DEL MENÚ PRINCIPAL */
+  .menu-principal>ul>li>a:hover{
+    background-color:#E0DBDB;
+    font-weight: bold;
+    font-size: 1.06em;
+  }
+
+  /* INICIO DE PRIMER MEDIA QUERY */
+  @media screen and (min-width:1024px){
+   .header{
+     margin: auto;
+   }
+   .responsive-menu-button{
+     display: none;
+   }
+  }
+  /* FIN DE PRIMER QUERY */
+
+
+
+
+/* MEDAQUERY PARA TABLET */
+@media screen and (max-width:767px){
+  .responsive-menu-button{
+    display: none;
+  }
 }
-.menu-principal>ul>li:nth-of-type(4){
-  background-color: #D1ECF1;
+@media screen and (max-width:814px){
+  .responsive-menu-button{
+    display: none;
+  }
+}
+/* FIN SEGUNDO MEDIA QUERY */
+
+
+
+/* INICIO DE MEDIAQUERY PARA TABLET */
+@media screen and (max-width:500px){
+
+
+ /* MODIFICACIONES GENERALES AL HEADER */
+  .header{
+    height: 80px;;
+  }
+
+ /* MODIFICACIONES A ESTRUCTURA FLEX DEL HEADER */
+  .container-header{
+    flex-direction: column;
+   }
+  .logo-fixit-header{
+    display: flex;
+    width: 90%;
+    /* margin:10px 0; */
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+ /* ESTILOS AL ICONO DESPLEGABLE */
+  .responsive-menu-button{
+    display: inline-block;
+    height: 30px;
+    align-self: center;
+    }
+
+  /* ESTILOS A LOS ENLACES DEL MENÚ */
+  .menu-principal{
+    align-self: flex-end;
+  }
+  .menu-principal>ul{
+    display: flex;
+    flex-direction: column;
+    height: initial;
+  }
+  .menu-principal>ul>li{
+    padding: 5px;
+    border: 1px solid #F2F2F2;
+    background-color: white;
+  }
+  
+  /* OCULTAR EL MENÚ MIENTRAS SE SOLUCIONA EL J QUERY */
+  .menu-principal{
+    display: none;
+  }
+
+
+/* FIN DE MEDIAUQERY PARA TABLET */
 }
 
-/* FIN DE PRIMER QUERY */
 
-@media screen and (min-width:768px){
-}
-@media screen and (min-width:480px){
-
-}
-@media screen and (min-width:320px){
+@media screen and (max-width:319px){
 
 }

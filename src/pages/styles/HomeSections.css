@@ -1,15 +1,12 @@
-/* INICIO DE PRIMER MEDIA QUERY */
-@media screen and (min-width:1024px){
-   .ReserveSection1{
+.ReserveSection1{
     max-width: 1000px;
     margin: auto;
     }
-
 .hero-container{
     display: flex;
     /* justify-content: center;
     justify-items: center; */
-    width: 100%;
+    width: auto;
     margin: 20px auto;
     padding: 0 10px;
     align-items: center;
@@ -289,5 +286,13 @@
     width: 700px;
 }
 /* FIN ESTILOS A SECCIÓN CIFRAS */
+
+/* INICIO DE PRIMER MEDIA QUERY */
+@media screen and (max-width:767px){
+    .hero-container{
+        width:auto;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 /* FIN DE PRIMER MEDIA QUERY */

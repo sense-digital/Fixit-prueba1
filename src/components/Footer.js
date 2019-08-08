@@ -9,19 +9,22 @@ class Footer extends Component {
     <div className='first-footer'>
         <div className='info-containter-footer'>  
            <div className='itemfooter'>
-             <h3>Acerca de nosotros</h3>
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget libero tincidunt, fringilla enim vel, tristique nisl. Lorem ipsum dolor sit amet.</p>
+             <input type='radio' name='deplegable-footer' id='desplegablefooter' className='footer-desplegable-menu'></input>
+             <label for='desplegablefooter'>Acerca de nosotros</label>
+             <p className='footercontenido'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget libero tincidunt, fringilla enim vel, tristique nisl. Lorem ipsum dolor sit amet.</p>
            </div>
            <div className='itemfooter'>
-             <h3>Trabaja con nosotros</h3>
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget libero tincidunt, fringilla enim vel, tristique nisl. Lorem ipsum dolor sit amet.</p>
+           <input type='radio' name='deplegable-footer2' id='desplegablefooter2' className='footer-desplegable-menu'></input>
+             <label for='desplegablefooter2'>Trabaja con nosotros</label>
+             <p className='footercontenido'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget libero tincidunt, fringilla enim vel, tristique nisl. Lorem ipsum dolor sit amet.</p>
            </div>
            <div className='itemfooter'>
-             <h3>Contacto</h3>
-             <p>Bogotá, Colombia.</p>
-             <p>Calle xx # xx - xx</p>
-             <p>xxx xxxx xxx</p>
-             <p>xxxxxx@mail.com</p>
+           <input type='radio' name='deplegable-footer3' id='desplegablefooter3' className='footer-desplegable-menu'></input>
+             <label for='desplegablefooter3'>Contacto</label>
+             <p className='footercontenido'>Bogotá, Colombia.</p>
+             <p className='footercontenido'>Calle xx # xx - xx</p>
+             <p className='footercontenido'>xxx xxxx xxx</p>
+             <p className='footercontenido'>xxxxxx@mail.com</p>
            </div>
           </div> 
           <div className='footer-img-container'><img src={logofixit} alt='logofixit'></img></div>   
