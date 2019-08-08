@@ -88,8 +88,6 @@ class ReserveSection3 extends Component {
               <input type="text" name="apellido" onChange={this.handleChange} value={this.state.apellido}/>
             </div>
 
-
-
           <div className='item-rs3form'>
             <label>
                 Dirección:
