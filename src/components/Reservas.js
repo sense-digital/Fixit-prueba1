@@ -47,7 +47,7 @@ class Reservas extends Component {
                          <td>{item.direccion}</td>
                          <td>{item.fechaDeRecogida}</td>
                          <td>{item.precio}</td>
-                         <td>{item.correo}</td>
+                         <td>{item.mail}</td>
                          <td>{item.celular}</td>
                          <td><Button>Eliminar</Button></td>
                      </tr>)

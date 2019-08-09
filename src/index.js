@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 //DESINTALAR ESTO Y DARLE ESTILOS PROPIOS A LAS TABLAS
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import firebase from 'firebase/app';
 import "firebase/firestore";
