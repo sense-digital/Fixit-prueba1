@@ -1,6 +1,6 @@
 .OptionBox {
-    width: 230px;
-    margin: 10px;
+    width: 23%;
+    margin: 1%;
     display: inline-block;
 }
 .OptionBox-Container{
@@ -13,14 +13,39 @@
     display: flex;
     justify-content: center;
     /* padding: 10px; */
+    font-size: 15px;
 }
 .OptionBox-Item>h2{
     text-decoration: none;
     color: #5F5E5E;
     text-transform: uppercase;
+    font-size: 1.5em;
 }
 .OptionBox-Item>img{
     width: 70%;
-    margin-top:50px;
-    margin-bottom:50px;
+    margin-top:15%;
+    margin-bottom:15%;
 }
+
+/* PRIMER MEDIA QUERY */
+@media screen and (max-width:814px){
+    .OptionBox-Item>h2{
+        font-size: 1.2em;
+        text-align: center;
+    }
+}
+/* FIN PRIMER MEDIA QUERY */
+@media screen and (max-width:425px){
+    .OptionBox{
+        width: 29.33%;
+        margin: 2%;
+    }
+    .OptionBox-Container{
+        grid-row-gap: 0;
+    }
+    .OptionBox-Item>h2{
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+

@@ -56,50 +56,65 @@
     height: 80px;
     font-family: roboto;
 } */
+.herosection-2{
+    margin-top: 5%;
+    font-size: 60px;
+}
 .titulo-herosection-2{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    font-size: 1em;
+    
 }
 
 .titulo-herosection-2>h1{
-    font-size: 60px;
-    margin:0;
+    font-size: 1em;
+    margin:0 auto;
     font-weight: normal;
 }
-
 .grid-herosection-2{
-    width: 60%;
+    width: 80%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3,0.1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 4%;
+    grid-row-gap: 1%;
     /* height: 100vh; */
     justify-items: center;
     align-items: center;
-    margin: 20px auto;
+    margin: 4% auto;
 }
-
-
+.item{
+    font-size: 40px;
+}
 .item:nth-of-type(1){
     grid-column: 1 / -1;
 }
 .item:nth-of-type(1)>h2{
     margin-top: 0;
-    font-size: 40px;
+    font-size: 1em;
     font-weight: normal;
+
+}
+.item:nth-of-type(2),.item:nth-of-type(3),.item:nth-of-type(4){
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
 }
 .item:nth-of-type(2)>img{
     /* box imagen paso 1 */
-    max-width: 100px;
+    max-width: 50%;
+    justify-self: center;
 }
 .item:nth-of-type(3)>img{
     /* box imagen paso 2 */
-    max-width: 100px;
+    max-width: 40%;
 }
 .item:nth-of-type(4)>img{
     /* box imagen paso 3 */
-    max-width: 120px;
+    max-width: 60%;
 }
 .item:nth-of-type(5){
     text-align: center;
@@ -115,6 +130,12 @@
     text-align: center;
     padding: 0 10px;
     text-align: center;
+}
+.item:nth-of-type(5)>h2,.item:nth-of-type(6)>h2,.item:nth-of-type(7)>h2{
+    font-size: 0.7em;
+}
+.item:nth-of-type(5)>p,.item:nth-of-type(6)>p,.item:nth-of-type(7)>p{
+    font-size: 0.4em;
 }
 /* FIN DE LOS ESTILOS AL GID DE CÓMO FUNCIONA FIXIT */
 
@@ -182,23 +203,37 @@
 .herosection-4{
     /* border: 1px solid red; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3,0.1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-template-columns: repeat(3, 33.333%);
+    grid-template-rows: repeat(3, 33.333%);
+    grid-column-gap: 0.8%;
+    grid-row-gap: 0.8%;
     justify-items: center;
     align-items: center;
-    font-family: roboto;
     box-shadow: 5px  5px 5px grey;
-    height: 600px;
+    height: 50%;
     color: white;
+    width: 100%;
+    font-size: 40px;
 }
 .porqueimg{
-    max-width: 150px;
+    width: 40%;
+}
+.item2{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.item2>h2{
+    font-size: 0.7em;
+    margin: 1%;
+}
+.item2>p{
+    font-size: 0.5em;
 }
 .item2:nth-of-type(1){
     grid-column: 1 / -1;
-    font-size: 40px;
+    font-size: 1em;
     font-weight: bold;
 }
 .item2:nth-of-type(1)>h1{
@@ -207,26 +242,33 @@
     padding-top: 20px;
 }
 .item2:nth-of-type(2){
- margin-top: 100px;
+    justify-content: flex-end;
 }
-.item2:nth-of-type(3){
-    margin-top:-100px;
+.item2:nth-of-type(2)>img{
+    margin-top:30%;
+}
+
+.item2:nth-of-type(3)>img{
+    width: 30%;
 }
 .item2:nth-of-type(4){
-    margin-top: 100px;
+    justify-content: flex-end;
+}
+.item2:nth-of-type(4)>img{
+    margin-top: 30%;
 }
 .item2:nth-of-type(5){
     text-align: center;
-    padding: 0 20px;
+    padding: 0 5%;
 }
 .item2:nth-of-type(6){
     text-align: center;
-    margin-top:-100px;
-    padding: 0 20px;
+    margin-top:-30%;
+    padding: 0 5%;
 }
 .item2:nth-of-type(7){
     text-align: center;
-    padding: 0 20px;
+    padding: 0 5%;
 }
 /* FIN DE ESTILOS A LA SECCIÓN POR QUÉ FIXIT */
 
@@ -235,16 +277,17 @@
 /* INICIO ESTILOS A SECCIÓN CIFRAS */
 .herosection-5{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2,0.1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    /* height: 100vh; */
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2,auto);
+    grid-column-gap: 1%;
+    grid-row-gap: 1%;
     justify-items: center;
     align-items: center;
-    font-family: roboto;
-    margin-top: 50px;
+    margin-top: 8%;
 
+}
+.item3{
+    font-size: 70px;
 }
 .item3:nth-of-type(1){
     text-align: center;
@@ -270,29 +313,202 @@
 }
 .item3:nth-of-type(4){
     grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    padding: 3%;
 }
 .item3:nth-of-type(1)>h2,.item3:nth-of-type(2)>h2,.item3:nth-of-type(3)>h2{
-    font-size: 70px;
+    font-size: 1em;
     text-shadow:2px 2px grey;
     font-style: italic;
     margin:0;
 }
 .item3>h3{
-    font-size: 30px;
+    font-size: 0.5em;
     font-style: italic;
     margin: 0;
 }
+.item3>p{
+    font-size: 0.3em;
+}
 .celular1{
-    width: 700px;
+    width: 68%;
 }
 /* FIN ESTILOS A SECCIÓN CIFRAS */
 
+
+
+
+
 /* INICIO DE PRIMER MEDIA QUERY */
 @media screen and (max-width:767px){
+    /* inicio media query para el titulo de selecciona tu dispositivo */
     .hero-container{
         width:auto;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    /* fin de media query */
+}
+@media screen and (max-width:425px){
+    /* inicio de query para sección como funciona fixit */
+    .titulo-herosection-2{
+        font-size: 0.8em;
+    }
+    .titulo-herosection-2>h1{
+        text-align: center;
+    }
+    .grid-herosection-2{
+        width: 92%;
+    }
+    .herosection-3{
+        display: none;
+        margin-top: 15%;
+    }
+    /* fin query */
+}
+
+@media screen and (max-width:375px){
+    .grid-herosection-2{
+        grid-template-rows: repeat(7,0.1fr);
+    }
+    .item:nth-of-type(2){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 2;
+    }
+    .item:nth-of-type(5){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 3;
+    }
+    .item:nth-of-type(3){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 4;
+    }
+    .item:nth-of-type(6){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 5;
+        grid-row-end: 5;
+    }
+    .item:nth-of-type(4){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 6;
+        grid-row-end: 6;
+    }
+    .item:nth-of-type(7){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 7;
+        grid-row-end: 7;
+    }
+    .herosection-3{
+        display: none;
+        margin-top: 15%;
     }
 }
 /* FIN DE PRIMER MEDIA QUERY */
+
+
+/* INICIO MEDIA QUERY PARA SECCIÓN POR QUÉ FIXIT */
+@media screen and (min-width:300px) and (max-width:425px){
+    .herosection-4{ 
+        grid-template-rows: repeat(3, 25%);
+        margin-top: 15%;
+    }
+    .item2:nth-of-type(2)>img,.item2:nth-of-type(4)>img{
+        margin-top:0;
+    }
+    .item2:nth-of-type(6){
+        margin-top: 0;
+    }
+    .item2:nth-of-type(2),.item2:nth-of-type(3),.item2:nth-of-type(4){
+        justify-content: center;
+    }
+    .item2:nth-of-type(1)>h1{
+        margin-top: 0;
+        padding-top: 2%;
+        margin-bottom: 10%;
+        font-size: .9em;
+    }
+    
+}
+@media screen and (max-width:425px){
+    .item2:nth-of-type(5)>h2,.item2:nth-of-type(6)>h2,.item2:nth-of-type(7)>h2{
+        font-size:0.5em;         
+    }
+    .item2:nth-of-type(5)>p,.item2:nth-of-type(6)>p,.item2:nth-of-type(7)>p{
+        font-size: 0.3em;
+    }
+}
+@media screen and (min-width:300px) and (max-width:375px){
+    .herosection-4{
+        grid-template-rows: repeat(7, auto);
+        padding-bottom: 10%;
+    }
+    .item2:nth-of-type(2){
+        grid-column-start: 2;
+        grid-row-start: 2;
+        grid-row-end: 2;
+    }
+    .item2:nth-of-type(3){
+        grid-column-start: 2;
+        grid-row-start: 4;
+        grid-row-end: 4;
+    }
+    .item2:nth-of-type(4){
+        grid-column-start: 2;
+        grid-row-start: 6;
+        grid-row-end: 6;
+    }
+    .item2:nth-of-type(5){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 3;
+    }
+    .item2:nth-of-type(6){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 5;
+        grid-row-end: 5;
+    }
+    .item2:nth-of-type(7){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 7;
+        grid-row-end: 7;
+    }
+    .item2:nth-of-type(1)>h1{
+        font-size: 1em;
+    }
+    .item2:nth-of-type(5)>h2,.item2:nth-of-type(6)>h2, .item2:nth-of-type(7)>h2{
+        font-size: .6em;
+    }
+    .item2:nth-of-type(5)>p,.item2:nth-of-type(6)>p, .item2:nth-of-type(7)>p{
+        font-size: 0.5em;
+    }
+}
+/* FIN DE QUERYS PARA SECCION POR QUÉ FIXIT */
+
+/* INICIO DE MEDIA QUERY PARA SECCIÓN DE CIFRAS */
+@media screen and (max-width:425px){
+    .item3:nth-of-type(1)>h2,.item3:nth-of-type(2)>h2,.item3:nth-of-type(3)>h2{
+        font-size: 0.6em;
+    }
+    .item3>h3{
+        font-size: 0.3em;
+        font-style: italic;
+        margin: 0;
+    }
+    .item3>p{
+        font-size: 0.2em;
+    }
+}
+/* FIN DE MEDIA QUERY PARA SECCIÓN DE CIFRAS */

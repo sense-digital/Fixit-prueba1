@@ -54,6 +54,10 @@ class ReserveSection1 extends Component {
             </div>
         {/* fin de título "selecciona tu dispotivo" */}
          {/* INICIO celulares */} 
+          <div style={{
+            marginLeft:'1%',
+            marginRight:'1%',
+          }}>
           {this.state.data.map(OptionBox=>{
                 return( 
                   <Link to='home/2' key={OptionBox.ref} onClick={() => this.handleClick(OptionBox.ref)}>
@@ -62,7 +66,7 @@ class ReserveSection1 extends Component {
                 )
           })}
          {/* FIN celulares */} 
-
+         </div>
         </div>
       );
     }
