@@ -11,6 +11,7 @@ import './styles/AdminFixit.css';
 import logofixit from '../images/logofix-it.png';
 
 
+
 class AdminFixit extends Component {
     constructor(props) {
         super(props);
@@ -30,7 +31,7 @@ class AdminFixit extends Component {
              <div className='linkto1'><Link to="/adminfixit/clientes">Clientes</Link> <br/></div>
              <div className='linkto1'><Link to="/adminfixit/reservas">Reservas</Link> <br/></div>
              <div className='linkto1'><Link to='/adminfixit/servicios'>Servicios ofrecidos</Link> <br/></div>
-             <div className='linkto1'><Link tgit puo="/adminfixit/sliderpromocional">Slider promocional</Link> <br/></div>
+             <div className='linkto1'><Link to="/adminfixit/sliderpromocional">Slider promocional</Link> <br/></div>
              <div className='linkto1'><Link to="/adminfixit/contabilidad">Contabilidad</Link> <br/></div>
 
             <button onClick={this.logout} className='admin-exit-button'>Cerrar sesión</button>

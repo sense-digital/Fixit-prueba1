@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import '../pages/styles/HomeSections.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/auth';
 import '../components/styles/reservesection4.css';
 
 
@@ -12,13 +13,86 @@ class ReserveSection4 extends Component {
   constructor () {
     super()
     this.state = {
-      pago: '',
+      pago:'',
+      noUser:'',
+      user:''
     }
     this.db = firebase.firestore()  
   }
   
+componentDidMount(){
+ this.authListener();
+ firebase.firestore().collection('usuarios').where("mail", '==',this.props.estado.mail).get().then((snapShots)=>{
+    this.setState({
+      noUser: snapShots.empty
+    })
+  })
+}
+
+authListener() {
+  firebase.auth().onAuthStateChanged((user) => {       
+      if (user) {
+        // User is signed in.
+      this.setState({user:true});        
+      } else {
+        // User is signed out.
+        this.setState({user:false});
+      }
+    });}
+
+
   handleChange(e) {
     return this.props.modoPago(e);
+  }
+
+  login () {
+    firebase.auth().signInWithEmailAndPassword(this.props.estado.mail, this.props.estado.password)
+    .then(result => {
+      console.log('loggeado')
+      // result.user.updateProfile()
+    })
+    .catch(function(error) {
+        alert(`Se ha presentado el siguiente error: ${error}`)
+      });
+  }
+
+  createUserDataBase(result) {
+    return this.db.collection('usuarios').add({
+      nombre : this.props.estado.nombre,
+      apellido : this.props.estado.apellido,
+      correo : this.props.estado.mail,
+      direccion: this.props.estado.direccion,
+      detalleDireccion : this.props.estado.detalleDireccion,
+      tipoUsuario:'cliente',
+      id:result.user.uid,
+      fechaDeSolicitud: firebase.firestore.FieldValue.serverTimestamp()
+    })
+}
+
+  register () {
+    firebase.auth().createUserWithEmailAndPassword(this.props.estado.mail, this.props.estado.password)
+    .then( result => 
+      {this.createUserDataBase(result) 
+    })
+    .catch(function(error) {
+    alert(`Se ha presentado el siguiente error: ${error}`)
+    });
+  }
+
+  disparadorReserva(){
+    if ( this.state.user )
+      this.guardarServicioEnBaseDeDatos();
+    // return this.guardarServicioEnBaseDeDatos()
+    else if ( this.state.noUser ) {
+      this.register();
+      this.guardarServicioEnBaseDeDatos();
+      // this.guardarServicioEnBaseDeDatos()
+    }
+    else if ( !this.state.noUser ) {
+      this.login();
+      this.guardarServicioEnBaseDeDatos();
+      // this.guardarServicioEnBaseDeDatos()
+    }
   }
 
   guardarServicioEnBaseDeDatos() {
@@ -32,20 +106,22 @@ class ReserveSection4 extends Component {
       detalleDireccion: this.props.estado.detalleDireccion,
       fechaDeRecogida:this.props.estado.fechaDeRecogida,
       hora: this.props.estado.hora,
-      correo: this.props.estado.correo,
+      mail: this.props.estado.mail,
       equipo: this.props.estado.equipo,
       pago:this.state.pago,
       fechaDeSolicitud: firebase.firestore.FieldValue.serverTimestamp(),
       estado: 'procesando'
      })
-  }
+   }
 
   botonDeSiguiente = ()=>{
     if(this.state.pago)
-    return  <button onClick={()=>this.guardarServicioEnBaseDeDatos()}><Link to='/thankyou'> Confirmar </Link></button>
+    return  <button onClick={()=>this.disparadorReserva()}><Link to='/thankyou'> Confirmar </Link></button>
     else
     return <h5>Elige un medio de pago para continuar</h5>
   }
+
+
   render () {   
       return (
         <div>
@@ -68,7 +144,7 @@ class ReserveSection4 extends Component {
           <p>{this.props.estado.direccion}</p>
           <p>{this.props.estado.detalleDireccion}</p>
           <p>{this.props.estado.celular}</p>
-          <p>{this.props.estado.correo}</p>
+          <p>{this.props.estado.mail}</p>
         </div>
 
         <div className='info-servicio-cliente'>

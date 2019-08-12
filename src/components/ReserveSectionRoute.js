@@ -21,7 +21,7 @@ class ReserveSectionRoute extends Component{
           detalleDireccion: '',
           fechaDeRecogida:'',
           hora: '',
-          correo: '',
+          mail: '',
           equipo: '',
         }
       }

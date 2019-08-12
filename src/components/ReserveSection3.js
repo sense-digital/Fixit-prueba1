@@ -4,11 +4,30 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import '../components/styles/reservesection3.css';
 import '../pages/styles/HomeSections.css';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 
 class ReserveSection3 extends Component {  
   state = {};
  
+  componentDidMount(){
+    this.authListener();
+}
+
+authListener() {
+firebase.auth().onAuthStateChanged((user) => {       
+    if (user) {
+      // User is signed in.
+    this.setState({user});        
+    
+    } else {
+      // User is signed out.
+      this.setState({user:null});
+    }
+  });}
+
+
   handleChange = (e) => {
     this.props.formularioDeContacto(e);
   }
@@ -42,8 +61,23 @@ class ReserveSection3 extends Component {
     return yyyy+"-"+mm+"-"+dd
   }
 
+  contraseña = ()=> {
+    if (this.state.user===null)
+    return (
+      <div className='item-rs3form'>
+      <div className='item-rs3form'>
+      <label>
+            Contraseña para tu nueva cuenta en Fixit:
+        </label>
+      </div>
+      <div className='item-rs3form'>
+        <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
+      </div>
+      </div>) 
+}
+
   botonDeSiguiente = ()=> {
-    if ((this.props.estado.nombre) && (this.props.estado.apellido) && (this.props.estado.direccion) && (this.props.estado.detalleDireccion) && (this.props.estado.fechaDeRecogida) && (this.props.estado.hora) && (this.props.estado.correo) && (this.props.estado.celular))
+    if ((this.props.estado.nombre) && (this.props.estado.apellido) && (this.props.estado.direccion) && (this.props.estado.detalleDireccion) && (this.props.estado.fechaDeRecogida) && (this.props.estado.hora) && (this.props.estado.mail) && (this.props.estado.celular))
     return <button ><Link to="/home/4"> Siguiente </Link></button>
     else
     return <h4>Completa el formulario para continuar</h4>
@@ -87,8 +121,6 @@ class ReserveSection3 extends Component {
             <div className='item-rs3form'>
               <input type="text" name="apellido" onChange={this.handleChange} value={this.state.apellido}/>
             </div>
-
-
 
           <div className='item-rs3form'>
             <label>
@@ -148,7 +180,7 @@ class ReserveSection3 extends Component {
             </label>
           </div>
           <div className='item-rs3form'>
-            <input type="email" name="correo" onChange={this.handleChange} value={this.state.correo}/>
+            <input type="email" name="mail" onChange={this.handleChange} value={this.state.mail}/>
           </div>
           <div className='item-rs3form'>
             <label>
@@ -156,8 +188,9 @@ class ReserveSection3 extends Component {
             </label>
           </div>
           <div className='item-rs3form'>
-           <input type="tel" name="celular" onChange={this.handleChange} value={this.state.celular}/>
+           <input type="text" name="celular" onChange={this.handleChange} value={this.state.celular}/>
           </div>
+          {this.contraseña()} 
           </form>
         {/* FIN formulario para compra */}
 

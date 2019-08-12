@@ -5,6 +5,7 @@ import './styles/Login.css';
 import logofixit from '../images/logofixitsintexto.png';
 import logogoogle from '../images/G-google.png';
 import { Link } from 'react-router-dom'
+
 class Login extends Component {
         constructor(props){
         super(props);
