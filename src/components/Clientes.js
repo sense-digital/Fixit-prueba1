@@ -1,7 +1,6 @@
 //SECCIÓN DE CLIENTES DEL PANEL DE ADMINISTRACIÓN
 
 import React, {Component} from 'react';
-import { Table, Button } from 'reactstrap';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -30,7 +29,7 @@ class Clientes extends Component {
         <div>
 {/* INICIO TABLA DE USUARIOS ACTUALES   */}
 
-            <Table striped>
+            <table >
                 <thead>
                 <tr>
                     <th>Nombre</th>
@@ -45,11 +44,11 @@ class Clientes extends Component {
                          <td>{item.nombre}</td>
                          <td>{item.direccion}</td>
                          <td>{item.fechaInscripcion}</td>
-                         <td><Button>Eliminar</Button></td>
+                         <td><button>Eliminar</button></td>
                      </tr>)
                  } ):null}
                 </tbody>
-             </Table>
+             </table>
 
 {/* FIN TABLA DE USUARIOS ACTUALES   */}
         </div>

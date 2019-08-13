@@ -1,7 +1,6 @@
 //SECCIÓN DE SERVICIOS PRESTADOS DEL PANEL DE ADMINISTRACIÓN
 
 import React, {Component} from 'react';
-import { Table, Button } from 'reactstrap';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -51,7 +50,7 @@ class Servicios extends Component {
             <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
             </label>
 
-            <Button> Crear </Button>
+            <button> Crear </button>
 
           <h3>Agrega un servicio:</h3>
 
@@ -80,13 +79,13 @@ class Servicios extends Component {
             <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
             </label>
 
-            <Button> Crear </Button>
+            <button> Crear </button>
 
 {/* FIN AGREGA UN EQUIPO Y UN SERVICIO   */}
 
 {/* INICIO TABLA DE SERVICIOS ACTUALES   */}
 
-            <Table striped>
+            <table striped>
                 <thead>
                 <tr>
                     <th>Equipo</th>
@@ -101,11 +100,11 @@ class Servicios extends Component {
                          <td>{item.equipo}</td>
                          <td>{item.precio}</td>
                          <td>{item.servicio}</td>
-                         <td><Button>Eliminar</Button></td>
+                         <td><button>Eliminar</button></td>
                      </tr>)
                  } ):null}
                 </tbody>
-             </Table>
+             </table>
 
 {/* FIN TABLA DE SERVICIOS ACTUALES   */}
 

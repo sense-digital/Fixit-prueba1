@@ -1,7 +1,6 @@
 //SECCIÓN DE RESERVAS DEL PANEL DE ADMINISTRACIÓN
 
 import React, {Component} from 'react';
-import { Table, Button } from 'reactstrap';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -26,7 +25,7 @@ class Reservas extends Component {
     render () {
         return (
         <div>
-             <Table striped>
+             <table >
                 <thead>
                 <tr>
                     <th>Nombre y apellido</th>
@@ -49,11 +48,11 @@ class Reservas extends Component {
                          <td>{item.precio}</td>
                          <td>{item.mail}</td>
                          <td>{item.celular}</td>
-                         <td><Button>Eliminar</Button></td>
+                         <td><button>Eliminar</button></td>
                      </tr>)
                  } ):null}
                 </tbody>
-             </Table>
+             </table>
         </div>
         );
     }
