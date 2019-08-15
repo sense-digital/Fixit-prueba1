@@ -1,17 +1,18 @@
-/* INICIO DE PRIMER MEDIA QUERY */
 * {
   font-family: benchnine;
 }
-@media screen and (min-width:1024px){
-
   /* INICIO ESTILOS ACORDEON */
   .titulo-acordeon{
     color: #1E4899;
     font-size: 40px;
+    font-size: 4vw;
+  }
+  .acordeon{
+    font-size: 20px;
   }
 .acordeon-container{
   box-sizing: border-box;
-  width: 1000px;
+  width: 97%;
   margin: 0 auto;
   display: inherit;
   justify-content: inherit;
@@ -24,12 +25,12 @@
 }
 .acordeon-titulo{
   display: block;
-  padding: 15px;
+  padding: .7%;
   background: black;
   color: white;
-  font-size: 20px;
+  font-size: 1em;
   cursor: pointer;
-  border-bottom: 1px solid white;
+  border-bottom: 1% solid white;
 }
 .acordeon-titulo:hover{
   background: rgba(27, 26, 26, 0.8);
@@ -38,51 +39,52 @@
 .acordeon-contenido{
   height: 0;
   overflow: hidden;
-  margin:2px;
+  margin:.3%;
   transition: all 0.5s;
   box-shadow: 0px 2px 6px 0px grey;
-  padding-left: 5px;
+  padding-left: 1%;
 }
 .acordeon input:checked ~ .acordeon-contenido{
 height: auto;
-margin: 15px 0;
+margin: 1% 0;
 }
-.acordeon-titulo{
-  padding: 6px;
-}
+
 /* FIN ESTILOS ACORDEON */
 
 /* INICIO ESTILOS DE FORMULARIO DE CONTACTO*/
+.formulario-soporte{
+  font-size: 50px;
+}
 .formulario-soporte>h3{
 font-weight: bold;
-font-size: 50px;
+font-size:1em;
 margin: 0%;
-margin-top: 80px;
+margin-top: 6%;
 }
 .formulario-soporte>p{
-font-size: 25px;
-margin:-10px 0;
+font-size: 0.5em;
+margin:-0.8% 0;
 font-weight: normal;
 color: grey;
-margin-bottom: -10px;
+margin-bottom: -1%;
 }
 .form-container{
   box-shadow: 0px 2px 6px 0px grey;
-  padding: 10px;
+  padding: 1%;
   margin-top: 20px;
   margin-bottom: 50px;
 }
 .form-container>label{
-margin-right: 10px;
+font-size: 0.3em;
 width: 100%;
-margin-right: 25%;
+margin-right: 25.5%;
 }
 .campos-formulario-soporte{
   display: flex;
 }
 .campos-formulario-soporte>input{
   width:80%;
-  height: 30px;
+  height: 10vh;
 }
 .e-mail{
   /* margin-top: 30px;
@@ -98,7 +100,7 @@ margin-right: 25%;
 }
 .boton-formulario{
   margin-top: 10px;
-  width: 10%;
+  width: auto;
   height: 30px;
   border: none;
   background-color: black;
@@ -110,7 +112,7 @@ margin-right: 25%;
 
 /* INICIO ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
 .seccion-informacion-soporte{
-  margin-top: 20px;
+  margin-top: 8%;
 }
 .grid1-soporte{
   display:grid;
@@ -122,11 +124,12 @@ margin-right: 25%;
   justify-items: center;
   align-items: center;
   background-color: #F7F7F7;
-  padding: 20px 0;
+  padding: 3% 0;
 }
 .item-grid1-soporte{
   /* border:1px solid red;  */
   /* padding: 20px; */
+  
 }
 .item-grid1-soporte>h2{
   font-size: 30px;
@@ -135,7 +138,7 @@ margin-right: 25%;
 }
 .item-grid1-soporte>p{
 font-size: 18px;
-padding: 0 50px;
+padding: 0 15%;
 text-align: justify;
 }
 .item-grid1-soporte:nth-of-type(2){
@@ -143,36 +146,107 @@ text-align: justify;
 }
 .item-grid1-soporte:nth-of-type(1){
   justify-self: left;
-  margin-left: 70px;
-  border-radius: 100px;
+  margin-left: 20%;
+  clip-path: circle(50% at 50% 50%);
   /* margin: 10px; */
   width: 180px;
   height: 180px;
 }
 .item-grid1-soporte:nth-of-type(3){
   justify-self: right;
-  border-radius: 100px;
+  clip-path: circle(50% at 50% 50%);
+  /* border-radius: 100px; */
   width: 140px;
   height: 140px;
-  margin-right: 50px;
+  margin-right: 10%;
 }
 .item-grid1-soporte:nth-of-type(5){
   justify-self: center;
-  border-radius: 100px;  
-  width: 120px;
+  clip-path: circle(50% at 50% 50%);  width: 120px;
   height: 120px;
   margin-right: 50px;
 }
 .wp-button{
   background-color:#1E7E34;
-  width: 100px;
+  width: auto;
   height: 30px;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 40%;
   font-size: 15px;
 }
 /* FIN ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
 
+/*INICIO DE MEDIA QUERYS*/
+
+/* =====Query para Acordeón======*/
+@media screen and (max-width:425px){
+  .titulo-acordeon{
+    font-size: 5vw;
+  }
+  .acordeon-titulo{
+    font-size: 0.8em;
+  }
 }
-/* FIN PRIMER MEDIA QUERY */
+/* =====Fin Query para Acordeón======*/
+
+/* =====Query para formulario de contacto======*/
+@media screen and (max-width:768px){
+  .formulario-soporte>h3{
+    font-size: 0.8em;
+  }
+  .formulario-soporte>p{
+    font-size: 0.4em;
+  }
+}
+@media screen and (max-width:425px){
+  .formulario-soporte>h3{
+    font-size: 0.5em;
+  }
+  .formulario-soporte>p{
+    font-size: 0.3em;
+  }
+  .form-container>label{
+    margin-right: 15%;
+  }
+  .boton-formulario{
+    width: auto;
+  }
+}
+@media screen and (max-width:375px){
+  .form-container>label{
+    margin-right: 12%;
+  }
+}
+@media screen and (max-width:320px){
+  .form-container>label{
+    margin-right: 8%;
+  }
+}
+/* =====Fin Query para formulario de contacto======*/
+
+
+/* =====Query para seccion informativa de soporte======*/
+@media screen and (max-width:425px){
+  .grid1-soporte{
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(1, auto);
+  }
+  .item-grid1-soporte:nth-of-type(1){
+    display: none;
+  }
+  .item-grid1-soporte:nth-of-type(3){
+    display: none;
+  }
+  
+  .item-grid1-soporte:nth-of-type(5){
+    display: none;
+  }
+  .item-grid1-soporte>h2{
+    font-size: 20px;
+  }
+  .item-grid1-soporte>p{
+    font-size: 15px;
+  }
+}
+/* =====Fin Query para seccion informativa de soporte======*/
