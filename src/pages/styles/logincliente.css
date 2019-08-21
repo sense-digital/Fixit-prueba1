@@ -1,0 +1,18 @@
+#app > div > div > div:nth-child(2) > a > figure{
+  display: none;
+}
+.form-login-container{
+  margin: 3% auto;
+}
+.forgot-my-password{
+  margin:0 auto;
+}
+
+/* INICIO DE MEDIA QUERYS */
+
+@media screen and (max-width:425px){
+  .form-login-container{
+    padding: 1%;
+    width: 90%;
+  }
+}
