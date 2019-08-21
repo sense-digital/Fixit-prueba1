@@ -6,12 +6,15 @@ import './styles/Box.css';
 import ProductImage from '../images/iphonexs.png';
 
 class Box extends Component {  
-    render () {
+
+  estilos = this.props.item
+
+  render () {
         return (
 
-            <div className="OptionBox">
-            <div className='OptionBox-Container'>
-              <div className="OptionBox-Item">
+            <div className="OptionBox"  >
+            <div className='OptionBox-Container' >
+              <div className="OptionBox-Item" >
                   <img src={ProductImage} alt="Foto de producto"/>
               </div>
               <div className="OptionBox-Item">
