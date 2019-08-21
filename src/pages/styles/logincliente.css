@@ -7,12 +7,13 @@
 .forgot-my-password{
   margin:0 auto;
 }
-
-/* INICIO DE MEDIA QUERYS */
-
-@media screen and (max-width:425px){
-  .form-login-container{
-    padding: 1%;
-    width: 90%;
-  }
+#app > div > div > div:nth-child(2) > section:nth-child(5) > section > div:nth-child(2) > button > img{
+  width: 20%;
+  margin-right: 20%;
+}
+#app > div > div > div:nth-child(2) > section:nth-child(5) > section > div:nth-child(2) > button{
+  background-color: white;
+  color: grey;
+  display: flex;
+  justify-items: center;
 }

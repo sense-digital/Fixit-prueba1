@@ -99,6 +99,16 @@
   color: #2F9CCB;
   font-size: 17px;
 }
+#app > div > div > div > section > section > div:nth-child(2) > button > img{
+  width: 20%;
+  margin-right: 20%;
+}
+#app > div > div > div > section > section > div:nth-child(2) > button{
+  background-color: white;
+  color: grey;
+  display: flex;
+  justify-items: center;
+}
 
 @media screen and (max-width:425px){
   .form-login-container{

@@ -26,6 +26,18 @@
     margin-top:15%;
     margin-bottom:15%;
 }
+.OptionBox-Item:hover {
+    background-color: #D1ECF1;
+}
+.OptionBox-Item:hover ~ .OptionBox-Item{
+    background-color: #D1ECF1;
+}
+.OptionBox-Item:active{
+    background-color:#c1d7f9;
+}
+.OptionBox-Item:active ~ .OptionBox-Item{
+    background-color:#c1d7f9;
+}
 
 /* PRIMER MEDIA QUERY */
 @media screen and (max-width:814px){
@@ -48,4 +60,7 @@
         text-align: center;
     }
 }
+
+
+
 
