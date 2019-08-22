@@ -32,7 +32,7 @@ class ReserveSection2 extends Component {
  
 
   botonDeSiguiente = ()=> {
-    if (this.props.precioEscogido)
+    if (this.props.estado.precio)
     return <button><Link to='/home/3'>Siguiente</Link></button>
     else 
     return <h4>Escoge un servicio para continuar</h4>
@@ -63,7 +63,7 @@ class ReserveSection2 extends Component {
             <div className='reservesection2-info-container'> 
             <div className='reservesection2-tittle-container'>
             <div className='reservesection2-title'>
-              <h2>Costo de reparación {this.props.estado.servicio} </h2>
+              <h2>Costo de reparación </h2>
               
               <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.estado.precio)} </h5>
             </div> 

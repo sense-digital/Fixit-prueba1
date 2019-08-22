@@ -21,17 +21,9 @@ class Servicios extends Component {
             })
           })
         })
+    }
+      
 
-        firebase.firestore().collection('celulares').orderBy('ref').get().then((snapShots)=>{
-          this.setState({
-            dataEquipos: snapShots.docs.map(doc => {
-              return (doc.data());
-            })
-          })
-        })
-      }
-
-   
     render () {
         return (
         <div>
@@ -100,7 +92,7 @@ class Servicios extends Component {
                          <td>{item.equipo}</td>
                          <td>{item.precio}</td>
                          <td>{item.servicio}</td>
-                         <td><button>Eliminar</button></td>
+                         <td><button >Eliminar</button></td>
                      </tr>)
                  } ):null}
                 </tbody>

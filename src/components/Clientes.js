@@ -15,13 +15,14 @@ class Clientes extends Component {
       }
     
       componentDidMount () {
-        firebase.firestore().collection('usuarios').orderBy('fechaInscripcion').get().then((snapShots)=>{
+        firebase.firestore().collection('usuarios').orderBy('fechaDeInscripcion').get().then((snapShots)=>{
           this.setState({
             data: snapShots.docs.map(doc => {
               return (doc.data());
             })
           })
         })
+        console.log (this.state.data)
     }
 
     render () {
@@ -33,18 +34,16 @@ class Clientes extends Component {
                 <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Direccion</th>
-                    <th>Fecha Inscripcion</th>
-                    <th>Eliminar</th>
+                    <th>Dirección</th>
+                    <th>Correo</th>
                 </tr>
                 </thead>
                 <tbody>
                  {this.state && this.state !== undefined ? this.state.data.map(item => {
-                     return (<tr key={item.fechaInscripcion}>
-                         <td>{item.nombre}</td>
-                         <td>{item.direccion}</td>
-                         <td>{item.fechaInscripcion}</td>
-                         <td><button>Eliminar</button></td>
+                     return (<tr key={item.fechaDeInscripcion}>
+                         <td>{item.nombre + ' ' + item.apellido }</td>
+                         <td>{item.direccion + ' | ' + item.detalleDireccion}</td>
+                         <td>{item.correo}</td>
                      </tr>)
                  } ):null}
                 </tbody>

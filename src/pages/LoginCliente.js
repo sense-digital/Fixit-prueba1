@@ -55,7 +55,7 @@ class LoginCliente extends Component {
               detalleDireccion : this.state.detalleDireccion,
               tipoUsuario:'cliente',
               id:result.user.uid,
-              fechaDeSolicitud: firebase.firestore.FieldValue.serverTimestamp()
+              fechaDeInscripcion: firebase.firestore.FieldValue.serverTimestamp()
             })
         }
         

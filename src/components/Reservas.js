@@ -13,7 +13,7 @@ class Reservas extends Component {
       }
     
       componentDidMount () {
-        firebase.firestore().collection('reservas').orderBy('fechaDeSolicitud').get().then((snapShots)=>{
+        firebase.firestore().collection('reservas').orderBy('fechaDeSolicitud', "desc").get().then((snapShots)=>{
           this.setState({
             data: snapShots.docs.map(doc => {
               return (doc.data());
@@ -21,6 +21,17 @@ class Reservas extends Component {
           })
         })
       }
+
+      delete = (id)=>{
+       console.log (id)       
+        // firebase.firestore().collection("reservas").doc("id").delete().then(function() {
+        //     console.log("Document successfully deleted!");
+        // }).catch(function(error) {
+        //     console.error("Error removing document: ", error);
+        // });
+      }
+     
+
 
     render () {
         return (
@@ -48,7 +59,7 @@ class Reservas extends Component {
                          <td>{item.precio}</td>
                          <td>{item.mail}</td>
                          <td>{item.celular}</td>
-                         <td><button>Eliminar</button></td>
+                         <td><button onClick={()=>this.delete (item.id)}>Eliminar</button></td>
                      </tr>)
                  } ):null}
                 </tbody>
