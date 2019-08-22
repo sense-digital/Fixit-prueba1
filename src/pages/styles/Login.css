@@ -2,7 +2,7 @@
 * {
   font-family: benchnine;
 }
-@media screen and (min-width:1024px){
+
  /* MODIFICACIONES GENERALES A LA PG */
  .login-page-container{
    display: flex;
@@ -99,5 +99,21 @@
   color: #2F9CCB;
   font-size: 17px;
 }
+#app > div > div > div > section > section > div:nth-child(2) > button > img{
+  width: 20%;
+  margin-right: 20%;
 }
-/* FIN DE PRIMER MEDIA QUERY */
+#app > div > div > div > section > section > div:nth-child(2) > button{
+  background-color: white;
+  color: grey;
+  display: flex;
+  justify-items: center;
+}
+
+@media screen and (max-width:425px){
+  .form-login-container{
+    padding: 5%;
+    width:90%;
+    font-size: 0.8em;
+  }
+}

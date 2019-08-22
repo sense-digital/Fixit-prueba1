@@ -1,0 +1,136 @@
+/* ESTILOS AL GRID FELICIDADES */
+.hero-tnks-contact{
+  width: 90%;
+  padding: 3%;
+  }
+  .grid1-tnks-contact{
+    display:grid;
+    grid-column-gap: 1%;
+    grid-row-gap: 1%;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(1, auto);
+  }
+  .item-grid1-tnks-contact:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .item-grid1-tnks-contact:nth-of-type(1)>h1,.item-grid1-tnks-contact:nth-of-type(1)>h3,.item-grid1-tnks-contact:nth-of-type(1)>p{
+    text-align: center;
+  }
+  .item-grid1-tnks-contact:nth-of-type(1)>h1{
+    border-bottom: 3px solid #98261E;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    align-self: center;
+    font-size: 5em;
+    margin:1%;
+  }
+  .item-grid1-tnks-contact:nth-of-type(1)>h3{
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    align-self: center;
+    font-size: 1.5em;
+    margin:1%;
+    color: #1F4899;
+  }
+  .item-grid1-tnks-contact:nth-of-type(2){
+    display: flex;
+    justify-content: center;
+  }
+  .item-grid1-tnks-contact:nth-of-type(2)>img{
+    width: 50%;
+  }
+  /* FIN DE ESTILOS AL GRID FELICIDADES */
+  
+  /* INICIO ESTILOS SECCIÓN INFORMATIVA */
+  .instrucciones-tnks{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    margin-top:10%;
+  }
+  .instrucciones-tnks>h1,.instrucciones-tnks>h2,.instrucciones-tnks>p{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  .instrucciones-tnks>h1{
+    width: fit-content;
+    margin: 0 auto;
+    border-bottom: 2px solid #98261E;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  .instrucciones-tnks>h2{
+    align-items: center;
+    font-weight: normal;
+    font-style: italic;
+  }
+  #app > div > section.section1-tnks-contact > div.instrucciones-tnks > h2 > figure:nth-child(1){
+    background-color: aliceblue;
+    width: 10px;
+    height: 30px;
+  }
+  #app > div > section.section1-tnks-contact > div.instrucciones-tnks > h2 > figure:nth-child(2){
+    background-color: aliceblue;
+    width: 10px;
+    height: 30px;
+  }
+  .instrucciones-tnks>p{
+    font-weight: normal;
+  }
+  .background-instrucciones-tnks{
+    height: 500px;
+    background-color: #1C272E;
+    position:relative;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 18%);
+  }
+  /* FIN ESTILOS SECCIÓN INFORMATIVA */
+  
+  /* INICIO DE MEDIA QUERYS */
+  
+  /* -----icinio de query para sección 'felicidades' */
+  @media screen and (max-width:1000px){
+    .item-grid1-tnks-contact:nth-of-type(2){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .item-grid1-tnks-contact:nth-of-type(2)>img{
+      width: 45%;
+      height: 80%;
+    }
+  }
+  @media screen and (max-width:768px){
+    .item-grid1-tnks-contact:nth-of-type(2)>img{
+      width: 100%;
+    }
+  }
+  @media screen and (max-width:425px){
+    .grid1-tnks-contact{
+      display: flex;
+      flex-direction: column;
+    }
+    .item-grid1-tnks-contact:nth-of-type(2)>img{
+      width: 70%;
+    }
+  }
+  /* -----fin de query para sección 'felicidades' */
+  
+  /* -----inicio de query para la seción informativa----- */
+  @media screen and (max-width:425px){
+    .instrucciones-tnks>h2{
+      margin-top: 10%;
+    }
+  }
+  @media screen and (min-width:1025px){
+    .instrucciones-tnks>h2{
+      margin-top: -2%;
+    }
+  }
+  
+  /* -----fin de query para la seción informativa----- */

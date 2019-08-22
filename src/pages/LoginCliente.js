@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import './styles/logincliente.css';
 import { Link } from 'react-router-dom';
 import logofixit from '../images/logofixitsintexto.png';
+import logogoogle from '../images/G-google.png';
 
 class LoginCliente extends Component {
         constructor(props){
@@ -95,7 +96,7 @@ class LoginCliente extends Component {
                </form>
                  <section className='botones-formulario-login'>
                  <div className='item-form-login'><button name="login" onClick={this.login}>Inicio de sesión </button></div>
-                 <div className='item-form-login'><button name="authGoogle" onClick={this.authGoogle}>Google</button></div>
+                 <div className='item-form-login'><button name="authGoogle" onClick={this.authGoogle}><img src={logogoogle}></img>Google</button></div>
                </section>
             </section>
             <div className='forgot-my-password'>
@@ -120,7 +121,7 @@ class LoginCliente extends Component {
                </form>
                 <section className='botones-formulario-login'>
                  <div className='item-form-login'><button name="register" onClick={this.register}>Registro</button></div>
-                 <div className='item-form-login'><button name="authGoogle" onClick={this.authGoogle}>Google</button></div>
+                 <div className='item-form-login'><button name="authGoogle" onClick={this.authGoogle}><img src={logogoogle}></img>Google</button></div>
                </section>
             </section>
            </div>

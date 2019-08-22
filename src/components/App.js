@@ -14,6 +14,7 @@ import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './styles/App.css';
+import ThankYouContacto from '../pages/ThankYouContacto';
 
 class App extends Component {
     constructor(props){
@@ -53,6 +54,7 @@ class App extends Component {
                 <Route exact path="/soporte" component={Soporte} />
                 <Route exact path="/trabajo" component={Trabajo} />
                 <Route exact path="/thankyou" component={ThankYou} />
+                <Route exact path="/thankyoucontacto" component={ThankYouContacto} />
                 <Route exact path="/olvideMiContraseña" component={ForgotMyPassword} />
                 <Route path="/adminfixit" component={AppLogin} />
                 <Redirect exact from="/login" to="/adminfixit"/>

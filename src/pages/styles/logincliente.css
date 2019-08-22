@@ -1,0 +1,19 @@
+#app > div > div > div:nth-child(2) > a > figure{
+  display: none;
+}
+.form-login-container{
+  margin: 3% auto;
+}
+.forgot-my-password{
+  margin:0 auto;
+}
+#app > div > div > div:nth-child(2) > section:nth-child(5) > section > div:nth-child(2) > button > img{
+  width: 20%;
+  margin-right: 20%;
+}
+#app > div > div > div:nth-child(2) > section:nth-child(5) > section > div:nth-child(2) > button{
+  background-color: white;
+  color: grey;
+  display: flex;
+  justify-items: center;
+}

@@ -146,12 +146,11 @@
 .herosection-3{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     background-color:#dbd5d5b0;
     max-width: 100%;
     margin: 0 auto;
     height: 300px;
-    font-family: roboto;
     align-items: center;
     box-shadow: 5px  5px 5px grey;
     /* box-shadow: 10px -2px 5px 0px rgba(99,99,99,1); */
@@ -167,19 +166,21 @@
     padding: 0;
     display: flex;
     width: 400%;
-    animation: cambio 20s infinite;
+    width: fit-content;
+    animation: cambio 10s infinite;
     animation-direction: alternate;
     animation-timing-function: linear;
 }
 .banner-publicitario1>li{
    display: inherit; 
    list-style: none;
-   width: 100%;
+   width: auto;
 }
 .banner-img{
     display: inherit;
-    width: 450px;
     height: 300px;
+    width: auto;
+    margin: 0 auto;
 }
 @keyframes cambio{
  0% { margin-left: 0;}
@@ -334,6 +335,14 @@
 .celular1{
     width: 68%;
 }
+.item3:nth-of-type(1),.item3:nth-of-type(3){
+    padding-top: 20%;
+}
+.item3:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
 /* FIN ESTILOS A SECCIÓN CIFRAS */
 
 
@@ -417,6 +426,14 @@
 
 
 /* INICIO MEDIA QUERY PARA SECCIÓN POR QUÉ FIXIT */
+@media screen and (min-width:1035px){
+    .item2:nth-of-type(6){
+        margin-top: 0;
+    }
+    .item2:nth-of-type(3)>img{
+        width: 25%;
+    }
+}
 @media screen and (min-width:300px) and (max-width:425px){
     .herosection-4{ 
         grid-template-rows: repeat(3, 25%);

@@ -27,7 +27,7 @@ class AdminCliente extends Component {
                      margin:'0 auto',
                      marginBottom:'0',
                      height:'50px;',
-                     boxShadow:'-5px -4px 30px rgba(0, 0, 0, 0.25)',
+                     boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.25)',
                      position:'relative',
                      zIndex:'1',
                      }}>
@@ -36,13 +36,15 @@ class AdminCliente extends Component {
                      justifyContent:'center',
                      alignItems:'center',
                      fontSize:'30px',
+                     height:'8vh',
 
                      }}>MI CUENTA</h3></div>
 
              <div className='admin-page' style={{
-                 boxShadow:' -5px -4px 30px rgba(0, 0, 0, 0.25)', 
+                 boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.25)', 
                  maxWidth:'90%',
                  margin:'12px auto',
+                 height:'80vh',
                  }}>
                <div className='admin-menu'style={{
                    backgroundColor:'white',
@@ -62,7 +64,8 @@ class AdminCliente extends Component {
                  <button className='admin-exit-button' onClick={this.logout}>Cerrar sesión</button>
                </div>
                <div className='display-info-container' style={{
-                   backgroundColor:'white'
+                   backgroundColor:'white',
+                   height:'80vh',
                }}>
                  <figure className='display-info-inside'>
                    {/* <Switch>
