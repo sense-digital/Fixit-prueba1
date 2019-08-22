@@ -12,7 +12,7 @@ class ReserveSection2 extends Component {
   constructor () {
     super() 
     this.state = {
-      data:[] 
+      data:[]
     }
   }
 
@@ -29,6 +29,7 @@ class ReserveSection2 extends Component {
   handleClick(e,p) {
     this.props.servicioEscogido(e,p);
   }
+ 
 
   botonDeSiguiente = ()=> {
     if (this.props.precioEscogido)
@@ -56,14 +57,15 @@ class ReserveSection2 extends Component {
           {this.state.data.map(OptionBox => {
                 return(
               <span key={OptionBox.servicio} onClick={() => this.handleClick(OptionBox.servicio,OptionBox.precio)}>
-              <Box  descripcion={OptionBox.servicio}/>
+              <Box  descripcion={OptionBox.servicio}  />
               </span>
               )})}
             <div className='reservesection2-info-container'> 
             <div className='reservesection2-tittle-container'>
             <div className='reservesection2-title'>
-              <h2>Costo de reparación </h2>
-              <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.precioEscogido)} </h5>
+              <h2>Costo de reparación {this.props.estado.servicio} </h2>
+              
+              <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.estado.precio)} </h5>
             </div> 
             {this.botonDeSiguiente()}
             </div>

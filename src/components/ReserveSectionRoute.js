@@ -45,7 +45,7 @@ class ReserveSectionRoute extends Component{
         return (
     <div>
         <Route  exact path="/home" render={()=> <ReserveSection1 celularEscogido={(e)=>this.celularEscogido(e)} />} />
-        <Route  path="/home/2" render={()=> <ReserveSection2 celularEscogido={this.state.equipo} servicioEscogido={(e,p)=>this.servicioEscogido(e,p)} precioEscogido={this.state.precio} />} />
+        <Route  path="/home/2" render={()=> <ReserveSection2 celularEscogido={this.state.equipo} servicioEscogido={(e,p)=>this.servicioEscogido(e,p)} estado={this.state} />} />
         <Route  path="/home/3" render={()=> <ReserveSection3 precioEscogido={this.state.precio} formularioDeContacto={(e)=>this.formularioDeContacto(e)} estado={this.state}/>} />
         <Route  path="/home/4" render={()=> <ReserveSection4 estado={this.state} />} />
     </div>               
