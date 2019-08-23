@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import iphones2 from '../images/iphones2.png';
-import '/Users/macbookair/Desktop/FIXIT/Fixit/src/pages/styles/TankYou.css';
+import './styles/TankYou.css';
 
 class ThankYou extends Component {
     render () {

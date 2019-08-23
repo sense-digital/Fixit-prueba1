@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 class Servicios extends Component {
     constructor () {
@@ -77,26 +79,34 @@ class Servicios extends Component {
 
 {/* INICIO TABLA DE SERVICIOS ACTUALES   */}
 
-            <table striped>
-                <thead>
-                <tr>
-                    <th>Equipo</th>
-                    <th>Precio</th>
-                    <th>Servicio</th>
-                    <th>Eliminar</th>
-                </tr>
-                </thead>
-                <tbody>
-                 {this.state && this.state !== undefined ? this.state.dataServicios.map(item => {
-                     return (<tr key={item.fechaDeSolicitud}>
-                         <td>{item.equipo}</td>
-                         <td>{item.precio}</td>
-                         <td>{item.servicio}</td>
-                         <td><button >Eliminar</button></td>
-                     </tr>)
-                 } ):null}
-                </tbody>
-             </table>
+<ReactTable
+            columns={[
+              {
+              Header: 'Equipo',
+              accessor: 'equipo',
+              style:{ textAlign:'center'},
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Precio',
+              accessor: 'precio',
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Servicio',
+              accessor: 'servicio',
+              style:{ textAlign:'center'},
+              },
+              {
+                Header: 'Actions',
+                sortable: false, 
+                Cell: props =>{return [<button>Eliminar</button>]},
+                style:{ textAlign:'center'},
+                },
+            ]}
+            data={this.state.dataServicios}
+            defaultPageSize={10}
+            ></ReactTable>
 
 {/* FIN TABLA DE SERVICIOS ACTUALES   */}
 

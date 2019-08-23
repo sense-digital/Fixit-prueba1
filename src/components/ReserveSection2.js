@@ -65,7 +65,7 @@ class ReserveSection2 extends Component {
             <div className='reservesection2-title'>
               <h2>Costo de reparación </h2>
               
-              <h5>{ new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.estado.precio)} </h5>
+              <h5>{  this.props.estado.servicio + ' | ' + new Intl.NumberFormat("de-DE", {style: "currency", currency: "COP", minimumFractionDigits: 0}).format(this.props.estado.precio)} </h5>
             </div> 
             {this.botonDeSiguiente()}
             </div>

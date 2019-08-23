@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 class Reservas extends Component {
     constructor () {
@@ -20,50 +22,105 @@ class Reservas extends Component {
             })
           })
         })
+        
       }
 
       delete = (id)=>{
        console.log (id)       
+       console.log(this.state.data)
         // firebase.firestore().collection("reservas").doc("id").delete().then(function() {
         //     console.log("Document successfully deleted!");
         // }).catch(function(error) {
         //     console.error("Error removing document: ", error);
         // });
       }
-     
-
 
     render () {
         return (
         <div>
-             <table >
-                <thead>
-                <tr>
-                    <th>Nombre y apellido</th>
-                    <th>Servicio y equipo</th>
-                    <th>Dirección</th>
-                    <th>Fecha y hora</th>
-                    <th>Valor a pagar</th>
-                    <th>Correo</th>
-                    <th>Celular</th>
-                    <th>Eliminar</th>
-                </tr>
-                </thead>
-                <tbody>
-                 {this.state && this.state !== undefined ? this.state.data.map(item => {
-                     return (<tr key={item.fechaDeSolicitud}>
-                         <td>{item.nombre}</td>
-                         <td>{item.servicio}</td>
-                         <td>{item.direccion}</td>
-                         <td>{item.fechaDeRecogida}</td>
-                         <td>{item.precio}</td>
-                         <td>{item.mail}</td>
-                         <td>{item.celular}</td>
-                         <td><button onClick={()=>this.delete (item.id)}>Eliminar</button></td>
-                     </tr>)
-                 } ):null}
-                </tbody>
-             </table>
+
+          <ReactTable
+            columns={[
+              {
+              Header: 'Nombre',
+              accessor: 'nombre',
+              style:{ textAlign:'center'},
+              width: 50,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Apellido',
+              accessor: 'apellido',
+              width: 50,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Servicio',
+              accessor: 'servicio',
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Equipo',
+              accessor: 'equipo',
+              width: 60,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Dirección',
+              accessor: 'direccion',
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Fecha',
+              accessor: 'fechaDeRecogida',
+              width: 70,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Hora',
+              accessor: 'hora',
+              width: 70,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Valor',
+              accessor: 'precio',
+              width: 50,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Correo',
+              accessor: 'mail',
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Celular',
+              accessor: 'celular',
+              width: 70,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Pago',
+              accessor: 'pago',
+              width: 60,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Estado',
+              accessor: 'estado',
+              width: 60,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Actions',
+              sortable: false, 
+              Cell: props =>{return [<button>Edit</button>,<button>Delete</button>]},
+              style:{ textAlign:'center'},
+              },
+            ]}
+            data={this.state.data}
+            defaultPageSize={10}
+          ></ReactTable>
         </div>
         );
     }

@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 // import admin from 'firebase-admin';
 
@@ -30,24 +32,40 @@ class Clientes extends Component {
         <div>
 {/* INICIO TABLA DE USUARIOS ACTUALES   */}
 
-            <table >
-                <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Correo</th>
-                </tr>
-                </thead>
-                <tbody>
-                 {this.state && this.state !== undefined ? this.state.data.map(item => {
-                     return (<tr key={item.fechaDeInscripcion}>
-                         <td>{item.nombre + ' ' + item.apellido }</td>
-                         <td>{item.direccion + ' | ' + item.detalleDireccion}</td>
-                         <td>{item.correo}</td>
-                     </tr>)
-                 } ):null}
-                </tbody>
-             </table>
+            <ReactTable
+            columns={[
+              {
+              Header: 'Nombre',
+              accessor: 'nombre',
+              style:{ textAlign:'center'},
+              width: 50,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Apellido',
+              accessor: 'apellido',
+              width: 50,
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Dirección',
+              accessor: 'direccion',
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Detalle',
+              accessor: 'detalleDireccion',
+              style:{ textAlign:'center'},
+              },
+              {
+                Header: 'Correo',
+                accessor: 'correo',
+                style:{ textAlign:'center'},
+                },
+            ]}
+            data={this.state.data}
+            defaultPageSize={10}
+            ></ReactTable>
 
 {/* FIN TABLA DE USUARIOS ACTUALES   */}
         </div>
