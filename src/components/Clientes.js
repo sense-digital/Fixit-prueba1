@@ -24,7 +24,6 @@ class Clientes extends Component {
             })
           })
         })
-        console.log (this.state.data)
     }
 
     render () {

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {Route, Link, Switch} from 'react-router-dom';
+import ReservasCliente from '../components/ReservasCliente'
+import DetalleCuentaCliente from '../components/DetalleCuentaCliente'
+import {Route, Redirect, Link, Switch} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './styles/AdminCliente.css';
@@ -26,7 +28,7 @@ class AdminCliente extends Component {
                      backgroundColor:'white',
                      margin:'0 auto',
                      marginBottom:'0',
-                     height:'50px;',
+                     height:'50px',
                      boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.25)',
                      position:'relative',
                      zIndex:'1',
@@ -58,8 +60,8 @@ class AdminCliente extends Component {
                        marginBottom:'0',
                    }}></img>
                    <h2 style={{color:'#ABABAB', fontWeight:'normal'}}>Camilo Castro</h2> 
-                   <div className='linkto1' style={{borderTop:'none'}}><Link to="/admincliente" style={{color:'black',}}>RESERVAS</Link> <br/></div>
-                   <div className='linkto1' style={{borderBottom:'0.1px solid #DDDDDD'}}><Link to="/admincliente" style={{color:'black',}}>DETALLES DE LA CUENTA</Link> <br/></div>
+                   <div className='linkto1' style={{borderTop:'none'}}><Link to="/admincliente/reservas" style={{color:'black',}}>RESERVAS</Link> <br/></div>
+                   <div className='linkto1' style={{borderBottom:'0.1px solid #DDDDDD'}}><Link to="/admincliente/detalles" style={{color:'black',}}>DETALLES DE LA CUENTA</Link> <br/></div>
                 
                  <button className='admin-exit-button' onClick={this.logout}>Cerrar sesión</button>
                </div>
@@ -68,10 +70,11 @@ class AdminCliente extends Component {
                    height:'80vh',
                }}>
                  <figure className='display-info-inside'>
-                   {/* <Switch>
-                      <Route  path="/adminfixit/" component={RESERVAS} />
-                      <Route  path="/adminfixit/" component={DETALLES DE LA CUENTA} />
-                    </Switch> */}
+                   <Switch>
+                      <Route  path="/admincliente/reservas" component={ReservasCliente} />
+                      <Redirect exact from="/admincliente" to="/admincliente/reservas"/>
+                      <Route  path="/admincliente/detalles" component={DetalleCuentaCliente} />
+                    </Switch>
                  </figure>
             
                </div>

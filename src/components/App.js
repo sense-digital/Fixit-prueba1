@@ -50,7 +50,7 @@ class App extends Component {
                 <Route path="/home" component={Home} />
                 <Redirect exact from="/" to="/home"/>
                 <Route exact path="/LoginCliente" component={AppAdminCliente} />
-                <Route exact path="/admincliente" component={AppAdminCliente} />
+                <Route path="/admincliente" component={AppAdminCliente} />
                 <Route exact path="/soporte" component={Soporte} />
                 <Route exact path="/trabajo" component={Trabajo} />
                 <Route exact path="/thankyou" component={ThankYou} />
