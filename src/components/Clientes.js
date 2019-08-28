@@ -64,7 +64,8 @@ class Clientes extends Component {
             ]}
             data={this.state.data}
             defaultPageSize={10}
-            ></ReactTable>
+            showPageSizeOptions={false}
+            />
 
 {/* FIN TABLA DE USUARIOS ACTUALES   */}
         </div>

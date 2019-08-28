@@ -15,11 +15,35 @@ class Servicios extends Component {
         }
       }
     
+      eliminarCelulares(id){
+        firebase.firestore().collection("celulares").doc(id).delete().then(function() {
+          alert('El equipo ha sido borrada, ACTULIZA PARA VER LOS CAMBIOS');
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+      }
+
+      eliminarServicios(id){
+        firebase.firestore().collection("servicios").doc(id).delete().then(function() {
+          alert('Este servicio ha sido borrada, ACTULIZA PARA VER LOS CAMBIOS');
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+      }
+
+
       componentDidMount () {
         firebase.firestore().collection('servicios').orderBy('equipo').get().then((snapShots)=>{
           this.setState({
             dataServicios: snapShots.docs.map(doc => {
-              return (doc.data());
+              return {data: doc.data(),id: doc.id};
+            })
+          })
+        })
+        firebase.firestore().collection('celulares').orderBy('ref').get().then((snapShots)=>{
+          this.setState({
+            dataEquipos: snapShots.docs.map(doc => {
+              return {data: doc.data(),id: doc.id};
             })
           })
         })
@@ -77,36 +101,64 @@ class Servicios extends Component {
 
 {/* FIN AGREGA UN EQUIPO Y UN SERVICIO   */}
 
-{/* INICIO TABLA DE SERVICIOS ACTUALES   */}
+{/* INICIO TABLA DE EQUIPOS ACTUALES   */}
 
+<h2>Celulares</h2>
 <ReactTable
             columns={[
               {
               Header: 'Equipo',
-              accessor: 'equipo',
+              accessor: 'data.ref',
               style:{ textAlign:'center'},
-              style:{ textAlign:'center'},
-              },
-              {
-              Header: 'Precio',
-              accessor: 'precio',
-              style:{ textAlign:'center'},
-              },
-              {
-              Header: 'Servicio',
-              accessor: 'servicio',
               style:{ textAlign:'center'},
               },
               {
                 Header: 'Actions',
                 sortable: false, 
-                Cell: props =>{return [<button>Eliminar</button>]},
+                Cell: props =>{return [<button onClick={()=>this.eliminarCelulares(props.original.id)}>Eliminar</button>]},
+                style:{ textAlign:'center'},
+              },
+            ]}
+            data={this.state.dataEquipos}
+            defaultPageSize={5}
+            showPageSizeOptions={false}
+            />
+
+
+{/* FIN TABLA DE EQUIPOS ACTUALES   */}
+{/* INICIO TABLA DE SERVICIOS ACTUALES   */}
+<h2>Servicios</h2>
+<ReactTable
+            columns={[
+              {
+              Header: 'Equipo',
+              accessor: 'data.equipo',
+              style:{ textAlign:'center'},
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Precio',
+              accessor: 'data.precio',
+              style:{ textAlign:'center'},
+              },
+              {
+              Header: 'Servicio',
+              accessor: 'data.servicio',
+              style:{ textAlign:'center'},
+              },
+              {
+                Header: 'Actions',
+                sortable: false, 
+                Cell: props =>{return [<button onClick={()=>this.eliminarServicios(props.original.id)}>Eliminar</button>]},
                 style:{ textAlign:'center'},
                 },
             ]}
             data={this.state.dataServicios}
             defaultPageSize={10}
-            ></ReactTable>
+            showPageSizeOptions={false}
+            />
+
+
 
 {/* FIN TABLA DE SERVICIOS ACTUALES   */}
 

@@ -20,6 +20,7 @@ class LoginCliente extends Component {
             password: '',
             name: '',
             apellido: '',
+            celular:'',
             direccion: '',
             detalleDireccion: ''
         }
@@ -55,6 +56,7 @@ class LoginCliente extends Component {
               direccion: this.state.direccion,
               detalleDireccion : this.state.detalleDireccion,
               tipoUsuario:'cliente',
+              celular: this.state.celular,
               id:result.user.uid,
               fechaDeInscripcion: firebase.firestore.FieldValue.serverTimestamp()
             })
@@ -116,6 +118,8 @@ class LoginCliente extends Component {
                  <div className='item-form-login'><input type="text" name="direccion" onChange={this.handleChange}/></div>
                  <div className='item-form-login'><label > Detalle dirección:</label></div>
                  <div className='item-form-login'><input type="text" name="detalleDireccion" onChange={this.handleChange}/></div>
+                 <div className='item-form-login'><label > Celular:</label></div>
+                 <div className='item-form-login'><input type="text" name="celular" onChange={this.handleChange}/></div>
                  <div className='item-form-login'><label >Contraseña:</label></div>
                  <div className='item-form-login'><input type="password" name="password" onChange={this.handleChange}/></div>
                </form>

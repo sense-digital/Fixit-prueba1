@@ -10,7 +10,7 @@ class Reservas extends Component {
     constructor () {
         super() 
         this.state = {
-          data:[] 
+          data:[],
         }
       }
     
@@ -18,109 +18,108 @@ class Reservas extends Component {
         firebase.firestore().collection('reservas').orderBy('fechaDeSolicitud', "desc").get().then((snapShots)=>{
           this.setState({
             data: snapShots.docs.map(doc => {
-              return (doc.data());
+              return {data: doc.data(), id: doc.id}
             })
           })
         })
-        
       }
 
       delete = (id)=>{
-       console.log (id)       
-       console.log(this.state.data)
-        // firebase.firestore().collection("reservas").doc("id").delete().then(function() {
-        //     console.log("Document successfully deleted!");
-        // }).catch(function(error) {
-        //     console.error("Error removing document: ", error);
-        // });
+        firebase.firestore().collection("reservas").doc(id).delete().then(function() {
+          alert('Tu reserva ha sido borrada, ACTULIZA PARA VER LOS CAMBIOS');
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
       }
 
     render () {
         return (
         <div>
-
           <ReactTable
             columns={[
               {
               Header: 'Nombre',
-              accessor: 'nombre',
+              accessor: 'data.nombre',
               style:{ textAlign:'center'},
               width: 50,
               style:{ textAlign:'center'},
               },
               {
               Header: 'Apellido',
-              accessor: 'apellido',
+              accessor: 'data.apellido',
               width: 50,
               style:{ textAlign:'center'},
               },
               {
-              Header: 'Servicio',
-              accessor: 'servicio',
-              style:{ textAlign:'center'},
+                Header: 'Equipo',
+                accessor: 'data.equipo',
+                width: 60,
+                style:{ textAlign:'center'},
               },
               {
-              Header: 'Equipo',
-              accessor: 'equipo',
-              width: 60,
+              Header: 'Servicio',
+              accessor: 'data.servicio',
               style:{ textAlign:'center'},
               },
               {
               Header: 'Dirección',
-              accessor: 'direccion',
+              accessor: 'data.direccion',
               style:{ textAlign:'center'},
               },
               {
               Header: 'Fecha',
-              accessor: 'fechaDeRecogida',
+              accessor: 'data.fechaDeRecogida',
               width: 70,
               style:{ textAlign:'center'},
               },
               {
               Header: 'Hora',
-              accessor: 'hora',
+              accessor: 'data.hora',
               width: 70,
               style:{ textAlign:'center'},
               },
               {
               Header: 'Valor',
-              accessor: 'precio',
+              accessor: 'data.precio',
               width: 50,
               style:{ textAlign:'center'},
               },
               {
               Header: 'Correo',
-              accessor: 'mail',
+              accessor: 'data.mail',
               style:{ textAlign:'center'},
               },
               {
               Header: 'Celular',
-              accessor: 'celular',
+              accessor: 'data.celular',
               width: 70,
               style:{ textAlign:'center'},
               },
               {
               Header: 'Pago',
-              accessor: 'pago',
+              accessor: 'data.pago',
               width: 60,
               style:{ textAlign:'center'},
               },
               {
               Header: 'Estado',
-              accessor: 'estado',
+              accessor: 'data.estado',
               width: 60,
-              style:{ textAlign:'center'},
+              style:{ textAlign:'data.center'},
               },
               {
               Header: 'Actions',
               sortable: false, 
-              Cell: props =>{return [<button>Edit</button>,<button>Delete</button>]},
+              Cell: props =>{return [<button>Edit</button>,<button onClick={()=>this.delete(props.original.id)}>Delete</button>]},
               style:{ textAlign:'center'},
               },
             ]}
             data={this.state.data}
             defaultPageSize={10}
-          ></ReactTable>
+            showPageSizeOptions={false}
+            resolveData={data => data.map(row => row)}
+            />
+
         </div>
         );
     }

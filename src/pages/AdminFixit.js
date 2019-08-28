@@ -18,9 +18,14 @@ class AdminFixit extends Component {
         this.logout = this.logout.bind(this);
     }
 
+
+   
+
     logout(){
         firebase.auth().signOut();
     }
+
+  
 
     render () {
         return (

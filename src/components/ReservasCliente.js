@@ -13,39 +13,46 @@ class ReservasCliente extends Component {
       super() 
       this.state = {
         data:[],
-        user: {},
-      }
+        user:{},
+      }      
     }
     
+
+    llamadoFirebase () {
+      firebase.firestore().collection('reservas').where("mail", '==',this.state.user.email).get().then((snapShots)=>{
+        this.setState({
+          data: snapShots.docs.map(doc => {
+            return (doc.data());
+          })
+        })
+      })          
+  }  
+
     authListener() {
       firebase.auth().onAuthStateChanged((user) => {       
-          if (user) {
+        if (user) {
             // User is signed in.
           this.setState({user});        
-          
           } else {
             // User is signed out.
             this.setState({user:null});
           }
-        });}
-  
-
-      componentDidMount () {
-        firebase.firestore().collection('reservas').where("mail", '==',this.state.user.email).get().then((snapShots)=>{
-          this.setState({
-            data: snapShots.docs.map(doc => {
-              return (doc.data());
-            })
-          })
+          this.llamadoFirebase();
         })
-        this.authListener();
-      }   
+      }
+
+    componentWillMount () {
+      this.authListener();      
+    }
+
+     
+
    
+    
+      
     render () {
         return (
         <div>
-           
-           <h1>{this.state.user.email}</h1>
             <ReactTable
             columns={[
                     {
@@ -92,6 +99,7 @@ class ReservasCliente extends Component {
                 data={this.state.data}
                 defaultPageSize={10}
                 showPagination={false}
+                resizable={false}
             ></ReactTable>
             
         </div>

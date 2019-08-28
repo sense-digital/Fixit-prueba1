@@ -12,12 +12,45 @@ import camilocastro from '../images/CamiloCastro.jpg';
 class AdminCliente extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            data:[],
+            user:{},
+          }      
         this.logout = this.logout.bind(this);
     }
+
 
     logout(){
         firebase.auth().signOut();
     }
+
+    llamadoFirebase () {
+        firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.email).get().then((snapShots)=>{
+          this.setState({
+            data: snapShots.docs.map(doc => {
+              return (doc.data());
+            })
+          })
+        })          
+    }  
+  
+      authListener() {
+        firebase.auth().onAuthStateChanged((user) => {       
+          if (user) {
+              // User is signed in.
+            this.setState({user});        
+            } else {
+              // User is signed out.
+              this.setState({user:null});
+            }
+            this.llamadoFirebase();
+          })
+        }
+  
+      componentWillMount () {
+        this.authListener();      
+      }
+  
 
     render () {
         return (
@@ -59,7 +92,7 @@ class AdminCliente extends Component {
                        boxShadow:'0px 2px 6px 0px grey',
                        marginBottom:'0',
                    }}></img>
-                   <h2 style={{color:'#ABABAB', fontWeight:'normal'}}>Camilo Castro</h2> 
+                  {this.state.data.map(data=>{return( <h2 style={{color:'#ABABAB', fontWeight:'normal'}} key={data.id}>{data.nombre} {data.apellido}</h2>)})}
                    <div className='linkto1' style={{borderTop:'none'}}><Link to="/admincliente/reservas" style={{color:'black',}}>RESERVAS</Link> <br/></div>
                    <div className='linkto1' style={{borderBottom:'0.1px solid #DDDDDD'}}><Link to="/admincliente/detalles" style={{color:'black',}}>DETALLES DE LA CUENTA</Link> <br/></div>
                 

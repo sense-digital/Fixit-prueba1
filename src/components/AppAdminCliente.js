@@ -34,7 +34,8 @@ class AppAdminCliente extends Component {
           // User is signed out.
           this.setState({user:null});
         }
-      });}
+      })
+    }
  
 //RENDERIZA UN COMPONENTE U OTRO SEGÚN SI EL USUARIO ESTÁ LOGGEADO O NO
 

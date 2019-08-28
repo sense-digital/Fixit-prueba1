@@ -10,37 +10,60 @@ class DetalleCuentaCliente extends Component {
         super() 
         this.state = {
           data:[],
-          user: {},
+          user:{},
         }
       }
 
-    authListener() {
-    firebase.auth().onAuthStateChanged((user) => {       
-        if (user) {
-          // User is signed in.
-        this.setState({user});        
-        
-        } else {
-          // User is signed out.
-          this.setState({user:null});
+      authListener() {
+        firebase.auth().onAuthStateChanged((user) => {       
+          if (user) {
+              // User is signed in.
+            this.setState({user});        
+            } else {
+              // User is signed out.
+              this.setState({user:null});
+            }
+            this.llamadoFirebase();
+          })
         }
-      });}
 
-      componentDidMount () {
-        firebase.firestore().collection('usuarios').where("mail", '==','{'+this.state.user.email+'}').get().then((snapShots)=>{
+      llamadoFirebase () {
+        firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.email).get().then((snapShots)=>{
           this.setState({
             data: snapShots.docs.map(doc => {
-              return (doc.data());
+              return  (doc.data());
             })
           })
         })
-        this.authListener();
+    }
+
+    componentWillMount () {
+      this.authListener();      
     }
 
     render () {
         return (
         <div>
-            <h1>{this.state.user.email}</h1>
+            {this.state.data.map(data=>{return(<p key={data.id}>{data.nombre}</p>)})}
+            {this.state.data.map(data=>{return(<p key={data.id}>{data.apellido}</p>)})}
+            {this.state.data.map(data=>{return(<p key={data.id}>{data.direccion}</p>)})}
+            {this.state.data.map(data=>{return(<p key={data.id}>{data.detalleDireccion}</p>)})}
+            {this.state.data.map(data=>{return(<p key={data.id}>{data.correo}</p>)})}
+            {this.state.data.map(data=>{return(<p key={data.id}>{data.celular}</p>)})}
+
+            <h3>Cambio de contraseña:</h3>
+            <form>
+              <label>Contraseña actual
+                <input type='text'></input>
+              </label>
+              <label>Contraseña nueva
+                <input type='text'></input>
+              </label>
+              <label>Confirmar contraseña nueva
+                <input type='text'></input>
+              </label>
+            </form>
+
         </div>
         );
     }
