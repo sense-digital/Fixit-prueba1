@@ -11,13 +11,44 @@ class Servicios extends Component {
         super() 
         this.state = {
           dataServicios:[],
-          dataEquipos:[] 
+          dataEquipos:[],
+          NuevoEquipo:'',
+          equipo:'',
+          servicio:'',
+          precio:''
         }
       }
-    
+
+
+      guardarCelularEnBaseDeDatos() {
+        return firebase.firestore().collection('celulares').add({
+          ref: this.state.NuevoEquipo
+         })
+         .then(function() {
+          window.location.reload(false);
+          })        
+       }
+
+       guardarServicioEnBaseDeDatos() {
+        return firebase.firestore().collection('servicios').add({
+          equipo: this.state.equipo,
+          servicio: this.state.servicio,
+          precio: this.state.precio,
+         })
+         .then(function() {
+          window.location.reload(false);
+           })
+       }
+
+      handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+     }
+
       eliminarCelulares(id){
         firebase.firestore().collection("celulares").doc(id).delete().then(function() {
-          alert('El equipo ha sido borrada, ACTULIZA PARA VER LOS CAMBIOS');
+          window.location.reload(false);
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
@@ -25,7 +56,7 @@ class Servicios extends Component {
 
       eliminarServicios(id){
         firebase.firestore().collection("servicios").doc(id).delete().then(function() {
-          alert('Este servicio ha sido borrada, ACTULIZA PARA VER LOS CAMBIOS');
+          window.location.reload(false);
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
@@ -47,7 +78,7 @@ class Servicios extends Component {
             })
           })
         })
-    }
+      } 
       
 
     render () {
@@ -59,45 +90,45 @@ class Servicios extends Component {
             <h3>Agrega un equipo:</h3>
 
             <label>
-            Equipo<br/>
-            <input type="text" name="equipo" />
+            Equipo
+            <input type="text" name="NuevoEquipo" onChange={this.handleChange} />
             </label>
-
+            <br/>
             <label>
-            Foto<br/>
-            <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
+            Foto
+            <input type="file" name="" accept="image/x-png,image/jpeg" />
             </label>
-
-            <button> Crear </button>
+            <br/>
+            <button onClick={()=>this.guardarCelularEnBaseDeDatos()}> Crear </button>
 
           <h3>Agrega un servicio:</h3>
 
             <label>
-                Equipo: <br/>
-                <select name="hora" onChange={this.handleChange} value={this.state.hora}>
+                Equipo: 
+                <select name="equipo" onChange={this.handleChange} >
                 <option value="">Elige una opción</option>
                 {this.state.dataEquipos.map(item => {
-                  return <option value={item.ref}>{item.ref}</option> 
+                  return <option value={item.data.ref}>{item.data.ref}</option> 
                 }) }
                 </select>
             </label>
+
+            <label>
+                Servicio:
+            <input type="text" name="servicio" onChange={this.handleChange}/>
+            </label>
+            <br/>
+            <label>
+                Precio: 
+            <input type="number" name="precio" onChange={this.handleChange} />
+            </label>
             
             <label>
-                Servicio: <br/>
-            <input type="text" name="equipo" />
+            Foto
+            <input type="file" name="" accept="image/x-png,image/jpeg" />
             </label>
-
-            <label>
-                Precio: <br/>
-            <input type="number" name="equipo" />
-            </label>
-
-            <label>
-            Foto<br/>
-            <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
-            </label>
-
-            <button> Crear </button>
+            <br/>
+            <button  onClick={()=>this.guardarServicioEnBaseDeDatos()}> Crear </button>
 
 {/* FIN AGREGA UN EQUIPO Y UN SERVICIO   */}
 
@@ -154,11 +185,9 @@ class Servicios extends Component {
                 },
             ]}
             data={this.state.dataServicios}
-            defaultPageSize={10}
+            defaultPageSize={5}
             showPageSizeOptions={false}
             />
-
-
 
 {/* FIN TABLA DE SERVICIOS ACTUALES   */}
 

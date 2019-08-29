@@ -1,0 +1,26 @@
+ 
+  .popupWhite {  
+    position: absolute; 
+    width: 50%; 
+    height: 50%; 
+    left: 15%;  
+    right: 15%;  
+    top: 15%;  
+    bottom: 15%;  
+    margin: auto;  
+    padding: 2%;
+    border-radius: 20px;  
+    background-color: white;  
+  }
+  .popup {  
+    position: fixed;  
+    width: auto;  
+    height: 100%;  
+    z-index: 100;
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0; 
+    margin: auto;  
+    background-color: rgba(0,0,0, 0.5);  
+  } 

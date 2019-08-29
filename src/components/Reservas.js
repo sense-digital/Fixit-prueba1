@@ -1,16 +1,20 @@
 //SECCIÓN DE RESERVAS DEL PANEL DE ADMINISTRACIÓN
 
 import React, {Component} from 'react';
+import PopUp from './PopUp';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import { thisExpression } from '@babel/types';
 
 class Reservas extends Component {
-    constructor () {
-        super() 
+    constructor (props) {
+        super(props) 
         this.state = {
           data:[],
+          PopUp: false,
+          idActivo: ''
         }
       }
     
@@ -26,15 +30,26 @@ class Reservas extends Component {
 
       delete = (id)=>{
         firebase.firestore().collection("reservas").doc(id).delete().then(function() {
-          alert('Tu reserva ha sido borrada, ACTULIZA PARA VER LOS CAMBIOS');
+          window.location.reload(false);
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
       }
 
+      togglePopup = (id)=>{
+        this.setState({PopUp: !this.state.PopUp})
+        !this.state.idActivo ? this.setState({idActivo: id}):this.setState({idActivo: ""})
+      }
+
+      PopUp = () => {
+        if (this.state.PopUp) {
+          return (<PopUp idEdit={this.state.idActivo} closePopup={this.togglePopup} />)}
+        }
+
     render () {
         return (
         <div>
+          {this.PopUp()}
           <ReactTable
             columns={[
               {
@@ -94,6 +109,7 @@ class Reservas extends Component {
               accessor: 'data.celular',
               width: 70,
               style:{ textAlign:'center'},
+
               },
               {
               Header: 'Pago',
@@ -110,7 +126,7 @@ class Reservas extends Component {
               {
               Header: 'Actions',
               sortable: false, 
-              Cell: props =>{return [<button>Edit</button>,<button onClick={()=>this.delete(props.original.id)}>Delete</button>]},
+              Cell: props =>{return [<button onClick={()=>this.togglePopup(props.original.id)}> Edit </button>,<button onClick={()=>this.delete(props.original.id)}>Delete</button>]},
               style:{ textAlign:'center'},
               },
             ]}

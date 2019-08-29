@@ -53,6 +53,7 @@ class ReservasCliente extends Component {
     render () {
         return (
         <div>
+          <h2>Mis reservas</h2>
             <ReactTable
             columns={[
                     {
