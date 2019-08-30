@@ -68,10 +68,14 @@ class PopUp extends Component {
 
   render () {
         return (
-            <div className='popup'>  
-            <div className='popupWhite'>  
-            <form>
-                <label>
+<div className='popup'>  
+    <div className='popupWhite'>  
+ {/* FORMULARIO DE MODIFICACIOÓN DE RESERVAS */}
+        <form classNamE='form-mod-reserva'>
+            
+            {/* ---inicio de campo "equipo" */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>
                 Equipo: 
                 <select name="equipo" onChange={this.handleChange} >
                 <option value="">Elige una opción</option>
@@ -80,21 +84,44 @@ class PopUp extends Component {
                 }) }
                 </select>
             </label>
-                <label >Servicio
+            </div>
+            {/* ---fin de campo "equipo" */}
+
+            {/* ---campo servicios--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Servicio:
                     <input name='servicio' onChange={this.handleChange} ></input>
                 </label>
-                <br/><br/>
-                <label>Dirección
+            </div>    
+            {/* ---campo servicios--- */}
+
+            {/* ---campo dirección--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Dirección:
                     <input name='direccion'onChange={this.handleChange} ></input>
                 </label>
-                <label>Detalle dirección
+            </div>
+            {/* ---campo dirección---  */}
+
+            {/* ---campo detalle dirección--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Detalle dirección:
                     <input name='detalleDireccion' onChange={this.handleChange}></input>
                 </label>
-                <br/><br/>
-                <label>Fecha
+            </div>
+            {/* ---campo detalle dirección--- */}
+            
+            {/* ---campo fecha--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Fecha:
                     <input type="date" name='fechaDeRecogida' onChange={this.handleChange}></input>
                 </label>
-                <label>Hora
+            </div>
+            {/* ---campo fecha--- */}
+
+            {/* ---campo hora--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Hora:
                    <select name='hora' onChange={this.handleChange} >
                             <option value="">Elige una opción</option> 
                             <optgroup label="AM">
@@ -114,25 +141,50 @@ class PopUp extends Component {
                             </optgroup> 
                             </select>
                 </label>
-                <br/><br/>
-                <label>Correo
+            </div>
+            {/* ---campo hora--- */}
+
+            
+            {/* ---capo correo--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Correo:
                     <input type="email" name='mail' onChange={this.handleChange}></input>
                 </label>
-                <label>Celular
+            </div>
+            {/* ---capo correo--- */}
+
+            {/* ---campo celular--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Celular:
                     <input name='celular' onChange={this.handleChange}></input>
                 </label>
-                <br/><br/>
-                <label>Pago
+            </div>
+            {/* ---campo celular--- */}
+
+
+            {/* ---campo pago--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Pago:
                 <select name='pago' onChange={this.handleChange}>
                             <option>Elige una opción</option> 
                             <option value="payu">PayU</option> 
                             <option value="contraEntrega">Contra Entrega</option> 
                     </select>
                 </label>
-                <label>Precio
+            </div>
+            {/* ---campo pago--- */}
+
+            {/* ---capo precio--- */}
+            <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Precio:
                     <input name='precio' onChange={this.handleChange}></input>
                 </label>
-                <label>Estado
+            </div>
+            {/* ---capo precio--- */}
+
+             {/*---campo estado---  */}
+             <div className='form-mod-container'>
+                <label className='label-form-mod-reserva'>Estado:
                    <select name='estado' onChange={this.handleChange}>
                             <option>Elige una opción</option> 
                             <option value="procesando">Procesando</option> 
@@ -143,10 +195,18 @@ class PopUp extends Component {
                             <option value="pendiente de pago">Pendiente de pago</option> 
                     </select>
                 </label>
-                <br/><br/>
+            </div>
+            {/*---campo estado---  */}
+                
+            {/* botones */}
+            <div className='form-mod-container'>
+               <button onClick={()=>this.actualizarReserva(this.props.idEdit)}>Guardar</button>  
+                
+               <button onClick={this.props.closePopup}>Cerrar</button>  
+            </div>
+            {/* botones */}
             </form>
-            <button onClick={()=>this.actualizarReserva(this.props.idEdit)}>Guardar</button>  
-            <button onClick={this.props.closePopup}>Cerrar</button>  
+
             </div>  
             </div>  
         );  

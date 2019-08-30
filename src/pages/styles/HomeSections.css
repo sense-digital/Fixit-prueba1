@@ -96,6 +96,7 @@
     margin-top: 0;
     font-size: 1em;
     font-weight: normal;
+    text-align: center;
 
 }
 .item:nth-of-type(2),.item:nth-of-type(3),.item:nth-of-type(4){
@@ -143,8 +144,10 @@
 
 /* INICIO DE ESTILOS AL BANNER PUBLICITARIO*/
 
+
 .herosection-3{
     display: flex;
+    display: none;
     flex-wrap: nowrap;
     justify-content: center;
     background-color:#dbd5d5b0;
@@ -374,10 +377,30 @@
         display: none;
         margin-top: 15%;
     }
-    /* fin query */
+    .item:nth-of-type(1)> h2{
+        font-size: 0.5em;
+    }
+    .titulo-herosection-2{
+        font-size: 0.6em;
+    }
+    .item:nth-of-type(5),.item:nth-of-type(6),.item:nth-of-type(7){
+        font-size: 0.5em;
+    }
+    .grid-herosection-2{
+        width: 98%;
+    }
 }
+@media screen and (max-width:385px){
+    .item:nth-of-type(5),.item:nth-of-type(6),.item:nth-of-type(7){
+        font-size: 0.4em;
+    }
+    .grid-herosection-2{
+        width: 100%;
+    }
+}
+/* fin query */
 
-@media screen and (max-width:375px){
+/* @media screen and (max-width:375px){
     .grid-herosection-2{
         grid-template-rows: repeat(7,0.1fr);
     }
@@ -421,7 +444,8 @@
         display: none;
         margin-top: 15%;
     }
-}
+} */
+
 /* FIN DE PRIMER MEDIA QUERY */
 
 

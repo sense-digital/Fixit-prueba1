@@ -1,0 +1,135 @@
+#app > div > div > div:nth-child(2){
+max-Width:90%;
+background-Color:white;
+margin:0 auto;
+margin-top:3%;
+margin-Bottom:0;
+height:50px;
+box-Shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+position:relative;
+z-Index:1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#app > div > div > div:nth-child(2) > h3{
+  margin-Bottom:0;
+  display:flex;
+  justify-Content:center;
+font-Size:30px;
+height:8vh;
+margin:0;
+}
+#app > div > div > div.admin-page{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  margin:12px auto;
+  /* height: 80vh; */
+}
+#app > div > div > div.admin-page > div.admin-menu{
+  background-color: white;
+  padding-left:1%;
+  border-right: 2px solid #DDDDDD;
+}
+#app > div > div > div.admin-page > div.admin-menu > img{
+  width: 100%;
+  clip-path: circle(32% at 50% 50%);
+  box-shadow:  0px 2px 6px 0px grey;
+  margin-bottom: 0;
+}
+#app > div > div > div.admin-page > div.admin-menu > div:nth-child(2),#app > div > div > div.admin-page > div.admin-menu > div:nth-child(2) > a{
+  border-top: none;
+}
+#app > div > div > div.admin-page > div.display-info-container{
+  background-color: white;
+  /* height: 80vh; */
+}
+#app > div > div > div.admin-page > div.display-info-container > figure{
+  align-items: flex-start;
+}
+#app > div > div > div.admin-page > div.admin-menu > div:nth-child(3){
+  border-bottom: 0.1px solid #DDDDDD;
+}
+
+/* INICIO MEDIA QUERYS */
+
+/* ---media query para menú lateral--- */
+@media screen and (max-width:768px){
+  #app > div > div > div.admin-page > div.admin-menu{
+    width: 30%;
+  }
+  #app > div > div > div.admin-page > div.display-info-container{
+    width: 80%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3) > a{
+    text-align: center;
+    padding-right: 5%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > button{
+    width: 70%;
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width:767px){
+  #app > div > div > div.admin-page{
+    display: block;
+  }
+  #app > div > div > div.admin-page > div.admin-menu{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 1%;
+    padding:1%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > img{
+    width:20%;
+    margin:0;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3){
+    border: none;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > button{
+    margin: 0;
+    width: auto;
+    margin-left: 10%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(2),#app > div > div > div.admin-page > div.admin-menu > div:nth-child(3){
+    width: 25%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3){
+    border-bottom: none;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3) > a{
+    width: auto;
+  }
+}
+@media screen and (max-width:545px){
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3) > a,#app > div > div > div.admin-page > div.admin-menu > div:nth-child(2) > a{
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width:425px){
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(2){
+    width: auto;
+    margin-right: 8%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3){
+    width: 30%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3) > a{
+    width: 100%;
+  }
+  #app > div > div > div.admin-page > div.admin-menu > div:nth-child(3) > a,#app > div > div > div.admin-page > div.admin-menu > div:nth-child(2) > a{
+    font-size: 0.7em;
+  }
+}
+/* ---fin media query para menú lateral--- */
+
+
+/* ---media query para datos--- */
+@media screen and (max-width:425px){
+  #app > div > div > div.admin-page > div.display-info-container{
+    width: auto;
+  }
+}

@@ -56,27 +56,35 @@ class Home extends Component {
                    <h1><strong>¿CÓMO FUNCIONA</strong> FIXIT?</h1>
                </div>
                <section className="grid-herosection-2">
-                   <div className="item"><h2>Texto de poyo al título</h2></div>
+                   <div className="item"><h2>Agenda tu servicio de reparación a domicilio en tres sencillos pasos</h2></div>
                    <div className="item"><img src={Paso1} alt='paso 1'></img></div>
                    <div className="item"><img src={Paso2} alt='paso 2'></img></div>
                    <div className="item"><img src={Paso3} alt='paso 3'></img></div>
                    <div className="item">
-                      <h2>Descripción 1</h2>
-                      <p>Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean </p>
+                      <h2>Escoge tu equipo</h2>
+                      <p>Seleccionalo en las referencias disponibles de Iphone</p>
                    </div>
                    <div className="item">
-                      <h2>Descripción 2</h2>
-                      <p>Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean </p>
+                      <h2>Reporta un daño</h2>
+                      <p> Escoge entre las opciones el daño que tiene tu equipo</p>
                    </div>
                    <div className="item">
-                      <h2>Descripción 3</h2>
-                      <p>Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean </p>
+                      <h2>Agenda tu reparación</h2>
+                      <p>Uno de nuestros técnicos se acercará en la fecha y hora indicada</p>
                    </div>
                 </section>
              {/*FIN DE SECCIÓN "CÓMO FUNCIONA FIXIT?"*/}
 
              {/* INICIO BANNER PUBLICITARIO */}
-      
+            <div className='herosection-3.2'>
+               <figure className='herosection-3.2-bckgrnd' style={{
+                  
+               }}>
+                  <img></img>
+                  <h1></h1>
+                  <p></p>
+               </figure>
+            </div>
             <div className="herosection-3">
                 {/* <h1>BANNER PUBLICITARIO</h1>  */}
                 <div className='banner-publicitario1'>

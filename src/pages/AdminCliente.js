@@ -25,7 +25,7 @@ class AdminCliente extends Component {
     }
 
     llamadoFirebase () {
-        firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.email).get().then((snapShots)=>{
+        firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.mail).get().then((snapShots)=>{
           this.setState({
             data: snapShots.docs.map(doc => {
               return (doc.data());
@@ -56,52 +56,19 @@ class AdminCliente extends Component {
         return (
         <div style={{backgroundColor:'#F2F2F2'}}>
             <Header/>
-            <div style={{
-                     maxWidth:'90%',
-                     backgroundColor:'white',
-                     margin:'0 auto',
-                     marginBottom:'0',
-                     height:'50px',
-                     boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.25)',
-                     position:'relative',
-                     zIndex:'1',
-                     }}>
-                <h3 style={{marginBottom:'0', height:'50px',
-                     display:'flex',
-                     justifyContent:'center',
-                     alignItems:'center',
-                     fontSize:'30px',
-                     height:'8vh',
+            <div classname='admin-client-title'>
+                <h3>MI CUENTA</h3></div>
 
-                     }}>MI CUENTA</h3></div>
-
-             <div className='admin-page' style={{
-                 boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.25)', 
-                 maxWidth:'90%',
-                 margin:'12px auto',
-                 height:'80vh',
-                 }}>
-               <div className='admin-menu'style={{
-                   backgroundColor:'white',
-                   paddingLeft:'25px',
-                   borderRight:'2px solid #DDDDDD',
-               }}>
-                   <img src={camilocastro} alt='usuario' style={{
-                       width:'100%',
-                       clipPath:'circle(32% at 50% 50%)',
-                       boxShadow:'0px 2px 6px 0px grey',
-                       marginBottom:'0',
-                   }}></img>
+             <div className='admin-page'>
+               <div className='admin-menu'>
+                   <img src={camilocastro} alt='usuario'></img>
                   {this.state.data.map(data=>{return( <h2 style={{color:'#ABABAB', fontWeight:'normal'}} key={data.id}>{data.nombre} {data.apellido}</h2>)})}
-                   <div className='linkto1' style={{borderTop:'none'}}><Link to="/admincliente/reservas" style={{color:'black',}}>RESERVAS</Link> <br/></div>
-                   <div className='linkto1' style={{borderBottom:'0.1px solid #DDDDDD'}}><Link to="/admincliente/detalles" style={{color:'black',}}>DETALLES DE LA CUENTA</Link> <br/></div>
+                   <div className='linkto1'><Link to="/admincliente/reservas" style={{color:'black',}}>RESERVAS</Link> <br/></div>
+                   <div className='linkto1'><Link to="/admincliente/detalles" style={{color:'black',}}>DETALLES DE LA CUENTA</Link> <br/></div>
                 
                  <button className='admin-exit-button' onClick={this.logout}>Cerrar sesión</button>
                </div>
-               <div className='display-info-container' style={{
-                   backgroundColor:'white',
-                   height:'80vh',
-               }}>
+               <div className='display-info-container'>
                  <figure className='display-info-inside'>
                    <Switch>
                       <Route  path="/admincliente/reservas" component={ReservasCliente} />
