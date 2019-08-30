@@ -18,7 +18,7 @@ class ReserveSection1 extends Component {
 
 
   componentDidMount () {
-    firebase.firestore().collection('celulares').get().then((snapShots)=>{
+    firebase.firestore().collection('celulares').orderBy('ref').get().then((snapShots)=>{
       this.setState({
         data: snapShots.docs.map(doc => {
           return (doc.data());
