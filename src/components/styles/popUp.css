@@ -26,12 +26,13 @@
   } 
 
   /* FORMULARIO EN GENERAL */
-  #app > div > div > div.display-info-container > figure > div > div.popup > div > form{
+  #app > div > div > div.display-info-container1 > figure > div > div.popup > div > form{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, auto);
     padding-bottom: 5%;
     grid-row-gap: 20%;
+    height: 50%;
   }
   .label-form-mod-reserva{
     display: flex;
@@ -59,11 +60,11 @@
     background-color: #F1F1F1;
     border-radius: 5%;
   }
-  #app > div > div > div.display-info-container > figure > div > div.popup > div > form > div:nth-child(12){
+  #app > div > div > div.display-info-container1 > figure > div > div.popup > div > form > div:nth-child(12){
     display: flex;
     justify-content: space-evenly;
   }
-  #app > div > div > div.display-info-container > figure > div > div.popup > div > form > div:nth-child(12)>button{
+  #app > div > div > div.display-info-container1 > figure > div > div.popup > div > form > div:nth-child(12) > button{
     border: none;
     background-color: #3A8BBB;
     color: white; 

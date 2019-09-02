@@ -1,10 +1,90 @@
+
+
+* {
+  font-family: benchnine;
+}
+.admin-page{
+    display: flex;
+  }
+.admin-menu{
+    width: inherit;
+    background-color: #3a8bbb;
+    width:25%; 
+    /* padding:20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-menu>img{
+  width: 90px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.linkto1{
+  border-top: 0.1px solid #DDDDDD;
+  width: 100%;
+  height: 70px;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.linkto1:nth-of-type(5){
+  border-bottom: 0.1px solid #DDDDDD;
+}
+.linkto1>a{
+  font-style: none;
+  text-decoration: none;
+  color: white;
+  justify-items: center;
+  height: inherit;
+  width: inherit;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+}
+.admin-exit-button{
+color: white;
+background-color: black;
+height: 50px;
+width: 100px;
+border:none;
+border-radius:30px;
+font-size: 20px;
+margin-top:50px;
+}
+
+  /* INICIO ESTILOS SECCIÓN DINÁMICA */
+  .display-info-container{
+    width: 100%;
+    height: 920px;
+    background-color: #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.admin-exit-button:hover{
+  background-color: #981915;
+}
+.display-info-inside{
+     display: inherit;
+     width: 90%; 
+     height: 90%;
+     justify-content: center;
+     align-items: center;
+
+}
+  /* FIN ESTILOS SECCIÓN DINÁMICA */
+
+
+
+
 #app > div > div > div:nth-child(2){
 max-Width:90%;
 background-Color:white;
 margin:0 auto;
 margin-top:3%;
 margin-Bottom:0;
-height:50px;
 box-Shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 position:relative;
 z-Index:1;

@@ -1,0 +1,81 @@
+.equipo-title{
+  background-color: white;
+  padding: 2%;
+  padding-left:10%;
+  box-shadow: -5px -4px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1%;
+  margin-top: 10%;
+  position: relative;
+  z-index: 1;
+}
+.equipo-title>h3,.equipo-title>h2{
+  margin:0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.form-nuevoequipo{
+  position: relative;
+  z-index: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px -4px 30px rgba(0, 0, 0, 0.25);
+  padding-left: 7%;
+}
+.form-nuevoequipo>label{
+  padding:2%;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.form-nuevoequipo>label>input{
+  width:80%;
+}
+.form-nuevoequipo>button,.form-nuevoservicio>button{
+  width: 20%;
+  justify-self: center;
+  align-self: center;
+  margin-top:8%;
+  margin-bottom: 2%;
+  background-color: #3A8BBB;
+  border: none;
+  color: white;
+  border-radius: 23.5px;
+  width: 10%;
+  height: 30px;
+  font-size: 15px;
+}
+
+.servicio-title{
+  background-color: white;
+  padding: 2%;
+  padding-left:10%;
+  box-shadow: -5px -4px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1%;
+  margin-top: 3%;
+  position: relative;
+  z-index: 1;
+}
+.servicio-title>h3{
+  margin:0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.form-nuevoservicio{ 
+  position: relative;
+  z-index: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px -4px 30px rgba(0, 0, 0, 0.25);
+  padding-left: 7%;
+}
+.form-nuevoservicio>label{
+  padding:2%;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.form-nuevoservicio>label>input{
+  width:80%;
+}

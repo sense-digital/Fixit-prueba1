@@ -1,0 +1,32 @@
+.banner-admin-container{
+  width: 90%;
+  background-color:white;
+  /* height: 50%; */
+  height: auto;
+  padding: 2%;
+  box-shadow: -5px -4px 30px rgba(0, 0, 0, 0.25);
+}
+.banner-admin-item>label{
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+  text-transform: uppercase;
+  padding: 1%;
+  font-size:0.7em;
+}
+.banner-admin-item>label>input{
+  
+  
+}
+.banner-admin-item>label>input{
+  
+}
+.banner-admin-button>button{
+  background-color: #3A8BBB;
+  border: none;
+  color: white;
+  border-radius: 23.5px;
+  width: 10%;
+  height: 30px;
+  font-size: 15px;
+}
