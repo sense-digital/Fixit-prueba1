@@ -2,7 +2,8 @@
   .popupWhite {  
     position: absolute; 
     width: auto; 
-    height: 30%; 
+    align-items: center;
+    height: 350px;
     left: 15%;  
     right: 15%;  
     top: 15%;  
