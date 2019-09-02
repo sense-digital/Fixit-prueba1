@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import './styles/Servicios.css';
 
 class Servicios extends Component {
     constructor () {
@@ -87,23 +88,26 @@ class Servicios extends Component {
           
 {/* INICIO AGREGA UN EQUIPO Y UN SERVICIO   */}
 
-            <h3>Agrega un equipo:</h3>
+            <div className='equipo-title'><h3>Agrega un equipo:</h3></div>
 
-            <label>
-            Equipo
-            <input type="text" name="NuevoEquipo" onChange={this.handleChange} />
-            </label>
-            <br/>
-            <label>
-            Foto
-            <input type="file" name="" accept="image/x-png,image/jpeg" />
-            </label>
-            <br/>
-            <button onClick={()=>this.guardarCelularEnBaseDeDatos()}> Crear </button>
+            <div className='form-nuevoequipo'>
+               <label>
+                Equipo
+               <input type="text" name="NuevoEquipo" onChange={this.handleChange} />
+               </label>
+             
+               <label>
+                Foto
+               <input type="file" name="" accept="image/x-png,image/jpeg" />
+               </label>
+               
+               <button onClick={()=>this.guardarCelularEnBaseDeDatos()}> Crear </button>
+            </div> 
 
-          <h3>Agrega un servicio:</h3>
+            <div className='servicio-title'><h3>Agrega un servicio:</h3></div>
 
-            <label>
+            <div className='form-nuevoservicio'>
+               <label>
                 Equipo: 
                 <select name="equipo" onChange={this.handleChange} >
                 <option value="">Elige una opción</option>
@@ -111,30 +115,29 @@ class Servicios extends Component {
                   return <option value={item.data.ref}>{item.data.ref}</option> 
                 }) }
                 </select>
-            </label>
+               </label>
 
-            <label>
+               <label>
                 Servicio:
-            <input type="text" name="servicio" onChange={this.handleChange}/>
-            </label>
-            <br/>
-            <label>
+               <input type="text" name="servicio" onChange={this.handleChange}/>
+               </label>
+               <label>
                 Precio: 
-            <input type="number" name="precio" onChange={this.handleChange} />
-            </label>
+               <input type="number" name="precio" onChange={this.handleChange} />
+               </label>
             
-            <label>
-            Foto
-            <input type="file" name="" accept="image/x-png,image/jpeg" />
-            </label>
-            <br/>
-            <button  onClick={()=>this.guardarServicioEnBaseDeDatos()}> Crear </button>
+               <label>
+                Foto
+               <input type="file" name="" accept="image/x-png,image/jpeg" />
+               </label>
+               <button  onClick={()=>this.guardarServicioEnBaseDeDatos()}> Crear </button>
+             </div>
 
 {/* FIN AGREGA UN EQUIPO Y UN SERVICIO   */}
 
 {/* INICIO TABLA DE EQUIPOS ACTUALES   */}
 
-<h2>Celulares</h2>
+<div className='equipo-title'><h2>Celulares</h2></div>
 <ReactTable
             columns={[
               {
@@ -158,7 +161,7 @@ class Servicios extends Component {
 
 {/* FIN TABLA DE EQUIPOS ACTUALES   */}
 {/* INICIO TABLA DE SERVICIOS ACTUALES   */}
-<h2>Servicios</h2>
+ <div className='equipo-title'><h2>Servicios</h2></div>
 <ReactTable
             columns={[
               {

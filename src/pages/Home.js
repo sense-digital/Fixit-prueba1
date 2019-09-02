@@ -76,13 +76,13 @@ class Home extends Component {
              {/*FIN DE SECCIÓN "CÓMO FUNCIONA FIXIT?"*/}
 
              {/* INICIO BANNER PUBLICITARIO */}
-            <div className='herosection-3.2'>
-               <figure className='herosection-3.2-bckgrnd' style={{
-                  
+            <div className='herosection-3-2' style={{
+                  backgroundImage: "url(" + Repair4 + ")",
                }}>
-                  <img></img>
-                  <h1></h1>
-                  <p></p>
+               <figure className='herosection-3-2-bckgrnd'>
+                  <img src={Check}></img>
+                  <h1> Banner publicitario</h1>
+                  <p>Texto del banner publicitario</p>
                </figure>
             </div>
             <div className="herosection-3">

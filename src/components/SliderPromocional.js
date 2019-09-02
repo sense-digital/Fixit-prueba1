@@ -1,32 +1,38 @@
 //SECCIÓN DE SLIDER PROMOCIONAL DEL PANEL DE ADMINISTRACIÓN
 
 import React, {Component} from 'react';
+import './styles/SliderPromocional.css';
 
 
 class SliderPromocional extends Component {
     render () {
-        return (
-        <div>
+        return (    
+        <div className='banner-admin-container'>
+        <div className='banner-admin-item'>
             <label>
-            Slider promocional 1<br/>
+            Slider promocional 1
             <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
             </label>
-            <br/>
-            <label>
-            Slider promocional 2<br/>
-            <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
-            </label>
-            <br/>
-            <label>
-            Slider promocional 3<br/>
-            <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
-            </label>
+        </div>
 
+        <div className='banner-admin-item'>
+            <label>
+            Slider promocional 2
+            <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
+            </label>
+        </div>
+
+        <div className='banner-admin-item'>
+            <label>
+            Slider promocional 3
+            <input type="file" name="equipo" accept="image/x-png,image/jpeg" />
+            </label>
+        </div>
             <br/>
             <br/>
             <br/>
 
-            <button>Guardar cambios</button>
+        <div className='banner-admin-button'><button>Guardar cambios</button></div>
 
         </div>
         );

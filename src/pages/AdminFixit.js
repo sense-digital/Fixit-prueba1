@@ -29,21 +29,21 @@ class AdminFixit extends Component {
 
     render () {
         return (
-        <div className='admin-page'>
+        <div className='admin-page1'>
       
-         <div className='admin-menu'>
+         <div className='admin-menu1'>
             <img src={logofixit} alt='logofixit'></img>
-             <div className='linkto1'><Link to="/adminfixit/clientes">Clientes</Link> <br/></div>
-             <div className='linkto1'><Link to="/adminfixit/reservas">Reservas</Link> <br/></div>
-             <div className='linkto1'><Link to='/adminfixit/servicios'>Servicios ofrecidos</Link> <br/></div>
-             <div className='linkto1'><Link to="/adminfixit/sliderpromocional">Slider promocional</Link> <br/></div>
-             <div className='linkto1'><Link to="/adminfixit/contabilidad">Contabilidad</Link> <br/></div>
+             <div className='linkto11'><Link to="/adminfixit/clientes">Clientes</Link> <br/></div>
+             <div className='linkto11'><Link to="/adminfixit/reservas">Reservas</Link> <br/></div>
+             <div className='linkto11'><Link to='/adminfixit/servicios'>Servicios ofrecidos</Link> <br/></div>
+             <div className='linkto11'><Link to="/adminfixit/sliderpromocional">Slider promocional</Link> <br/></div>
+             <div className='linkto11'><Link to="/adminfixit/contabilidad">Contabilidad</Link> <br/></div>
 
-            <button onClick={this.logout} className='admin-exit-button'>Cerrar sesión</button>
+            <button onClick={this.logout} className='admin-exit-button1'>Cerrar sesión</button>
 
          </div>
-         <div className='display-info-container'>
-           <figure className='display-info-inside'>
+         <div className='display-info-container1'>
+           <figure className='display-info-inside1'>
         <Switch>
             <Route  path="/adminfixit/clientes" component={Clientes} />
             <Redirect exact from="/adminfixit" to="/adminfixit/clientes"/>
