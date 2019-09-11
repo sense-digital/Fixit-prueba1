@@ -153,7 +153,7 @@
     background-position: center;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: auto;
     height: fit-content;
     margin-bottom: 1%;
 }

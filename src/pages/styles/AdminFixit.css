@@ -73,9 +73,9 @@ margin-top:50px;
      align-items: center;
 }
 .display-info-container1{
-  background-color:#F2F2F2 !important;
-  margin: 0 !important;
-  height: fit-content !important;
+  background-color:#F2F2F2;
+  margin: 0 ;
+  
 }
 
   /* FIN ESTILOS SECCIÓN DINÁMICA */

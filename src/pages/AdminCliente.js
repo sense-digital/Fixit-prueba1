@@ -56,12 +56,12 @@ class AdminCliente extends Component {
         return (
         <div style={{backgroundColor:'#F2F2F2'}}>
             <Header/>
-            <div classname='admin-client-title'>
+            <div className='admin-client-title'>
                 <h3>MI CUENTA</h3></div>
 
              <div className='admin-page'>
                <div className='admin-menu'>
-                   <img src={camilocastro} alt='usuario'></img>
+                   {/* <img src={camilocastro} alt='usuario'></img> */}
                   {this.state.data.map(data=>{return( <h2 style={{color:'#ABABAB', fontWeight:'normal'}} key={data.id}>{data.nombre} {data.apellido}</h2>)})}
                    <div className='linkto1'><Link to="/admincliente/reservas" style={{color:'black',}}>RESERVAS</Link> <br/></div>
                    <div className='linkto1'><Link to="/admincliente/detalles" style={{color:'black',}}>DETALLES DE LA CUENTA</Link> <br/></div>
