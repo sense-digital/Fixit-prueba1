@@ -19,6 +19,7 @@ class ForgotMyPassword extends Component {
                                   <div className='item-form-forgotMP'><input id='nyu3' type="text"></input></div>
                                   <div className='item-form-forgotMP' ><label for='email2'>Correo electrónico</label></div>
                                   <div className='item-form-forgotMP'><input id='email2' type="text"></input></div>
+                                  <div className='item-form-forgotMP'></div><button type='submit' className="boton-formulario-password" action=''>Enviar</button>
                             </div> 
                       </form>      
                </div>              

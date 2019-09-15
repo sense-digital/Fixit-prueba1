@@ -67,6 +67,7 @@
     color: white;
     font-size: 0.36em;
     border-radius: 50%;
+    cursor: pointer;
   }
 /* FIN ESTILOS A PRIMER GRID "TRABAJA CON NOSOTROS"*/
 
@@ -256,6 +257,7 @@ width: 30%;
   border-radius: 30%;
   font-size: 0.8em;
   margin-top: 5%;
+  cursor: pointer;
 }
 .trabajaimg4{
   width:40%;

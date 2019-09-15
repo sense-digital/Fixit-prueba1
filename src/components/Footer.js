@@ -11,12 +11,12 @@ class Footer extends Component {
            <div className='itemfooter'>
              <input type='radio' name='deplegable-footer' id='desplegablefooter' className='footer-desplegable-menu'></input>
              <label htmlFor='desplegablefooter'>Acerca de nosotros</label>
-             <p className='footercontenido'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget libero tincidunt, fringilla enim vel, tristique nisl. Lorem ipsum dolor sit amet.</p>
+             <p className='footercontenido'>En FixIt tendrás la oportunidad de acceder a un servicio especializado en reparaciones de Iphone, a domicilio</p>
            </div>
            <div className='itemfooter'>
            <input type='radio' name='deplegable-footer2' id='desplegablefooter2' className='footer-desplegable-menu'></input>
              <label htmlFor='desplegablefooter2'>Trabaja con nosotros</label>
-             <p className='footercontenido'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget libero tincidunt, fringilla enim vel, tristique nisl. Lorem ipsum dolor sit amet.</p>
+             <p className='footercontenido'>Se parte de nuestro equipo de técnicos especializados en reparación de celulares Iphone.</p>
            </div>
            <div className='itemfooter'>
            <input type='radio' name='deplegable-footer3' id='desplegablefooter3' className='footer-desplegable-menu'></input>
@@ -24,7 +24,7 @@ class Footer extends Component {
              <p className='footercontenido'>Bogotá, Colombia.</p>
              <p className='footercontenido'>Calle xx # xx - xx</p>
              <p className='footercontenido'>xxx xxxx xxx</p>
-             <p className='footercontenido'>xxxxxx@mail.com</p>
+             <p className='footercontenido'>xxxxxx@Fixitcolombia.com</p>
            </div>
           </div> 
           <div className='footer-img-container'><img src={logofixit} alt='logofixit'></img></div>   

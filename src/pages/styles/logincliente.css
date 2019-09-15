@@ -16,4 +16,5 @@
   color: grey;
   display: flex;
   justify-items: center;
+  cursor: pointer;
 }

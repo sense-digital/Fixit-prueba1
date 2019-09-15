@@ -108,6 +108,9 @@ margin-right: 25.5%;
   border-radius: 10px;
   font-size: 17px;
 }
+.boton-formulario, .item-grid1-soporte:nth-of-type(6)>a>button{
+  cursor: pointer;
+}
 /* FIN ESTILOS DE FORMULARIO DE CONTACTO*/
 
 /* INICIO ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
@@ -174,6 +177,7 @@ text-align: justify;
   border: none;
   border-radius: 40%;
   font-size: 15px;
+  cursor: pointer;
 }
 /* FIN ESTILOS PARTE INFORMATIVA DE LA SECCIÓN SOPORTE */
 
