@@ -7,7 +7,6 @@ import {Route, Redirect, Link, Switch} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './styles/AdminCliente.css';
-import camilocastro from '../images/CamiloCastro.jpg';
 
 class AdminCliente extends Component {
     constructor(props) {
@@ -25,7 +24,7 @@ class AdminCliente extends Component {
     }
 
     llamadoFirebase () {
-        firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.mail).get().then((snapShots)=>{
+        firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.email).get().then((snapShots)=>{
           this.setState({
             data: snapShots.docs.map(doc => {
               return (doc.data());
