@@ -8,6 +8,8 @@ import grid2img3 from '../images/trabaja3.png';
 import trabajaform from '../images/trabaja4.png';
 import './styles/Trabajo.css';
 class Trabajo extends Component {
+
+
     render () {
         return (
         <div>
@@ -80,7 +82,7 @@ class Trabajo extends Component {
 
 
              <div className='section-container'>
-               <div className='section3-title'>
+               <div className='section3-title' id='section3-title'>
                  <figure className='section3-figure1'></figure>
                  <h2>CONTÁCTANOS</h2>
                  <figure className='section3-figure2'></figure>

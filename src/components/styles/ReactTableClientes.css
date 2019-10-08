@@ -1,0 +1,28 @@
+.ReactTable{
+  background-color: white;
+}
+.rt-thead.-header{
+  background-color:white;
+  border: none;
+}
+.rt-thead.-header > div > div:nth-child(1),.rt-thead.-header > div > div:nth-child(4){
+  border: 1px solid #B1B1B1;
+}
+.rt-thead.-header > div > div:nth-child(2),.rt-thead.-header > div > div:nth-child(3),.rt-thead.-header > div > div:nth-child(4),.rt-thead.-header > div > div:nth-child(5),.rt-thead.-header > div > div:nth-child(6),.rt-thead.-header > div > div:nth-child(7),.rt-thead.-header > div > div:nth-child(8),.rt-thead.-header > div > div:nth-child(9),.rt-thead.-header > div > div:nth-child(10),.rt-thead.-header > div > div:nth-child(11),.rt-thead.-header > div > div:nth-child(12),.rt-thead.-header > div > div:nth-child(13){
+  border: 1px solid #B1B1B1;
+  border-left: none;
+}
+.rt-tbody > div:nth-child(1) > div > div:nth-child(2) > button,.rt-tbody > div:nth-child(2) > div > div:nth-child(2) > button,.rt-tbody > div:nth-child(3) > div > div:nth-child(2) > button,.rt-tbody > div:nth-child(4) > div > div:nth-child(2) > button,.rt-tbody > div:nth-child(5) > div > div:nth-child(2) > button,.rt-tbody > div:nth-child(1) > div > div:nth-child(4) > button,.rt-tbody > div:nth-child(2) > div > div:nth-child(4) > button,.rt-tbody > div:nth-child(3) > div > div:nth-child(4) > button,.rt-tbody > div:nth-child(4) > div > div:nth-child(4) > button{
+  background-color: #981915;
+  color: white;
+  border-radius: 15%;
+}
+.display-info-container1 > figure > div > div:nth-child(8) > div.pagination-bottom > div > div.-previous > button,.display-info-container1 > figure > div > div:nth-child(8) > div.pagination-bottom > div > div.-next > button,.display-info-container1 > figure > div > div:nth-child(6)> div.pagination-bottom > div > div.-previous > button,.display-info-container1 > figure > div > div:nth-child(6) > div.pagination-bottom > div > div.-next > button,.display-info-container1 > figure > div > div > div.pagination-bottom > div > div.-previous > button,.display-info-container1 > figure > div > div > div.pagination-bottom > div > div.-next > button{
+  background-color:#1F4899;
+  color: white;
+}
+.rt-td{
+  border-bottom:0.1px solid  #E2E2E2;
+  border-left:0.1px solid  #E2E2E2;
+  border-right:0.1px solid  #E2E2E2;
+}

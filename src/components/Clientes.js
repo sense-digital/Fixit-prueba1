@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import './styles/ReactTableClientes.css';
 
 // import admin from 'firebase-admin';
 
@@ -65,6 +66,7 @@ class Clientes extends Component {
             data={this.state.data}
             defaultPageSize={10}
             showPageSizeOptions={false}
+            className="ReactTableClientes"
             />
 
 {/* FIN TABLA DE USUARIOS ACTUALES   */}
