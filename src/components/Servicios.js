@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
+import 'firebase/storage';
 import 'firebase/firestore';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
@@ -9,8 +10,10 @@ import './styles/Servicios.css';
 
 class Servicios extends Component {
     constructor () {
-        super() 
+        super()
+        
         this.state = {
+          imageEquipo: null,
           dataServicios:[],
           dataEquipos:[],
           NuevoEquipo:'',
@@ -21,25 +24,108 @@ class Servicios extends Component {
       }
 
 
+
+      storageActivation () {
+        firebase.storage()
+      }
+
+      handleUploadEquipo = (e) => {
+        if(e.target.files[0]){
+          const imageEquipo = e.target.files[0];
+          this.setState(()=>({imageEquipo}));
+        }
+      }
+      
+      handleUploadServicio = (e) => {
+        if(e.target.files[0]){
+          const imageServicio = e.target.files[0];
+          this.setState(()=>({imageServicio}));
+        }
+      }
+      
+
+
+     
       guardarCelularEnBaseDeDatos() {
-        return firebase.firestore().collection('celulares').add({
-          ref: this.state.NuevoEquipo
-         })
-         .then(function() {
-          window.location.reload(false);
-          })        
+        const imageEquipo = this.state.imageEquipo;
+         if (this.state.NuevoEquipo && this.state.imageEquipo ){
+          firebase.storage().ref(`celulares/${imageEquipo.name}`).put(imageEquipo).on('state_changed', 
+        //progress
+          (snapshot) => {
+
+        } , 
+        //error
+        (error) => {
+          console.log(error);
+        }, 
+        //completed
+        ()=>{
+          firebase.storage().ref(`celulares`).child(imageEquipo.name).getDownloadURL().then( url => {
+
+            firebase.firestore().collection('celulares').add({
+              ref: this.state.NuevoEquipo,
+              urlImage: url
+             })
+             .then(function() {
+              window.location.reload(false);
+              })        
+            } )        
+        });
+      }
+      else {
+        alert("diligencia los datos completos")
+      }
        }
 
+
+
+
        guardarServicioEnBaseDeDatos() {
-        return firebase.firestore().collection('servicios').add({
+
+        if (this.state.precio && this.state.servicio  && this.state.equipo ){
+        firebase.firestore().collection('servicios').add({
           equipo: this.state.equipo,
           servicio: this.state.servicio,
           precio: this.state.precio,
-         })
-         .then(function() {
-          window.location.reload(false);
-           })
-       }
+          })
+          .then(function() {
+            setTimeout(()=>window.location.reload(false), 3000);
+           })}else {
+            alert("diligencia los datos completos")
+           }
+
+    //     const {imageServicio} = this.state;
+    //     if (this.state.precio && this.state.imageServicio && this.state.servicio  && this.state.equipo ){
+    //      firebase.storage().ref(`servicios/${imageServicio.name}`).put(imageServicio).on('state_changed', 
+    //    //progress
+    //      (snapshot) => {
+
+    //    } , 
+    //    //error
+    //    (error) => {
+    //      console.log(error);
+    //    }, 
+    //    //completed
+    //    ()=>{
+    //      firebase.storage().ref(`servicios`).child(imageServicio.name).getDownloadURL().then( url => {
+
+      // firebase.firestore().collection('servicios').add({
+      //   equipo: this.state.equipo,
+      //   servicio: this.state.servicio,
+      //   precio: this.state.precio,
+      //   })
+      //   .then(function() {
+      //     setTimeout(()=>window.location.reload(false), 3000);
+      //    })
+    //        } )        
+    //    });
+    //  }
+    //  else {
+    //    alert("diligencia los datos completos")
+    //  }
+     }
+
+
 
       handleChange = (e) => {
         this.setState({
@@ -63,8 +149,8 @@ class Servicios extends Component {
         });
       }
 
-
       componentDidMount () {
+
         firebase.firestore().collection('servicios').orderBy('equipo').get().then((snapShots)=>{
           this.setState({
             dataServicios: snapShots.docs.map(doc => {
@@ -93,12 +179,12 @@ class Servicios extends Component {
             <div className='form-nuevoequipo'>
                <label>
                 Equipo
-               <input type="text" name="NuevoEquipo" onChange={this.handleChange} />
+               <input type="text" name="NuevoEquipo" onChange={this.handleChange}  />
                </label>
              
                <label>
                 Foto
-               <input type="file" name="" accept="image/x-png,image/jpeg" />
+               <input type="file"  accept="image/x-png,image/jpeg" onChange={this.handleUploadEquipo}  />
                </label>
                
                <button onClick={()=>this.guardarCelularEnBaseDeDatos()}> Crear </button>
@@ -109,10 +195,10 @@ class Servicios extends Component {
             <div className='form-nuevoservicio'>
                <label>
                 Equipo: 
-                <select name="equipo" onChange={this.handleChange} >
+                <select name="equipo" onChange={this.handleChange} id="equipoCreado" >
                 <option value="">Elige una opción</option>
                 {this.state.dataEquipos.map(item => {
-                  return <option value={item.data.ref}>{item.data.ref}</option> 
+                  return <option v alue={item.data.ref}>{item.data.ref}</option> 
                 }) }
                 </select>
                </label>
@@ -126,10 +212,7 @@ class Servicios extends Component {
                <input type="number" name="precio" onChange={this.handleChange} />
                </label>
             
-               <label>
-                Foto
-               <input type="file" name="" accept="image/x-png,image/jpeg" />
-               </label>
+               
                <button  onClick={()=>this.guardarServicioEnBaseDeDatos()}> Crear </button>
              </div>
 

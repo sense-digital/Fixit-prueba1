@@ -155,7 +155,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 Hora:
            </label>
           </div>
-          <div className='item-rs3form'><select name="hora" onChange={this.handleChange} value={this.state.hora}>
+          <div className='item-rs3form'><select name="hora" onChange={this.handleChange} value={this.state.hora} id="horaReserva">
                 <option value="">Elige una opción</option> 
                   <optgroup label="AM">
                       <option value="8:00 A.M">8:00 A.M</option> 

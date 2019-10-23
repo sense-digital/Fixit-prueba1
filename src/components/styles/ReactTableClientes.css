@@ -26,3 +26,8 @@
   border-left:0.1px solid  #E2E2E2;
   border-right:0.1px solid  #E2E2E2;
 }
+
+.display-info-container1{
+  min-height: 100vh;
+  overflow: auto;
+}

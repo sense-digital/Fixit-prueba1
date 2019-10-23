@@ -1,7 +1,7 @@
 //SECCIÓN DE RESERVA "2. ¿Que necesitas arreglar?"
 
 import React, {Component} from 'react';
-import Box from './Box';
+import Box2 from './Box2';
 import { Link } from 'react-router-dom';
 import '../pages/styles/HomeSections.css';
 import firebase from 'firebase/app';
@@ -57,7 +57,7 @@ class ReserveSection2 extends Component {
           {this.state.data.map(OptionBox => {
                 return(
               <span key={OptionBox.servicio} onClick={() => this.handleClick(OptionBox.servicio,OptionBox.precio)}>
-              <Box  descripcion={OptionBox.servicio}  />
+              <Box2  descripcion={OptionBox.servicio} urlImage={OptionBox.urlImage} />
               </span>
               )})}
             <div className='reservesection2-info-container'> 

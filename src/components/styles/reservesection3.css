@@ -209,3 +209,8 @@
     font-size: 1.5em;
     color: white;
   }
+
+
+  #horaReserva {
+    width:100%; 
+  }
