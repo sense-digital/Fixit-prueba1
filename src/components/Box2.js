@@ -14,9 +14,6 @@ class Box extends Component {
 
             <div className="OptionBox"  >
             <div className='OptionBox-Container' >
-              <div className="OptionBox-Item" >
-                  <img src={this.props.urlImage}  id="imgBox" />
-              </div>
               <div className="OptionBox-Item">
                 <h2>{this.props.descripcion}</h2>
               </div>

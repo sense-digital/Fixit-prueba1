@@ -16,7 +16,7 @@ const config = {
     appId: "1:247322650476:web:2942b27439f7bd74"
 };
 const fire = firebase.initializeApp(config);
-
+// var storage = firebase.storage();
 
 const container = document.getElementById('app')
 ReactDOM.render(<App/>,container);

@@ -16,9 +16,39 @@ import ReserveSectionRoute from '../components/ReserveSectionRoute';
 import './styles/HomeSections.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import firebase from 'firebase/app';
+import 'firebase/storage';
 
 class Home extends Component {
-    render () {
+   constructor () {
+      super()
+      
+      this.state = {
+        imageEquipo: null,
+        imageServicio: null,
+        dataServicios:[],
+        dataEquipos:[],
+        NuevoEquipo:'',
+        equipo:'',
+        servicio:'',
+        precio:'',
+        bannerURL: '',
+      }
+         firebase.storage()
+   
+         firebase.storage().ref(`banners`).child("imgBanner").getDownloadURL().then( (url) => {
+            this.setState({bannerURL: url});
+         }
+         )
+    }
+
+
+   
+   
+   
+   
+   
+   render () {
         return (
         <React.Fragment>
            <Header/>
@@ -77,7 +107,7 @@ class Home extends Component {
 
              {/* INICIO BANNER PUBLICITARIO */}
             <div className='herosection-3-2' style={{
-                  backgroundImage: "url(" + Repair4 + ")",
+                  backgroundImage: "url("+this.state.bannerURL+")",
                }}>
                <figure className='herosection-3-2-bckgrnd'>
                   <img src={Check}></img>
