@@ -38,12 +38,13 @@ class Trabajo extends Component {
                    <img className='grid1-img' alt='grid1-img' src={grid1img}></img>
                  </div>
                  <div className='item4'>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                   <p>sed do eiusmod tempor incididunt ut labore et dolore</p>
+                   <p>Se parte de nuestro equipo</p>
+                   <p>y amplía tus posibilidades de generar ingresos</p>
                  </div>
                  <div className='item4'></div>
                  <div className='item4'>
-                   <button type='button' className='button-trabajo'>Contáctanos</button>
+                   <button type='button' className='button-trabajo' onClick="scrollTo(section3-form)">Contáctanos</button>
+
                  </div>
                  <div className='item4'></div>
                </section> 
@@ -60,14 +61,14 @@ class Trabajo extends Component {
               </div>
               <section className='section2'>
                   <div className='item5'>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <p>Es muy fácil! Sigue los siguientes pasos y en poco tiempo podrás empezar a trabajar nosotros</p>
                   </div>
                   <div className='item5'><img src={grid2img1} alt=''></img></div>
                   <div className='item5'><img src={grid2img2} alt=''></img></div>
                   <div className='item5'><img src={grid2img3} alt=''></img></div>
-                  <div className='item5'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
-                  <div className='item5'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
-                  <div className='item5'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                  <div className='item5'><p>Envíanos tus datos; nos pondremos en contacto contigo</p></div>
+                  <div className='item5'><p>Agendaremos una cita y realizaremos una pequeña prueba técnica</p></div>
+                  <div className='item5'><p>Serás vinculado a nuestra empresa en muy poco tiempo!</p></div>
               </section>
 
 
@@ -98,7 +99,7 @@ class Trabajo extends Component {
                     <div className='item6'><input  id='nombre' name='nombre' type="text"></input></div>
                     <div className='item6' ><label for='correo'>Correo electrónico</label></div>
                     <div className='item6'><input id='correo' name='correo' type="text"></input></div>
-                    <div className='item6' ><label for='numero'>Número de contacto</label></div>
+                    <div className='item6' ><label for='numero'>Teléfono</label></div>
                     <div className='item6'><input id='numero' name='numero' type="phone"></input></div>
                     <input id='tipo' name='tipo' type="hidden" value="Trabaja con fixit"></input>
                      {/* <div className='campos-formulario-trabaja'>

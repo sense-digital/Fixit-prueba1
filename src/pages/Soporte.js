@@ -54,7 +54,7 @@ class Soporte extends Component {
                 <div className='form-container'>
                     <label for='nombre'>Nombre y apellido</label>
                     <label for='correo'>Correo electrónico</label>
-                    <label for='numero'>Número de contacto</label>
+                    <label for='numero'>Teléfono</label>
                   <div className='campos-formulario-soporte'>
                     <input id='nombre' name='nombre' type="text" className="e-mail"></input>
                     <input id='correo' name='correo' type="text" className="e-mail"></input>
@@ -100,7 +100,9 @@ class Soporte extends Component {
                   }}>
                 </div>
                 <div className="item-grid1-soporte">
-                  <p>Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean. Aliquet eget sit. Id diam maecenas ultricies mi Rhoncus aenean</p>
+                  <p>Nos enfocamos en la calidad de nuestro servicio, con garantías sobre materiales utilizados y mano de obra contratada. Con Fixit tendrás un diagnóstico sensato y eficaz respecto
+                    a las fallas que puedan presentar tus dispositivos. Nos enfocamos en la marca Apple para garantizar el mejor servicio.
+                  </p>
                 </div>
                 <div className="item-grid1-soporte" style={{
                      backgroundImage: "url(" + Backgroundsoporte3 + ")",
