@@ -100,15 +100,17 @@
 
  /* MODIFICACIONES A ESTRUCTURA FLEX DEL HEADER */
   .container-header{
-    flex-direction: column;
+    /* flex-direction: column; */
+    padding: 0 2%;
    }
   .logo-fixit-header{
     display: flex;
-    width: 90%;
+    /* width: 90%; */
     /* margin:10px 0; */
     justify-content: space-between;
-    padding-right: 30px;
-    padding-left: 30px;
+    /* padding-right: 30px; */
+    /* padding-left: 30px; */
+    margin-left: 0;
   }
 
  /* ESTILOS AL ICONO DESPLEGABLE */
@@ -142,7 +144,45 @@
 /* FIN DE MEDIAUQERY PARA TABLET */
 }
 
-
-@media screen and (max-width:319px){
-
+.menu-principal-responsive>ul{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0%;
+  top:17%;
+  transition: top 2s;
+  align-items: center;
+  width: 100%;
+  background: white;
+}
+.menu-principal-responsive > ul{
+  border-bottom: 3px solid #1D4898;
+}
+.menu-principal-responsive > ul > li{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.menu-principal-responsive > ul > li:hover{
+  background:#D0EBF0;
+}
+.menu-principal-responsive > ul > li > a:link{
+  text-align: right;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  cursor: pointer;
+}
+@media screen and (max-width:768px){
+  .menu-principal{
+    display: none;
+  }
+  
+}
+@media screen and (min-width:767px){
+  .hamIcon{
+    display: none;
+  }
+}
+.hamIcon{
+  cursor: pointer;
 }

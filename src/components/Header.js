@@ -17,6 +17,14 @@ class Header extends Component {
         }
     }
 
+    state = {
+        on: false,
+    }
+    toggle = ()=>{
+        this.setState({
+            on: !this.state.on
+        })
+    }
     //IDENTIFICA SI EL USUARIO ESTA LOGGEADO O NO
 
     componentDidMount(){
@@ -42,8 +50,31 @@ class Header extends Component {
            <Link to ='/'>
                <img src={logo} alt="LogoFixIt" href='/home' width='50px'/>
            </Link>
-               <img src={btnmenu} className='responsive-menu-button' alt="botón menu fixit" href=''/>
+               {/* <img src={btnmenu} className='responsive-menu-button' alt="botón menu fixit" href=''/> */}
        </figure>
+       
+       {/* Hamburguer menu */}
+       <div className='hamIcon' onClick={this.toggle}>
+        <h1>&#9776;</h1>
+        {this.state.on &&(
+            <nav className='menu-principal-responsive'>
+            <ul>
+                <li>
+                    <Link to='/trabajo'>Trabaja con FixIt</Link>
+                </li>
+                <li>
+                    <Link to='/soporte'>Soporte</Link>
+                </li>
+                <li>
+                {this.state.user ? (<Link to='/admincliente'>Tu cuenta</Link>):(<Link to='/LoginCliente'>Inicia sesión</Link>)}
+                </li>
+                <li>
+                    <Link to='/#arreglaloYa'>arreglalo ya</Link>
+                </li>
+            </ul>
+        </nav>
+        )}
+       </div>
        <nav className='menu-principal'>
            <ul>
                <li>
