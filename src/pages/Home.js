@@ -18,6 +18,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import firebase from 'firebase/app';
 import 'firebase/storage';
+import { async } from '@firebase/util';
 
 class Home extends Component {
    constructor () {
@@ -35,18 +36,20 @@ class Home extends Component {
         bannerURL: '',
       }
          firebase.storage()
-   
-         firebase.storage().ref(`banners`).child("imgBanner").getDownloadURL().then( (url) => {
-            this.setState({bannerURL: url});
-         }
-         )
+         firebase.storage().ref(`banners`).child("imgBanner").getDownloadURL()
+         .then( (url) => { this.setState({bannerURL: url});}
+           )
+      
     }
 
 
+
+
+
    
    
    
-   
+
    
    render () {
         return (
@@ -68,7 +71,6 @@ class Home extends Component {
                  }}>
            </div>
         {/*CONTAINER COLOR GRIS PARA LA PRIMERA SECCIÓN DE LA PÁGINA*/}
-
 
         {/* INICIO DE GRID DE SELECCIÓN DE PRODUCTOS */}
             <div className="ReserveSection1">
@@ -92,7 +94,7 @@ class Home extends Component {
                    <div className="item"><img src={Paso3} alt='paso 3'></img></div>
                    <div className="item">
                       <h2>Escoge tu equipo</h2>
-                      <p>Seleccionalo en las referencias disponibles de Iphone</p>
+                      <p>Seleccionalo- en las referencias disponibles de Iphone</p>
                    </div>
                    <div className="item">
                       <h2>Reporta un daño</h2>
@@ -107,22 +109,24 @@ class Home extends Component {
 
              {/* INICIO BANNER PUBLICITARIO */}
             <div className='herosection-3-2' style={{
-                  backgroundImage: "url("+this.state.bannerURL+")",
+                  backgroundImage: "url("+this.state.bannerURL+")"
                }}>
                <figure className='herosection-3-2-bckgrnd'>
                   <img src={Check}></img>
                   <h1> Banner publicitario</h1>
                   <p>Texto del banner publicitario</p>
+                  
                </figure>
             </div>
             <div className="herosection-3">
                 {/* <h1>BANNER PUBLICITARIO</h1>  */}
                 <div className='banner-publicitario1'>
                    <ul>
-                      <li><img className='banner-img' src={Repair1} alt='Reparación de celular 1'></img></li>
-                      <li><img className='banner-img' src={Repair2} alt='Reparación de celular 2'></img></li>
-                      <li><img className='banner-img' src={Repair3} alt='Reparación de celular 3'></img></li>
-                      <li><img className='banner-img' src={Repair4} alt='Reparación de celular 4'></img></li>
+                      <li><img className='banner-img' src={Repair1} alt='Reparación de celular 1' ></img></li>
+                      <li><img className='banner-img' src={Repair2} alt='Reparación de celular 2' ></img></li>
+                      <li><img className='banner-img' src={Repair3} alt='Reparación de celular 3' ></img></li>
+                      <li><img className='banner-img' src={Repair4} alt='Reparación de celular 4' ></img></li>
+                      
                    </ul>
                 </div>  
            </div> 
@@ -131,25 +135,12 @@ class Home extends Component {
 
            {/* INICIO GRID DE POR QUÉ FIXIT */}
             <section className="herosection-4" style={{
-               backgroundImage: "url(" + Background1 + ")",
-               // backgroundRepeat: 'no-repeat',
-               // backgroundPosition: 'center',
-               backgroundSize: 'cover',
-               // position:'relative',
-               // WebkitClipPath:'polygon(100% 0, 1% 0%, 0 65%, 51% 39%, 100% 64%)',
-               // clipPath:'polygon(100% 0, 1% 0%, 0 65%, 51% 39%, 100% 64%)',
-               filter: 'brightness(0.5)',
-               KhtmlOpacity:'0.5',
-               MozOpacity:'0.5',
-               msFilter:'alpha(opacity=50)',
-               filter:'alpha(opacity=50)',
-               filter:'progid:DXImageTransform.Microsoft.Alpha(opacity=0.5)',
-               // opacity:'0.7',
-            }}>
+               backgroundImage: "url(" + Background1 + ")", }}>
+
                 <div className="item2"><h1>¿ Por qué FixIt ? </h1></div>
-                <div className="item2"><img className='porqueimg' src={Star} alt=''></img></div>
-                <div className="item2"><img className='porqueimg' src={Apple} alt=''></img></div>
-                <div className="item2"><img className='porqueimg' src={Check} alt=''></img></div>
+                <div className="item2"><img className='porqueimg ' src={Star} alt=''></img></div>
+                <div className="item2"><img className='porqueimg ' src={Apple} alt=''></img></div>
+                <div className="item2"><img className='porqueimg ' src={Check} alt=''></img></div>
                 <div className="item2">
                       <h2>PROFESIONALES</h2>
                       <p>Todo nuestros ténicos son expertos certificados en reparación de equipos.</p>
@@ -187,6 +178,7 @@ class Home extends Component {
             {/* FIN GRID DE CIFRAS */}
             <Footer/>
            </div>
+
 
             {/* <div className="Section HeroHome">
                 <h1>¿Condiciones? </h1>

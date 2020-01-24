@@ -1,3 +1,5 @@
+
+
 .ReserveSection1{
     max-width: 1000px;
     margin: auto;
@@ -108,14 +110,17 @@
     /* box imagen paso 1 */
     max-width: 50%;
     justify-self: center;
+    max-height: 200px;
 }
 .item:nth-of-type(3)>img{
     /* box imagen paso 2 */
     max-width: 40%;
+    max-height: 200px;
 }
 .item:nth-of-type(4)>img{
     /* box imagen paso 3 */
     max-width: 60%;
+    max-height: 200px;
 }
 .item:nth-of-type(5){
     text-align: center;
@@ -155,7 +160,6 @@
     align-items: center;
     width: auto;
     height: fit-content;
-    margin-bottom: 1%;
 }
 .herosection-3-2-bckgrnd{
     display: inherit;
@@ -166,6 +170,7 @@
     width: 100%;
     padding: 3% 0;
     background-color: #00000087;
+    margin:0px;
 }
 .herosection-3-2-bckgrnd>img{
     width: 10%;
@@ -173,10 +178,12 @@
 .herosection-3-2-bckgrnd>h1{
     color: white;
     font-size: 1em;
+    margin:1px;
 }
 .herosection-3-2-bckgrnd>p{
     color: white;
     font-size: 0.7em;
+    margin:1px;
 }
 .herosection-3{
     display: flex;
@@ -218,6 +225,9 @@
     width: auto;
     margin: 0 auto;
 }
+
+
+
 @keyframes cambio{
  0% { margin-left: 0;}
  20% { margin-left: 0;}
@@ -246,11 +256,17 @@
     grid-row-gap: 0.8%;
     justify-items: center;
     align-items: center;
-    box-shadow: 5px  5px 5px grey;
+    box-shadow: 5px  5px 5px black;
     height: 50%;
     color: white;
     width: 100%;
     font-size: 40px;
+    padding: 2.5% 0px;
+    margin: 0px;
+    background-attachment: fixed;
+    background-Repeat: no-repeat;
+    background-Position: center;
+    background-size: cover;
 }
 .porqueimg{
     width: 40%;
@@ -370,6 +386,7 @@
 }
 .celular1{
     width: 68%;
+    max-height: 250px;
 }
 .item3:nth-of-type(1),.item3:nth-of-type(3){
     padding-top: 20%;
@@ -393,6 +410,7 @@
         margin-left: 1%;
         margin-right: 1%;
     }
+   
     /* fin de media query */
 }
 @media screen and (max-width:425px){
@@ -421,6 +439,9 @@
     }
     .grid-herosection-2{
         width: 98%;
+    }
+    .celular1{
+        max-height: 100px;
     }
 }
 @media screen and (max-width:385px){
@@ -490,11 +511,12 @@
     .item2:nth-of-type(3)>img{
         width: 25%;
     }
+
+    
 }
 @media screen and (min-width:300px) and (max-width:425px){
     .herosection-4{ 
         grid-template-rows: repeat(3, 25%);
-        margin-top: 15%;
     }
     .item2:nth-of-type(2)>img,.item2:nth-of-type(4)>img{
         margin-top:0;
@@ -511,6 +533,9 @@
         margin-bottom: 10%;
         font-size: .9em;
     }
+    .celular1{
+        max-height: 100px;
+    }
     
 }
 @media screen and (max-width:425px){
@@ -520,11 +545,27 @@
     .item2:nth-of-type(5)>p,.item2:nth-of-type(6)>p,.item2:nth-of-type(7)>p{
         font-size: 0.3em;
     }
+    .item:nth-of-type(2)>img{
+        /* box imagen paso 1 */
+        max-height: 80px;
+    }
+    .item:nth-of-type(3)>img{
+        /* box imagen paso 2 */
+        max-height: 80px;
+    }
+    .item:nth-of-type(4)>img{
+        /* box imagen paso 3 */
+        max-height: 80px;
+    }
+    .celular1{
+        max-height: 100px;
+    }
 }
 @media screen and (min-width:300px) and (max-width:375px){
     .herosection-4{
         grid-template-rows: repeat(7, auto);
         padding-bottom: 10%;
+
     }
     .item2:nth-of-type(2){
         grid-column-start: 2;
@@ -568,6 +609,21 @@
     .item2:nth-of-type(5)>p,.item2:nth-of-type(6)>p, .item2:nth-of-type(7)>p{
         font-size: 0.5em;
     }
+    .item:nth-of-type(2)>img{
+        /* box imagen paso 1 */
+        max-height: 80px;
+    }
+    .item:nth-of-type(3)>img{
+        /* box imagen paso 2 */
+        max-height: 80px;
+    }
+    .item:nth-of-type(4)>img{
+        /* box imagen paso 3 */
+        max-height: 80px;
+    }
+    .celular1{
+        max-height: 100px;
+    }
 }
 /* FIN DE QUERYS PARA SECCION POR QUÉ FIXIT */
 
@@ -584,5 +640,29 @@
     .item3>p{
         font-size: 0.2em;
     }
+    .item:nth-of-type(2)>img{
+        /* box imagen paso 1 */
+        max-height: 80px;
+    }
+    .item:nth-of-type(3)>img{
+        /* box imagen paso 2 */
+        max-height: 80px;
+    }
+    .item:nth-of-type(4)>img{
+        /* box imagen paso 3 */
+        max-height: 80px;
+    }
+       .celular1{
+        max-height: 100px;
+    }
 }
 /* FIN DE MEDIA QUERY PARA SECCIÓN DE CIFRAS */
+
+
+
+.prueba {
+    background-Image: "url(" + Background1 + ")";
+    background-Repeat: 'no-repeat';
+    background-Position: 'center';
+    background-Size: 'cover';
+}

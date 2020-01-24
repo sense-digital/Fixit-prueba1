@@ -1,5 +1,6 @@
 .ReactTable{
   background-color: white;
+  width: 60vw;
 }
 .rt-thead.-header{
   background-color:white;

@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import './styles/DetallesCuenta.css';
 
 class DetalleCuentaCliente extends Component {
     constructor () {
@@ -59,7 +60,7 @@ class DetalleCuentaCliente extends Component {
 
     render () {
         return (
-        <div>
+        <div className="container">
             
             <h2>Detalles de mi cuenta</h2>
 
