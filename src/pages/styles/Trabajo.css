@@ -70,6 +70,20 @@
     border-radius: 50%;
     cursor: pointer;
   }
+  .btn-cont{
+    width: fit-content;
+    height: fit-content;
+    padding: 5% 8%;
+    border-radius: 30px;
+    background: #3ABB47;
+    display: flex;
+    align-items: center;
+  }
+  .btn-trabajo{
+    text-decoration: none;
+    font-size: 0.5em;
+    color: white;
+  }
 /* FIN ESTILOS A PRIMER GRID "TRABAJA CON NOSOTROS"*/
 
 /* INICIO ESTILOS A SEGUNDO GRID "CÓMO FUNCIONA"*/

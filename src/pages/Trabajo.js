@@ -43,8 +43,9 @@ class Trabajo extends Component {
                  </div>
                  <div className='item4'></div>
                  <div className='item4'>
-                   <button type='button' className='button-trabajo' onClick="scrollTo(section3-form)">Contáctanos</button>
-
+                 <p className="btn-cont">
+                   <a className="btn-trabajo" href="http://localhost:3000/trabajo/#section3-form">Contáctanos</a>
+                 </p> 
                  </div>
                  <div className='item4'></div>
                </section> 
@@ -91,7 +92,7 @@ class Trabajo extends Component {
 
 
 
-               <div className='section3-form'>
+               <div className='section3-form' id="section3-form">
 
                  <form method="POST"action="https://us-central1-fixit-88405.cloudfunctions.net/mailContacto/v1"className='formulario-trabaja'>
                    <div className='form2-container'>
