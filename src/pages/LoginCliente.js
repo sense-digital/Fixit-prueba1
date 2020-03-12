@@ -27,15 +27,7 @@ class LoginCliente extends Component {
         this.db = firebase.firestore()  
       }
 
-        authGoogle () {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider)
-                .then(function(result) {
-                  result.user.updateProfile()            
-              }).catch(function(error) {
-               alert(error)
-              });
-        }
+       
         
         login (e) {
             e.preventDefault();
@@ -49,7 +41,7 @@ class LoginCliente extends Component {
         }
 
         createUserDataBase(result) {
-            return this.db.collection('usuarios').add({
+            return this.db.collection('usuarios').doc(result.user.uid).set({
               nombre : this.state.name,
               apellido : this.state.apellido,
               correo : this.state.mail,
@@ -61,13 +53,35 @@ class LoginCliente extends Component {
               fechaDeInscripcion: firebase.firestore.FieldValue.serverTimestamp()
             })
         }
+
+
+        authGoogle () {
+          var provider = new firebase.auth.GoogleAuthProvider();
+          firebase.auth().signInWithPopup(provider)
+              .then( result => {
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                // result.user.updateProfile();
+
+                this.setState(
+                  {
+                    name: result.additionalUserInfo.profile.given_name,
+                    apellido: result.additionalUserInfo.profile.family_name,
+                  }
+                )
+                this.createUserDataBase(result);
+            }).catch(function(error) {
+             alert(error)
+            })
+      }
         
 
         register (e) {
             e.preventDefault();
             firebase.auth().createUserWithEmailAndPassword(this.state.mail, this.state.password)
-            .then( result => 
-              {this.createUserDataBase(result) 
+            .then( result => {
+              this.createUserDataBase(result) 
             })
             .catch(function(error) {
             alert(`Se ha presentado el siguiente error: ${error}`)

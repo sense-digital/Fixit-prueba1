@@ -24,13 +24,19 @@ class AdminCliente extends Component {
     }
 
     llamadoFirebase () {
-        firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.email).get().then((snapShots)=>{
+       
+      if (this.state.user) {
+      firebase.firestore().collection('usuarios').where("correo", '==',this.state.user.email).get().then((snapShots)=>{
           this.setState({
             data: snapShots.docs.map(doc => {
               return (doc.data());
             })
           })
-        })          
+        }) 
+      } 
+      else {
+        console.log("no user");
+      }        
     }  
   
       authListener() {
